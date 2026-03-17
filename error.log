@@ -1,0 +1,284 @@
+16:38:44 [vite-plugin-svelte] src/routes/airtime-and-data/+page.svelte:34:4 Unused CSS selector ".network_card img"
+https://svelte.dev/e/css_unused_selector
+32:     }
+33:     
+34:     .network_card img {
+                         ^
+35:         @apply h-16 w-auto mb-4 object-contain;
+36:     }
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:71:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+69:         <div class="right_col" use:reveal={{type: 'slideInRight', duration: '0.8s', delay: '0.2s'}}>
+70:         {#if slide == 0}
+71:             <div class="step" onclick={() => slide = 0}>
+                      ^
+72:                 <div class="title_wrapper">
+73:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:71:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+69:         <div class="right_col" use:reveal={{type: 'slideInRight', duration: '0.8s', delay: '0.2s'}}>
+70:         {#if slide == 0}
+71:             <div class="step" onclick={() => slide = 0}>
+                      ^
+72:                 <div class="title_wrapper">
+73:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:81:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+79:             </div>
+80:         {:else}
+81:             <div class="step inactive" onclick={() => slide = 0}>
+                      ^
+82:                 <div class="title_wrapper">
+83:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:81:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+79:             </div>
+80:         {:else}
+81:             <div class="step inactive" onclick={() => slide = 0}>
+                      ^
+82:                 <div class="title_wrapper">
+83:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:93:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+91: 
+92:         {#if slide == 1}
+93:             <div class="step" onclick={() => slide = 1}>
+                      ^
+94:                 <div class="title_wrapper">
+95:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:93:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+91: 
+92:         {#if slide == 1}
+93:             <div class="step" onclick={() => slide = 1}>
+                      ^
+94:                 <div class="title_wrapper">
+95:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:103:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+101:             </div>
+102:         {:else}
+103:             <div class="step inactive" onclick={() => slide = 1}>
+                       ^
+104:                 <div class="title_wrapper">
+105:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:103:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+101:             </div>
+102:         {:else}
+103:             <div class="step inactive" onclick={() => slide = 1}>
+                       ^
+104:                 <div class="title_wrapper">
+105:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:115:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+113: 
+114:         {#if slide == 2}
+115:             <div class="step" onclick={() => slide = 2}>
+                       ^
+116:                 <div class="title_wrapper">
+117:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:115:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+113: 
+114:         {#if slide == 2}
+115:             <div class="step" onclick={() => slide = 2}>
+                       ^
+116:                 <div class="title_wrapper">
+117:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:125:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+123:             </div>
+124:         {:else}
+125:             <div class="step inactive" onclick={() => slide = 2}>
+                       ^
+126:                 <div class="title_wrapper">
+127:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:125:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+123:             </div>
+124:         {:else}
+125:             <div class="step inactive" onclick={() => slide = 2}>
+                       ^
+126:                 <div class="title_wrapper">
+127:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:138:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+136: 
+137:         {#if slide == 3}
+138:             <div class="step" onclick={() => slide = 3}>
+                       ^
+139:                 <div class="title_wrapper">
+140:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:138:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+136: 
+137:         {#if slide == 3}
+138:             <div class="step" onclick={() => slide = 3}>
+                       ^
+139:                 <div class="title_wrapper">
+140:                     <div class="number">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:148:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+146:             </div>
+147:         {:else}
+148:             <div class="step inactive" onclick={() => slide = 3}>
+                       ^
+149:                 <div class="title_wrapper">
+150:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:45 [vite-plugin-svelte] src/components/HowItWorks.svelte:148:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+146:             </div>
+147:         {:else}
+148:             <div class="step inactive" onclick={() => slide = 3}>
+                       ^
+149:                 <div class="title_wrapper">
+150:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:47 [vite-plugin-svelte] src/routes/airtime-and-data/+page.svelte:34:4 Unused CSS selector ".network_card img"
+https://svelte.dev/e/css_unused_selector
+32:     }
+33:     
+34:     .network_card img {
+                         ^
+35:         @apply h-16 w-auto mb-4 object-contain;
+36:     }
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:71:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+69:         <div class="right_col" use:reveal={{type: 'slideInRight', duration: '0.8s', delay: '0.2s'}}>
+70:         {#if slide == 0}
+71:             <div class="step" onclick={() => slide = 0}>
+                      ^
+72:                 <div class="title_wrapper">
+73:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:71:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+69:         <div class="right_col" use:reveal={{type: 'slideInRight', duration: '0.8s', delay: '0.2s'}}>
+70:         {#if slide == 0}
+71:             <div class="step" onclick={() => slide = 0}>
+                      ^
+72:                 <div class="title_wrapper">
+73:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:81:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+79:             </div>
+80:         {:else}
+81:             <div class="step inactive" onclick={() => slide = 0}>
+                      ^
+82:                 <div class="title_wrapper">
+83:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:81:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+79:             </div>
+80:         {:else}
+81:             <div class="step inactive" onclick={() => slide = 0}>
+                      ^
+82:                 <div class="title_wrapper">
+83:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:93:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+91: 
+92:         {#if slide == 1}
+93:             <div class="step" onclick={() => slide = 1}>
+                      ^
+94:                 <div class="title_wrapper">
+95:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:93:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+91: 
+92:         {#if slide == 1}
+93:             <div class="step" onclick={() => slide = 1}>
+                      ^
+94:                 <div class="title_wrapper">
+95:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:103:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+101:             </div>
+102:         {:else}
+103:             <div class="step inactive" onclick={() => slide = 1}>
+                       ^
+104:                 <div class="title_wrapper">
+105:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:103:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+101:             </div>
+102:         {:else}
+103:             <div class="step inactive" onclick={() => slide = 1}>
+                       ^
+104:                 <div class="title_wrapper">
+105:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:115:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+113: 
+114:         {#if slide == 2}
+115:             <div class="step" onclick={() => slide = 2}>
+                       ^
+116:                 <div class="title_wrapper">
+117:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:115:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+113: 
+114:         {#if slide == 2}
+115:             <div class="step" onclick={() => slide = 2}>
+                       ^
+116:                 <div class="title_wrapper">
+117:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:125:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+123:             </div>
+124:         {:else}
+125:             <div class="step inactive" onclick={() => slide = 2}>
+                       ^
+126:                 <div class="title_wrapper">
+127:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:125:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+123:             </div>
+124:         {:else}
+125:             <div class="step inactive" onclick={() => slide = 2}>
+                       ^
+126:                 <div class="title_wrapper">
+127:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:138:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+136: 
+137:         {#if slide == 3}
+138:             <div class="step" onclick={() => slide = 3}>
+                       ^
+139:                 <div class="title_wrapper">
+140:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:138:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+136: 
+137:         {#if slide == 3}
+138:             <div class="step" onclick={() => slide = 3}>
+                       ^
+139:                 <div class="title_wrapper">
+140:                     <div class="number">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:148:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+146:             </div>
+147:         {:else}
+148:             <div class="step inactive" onclick={() => slide = 3}>
+                       ^
+149:                 <div class="title_wrapper">
+150:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+16:38:48 [vite-plugin-svelte] src/components/HowItWorks.svelte:148:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+146:             </div>
+147:         {:else}
+148:             <div class="step inactive" onclick={() => slide = 3}>
+                       ^
+149:                 <div class="title_wrapper">
+150:                     <div class="bg-inactive_grey rounded-md w-6 h-6 flex justify-center items-center mr-4">
+[31merror during build:
+Error: EPERM: operation not permitted, symlink '![-]\catchall.func' -> 'C:\Users\hp\Desktop\Kwami\justbuy\.vercel\output\functions\index.func'
+    at Object.symlinkSync (node:fs:1889:11)
+    at adapt (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/@sveltejs/adapter-vercel/index.js:477:9)
+    at async adapt (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/@sveltejs/kit/src/core/adapt/index.js:41:2)
+    at async finalise (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/@sveltejs/kit/src/exports/vite/index.js:1359:7)
+    at async Object.handler (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/@sveltejs/kit/src/exports/vite/index.js:1390:5)
+    at async PluginDriver.hookParallel (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/rollup/dist/es/shared/node-entry.js:22475:17)
+    at async Object.close (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/rollup/dist/es/shared/node-entry.js:23494:13)
+    at async buildEnvironment (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/vite/dist/node/chunks/config.js:33555:15)
+    at async Object.build (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/vite/dist/node/chunks/config.js:33900:19)
+    at async Object.buildApp (file:///C:/Users/hp/Desktop/Kwami/justbuy/node_modules/vite/dist/node/chunks/config.js:33897:153)[39m

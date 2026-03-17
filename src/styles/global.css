@@ -1,43 +1,15 @@
 @import "tailwindcss"; 
 
 @theme {
-  --color-heading_prime: var(--heading-prime);
-  --color-heading_highlight: var(--heading-highlight);
-  --color-heading_grey: var(--heading-grey);
-  --color-services_bg: var(--services-bg);
-  --color-heading_secondary: var(--heading-secondary);
-  --color-card_border: var(--card-border);
-  --color-card_bg: var(--card-bg);
-  --color-prime_grey: var(--prime-grey);
-  --color-inactive_grey: var(--inactive-grey);
-}
-
-:root {
-  --heading-prime: #121063;
-  --heading-highlight: #3ab7bf;
-  --heading-grey: #626973;
-  --services-bg: #d8edf1;
-  --heading-secondary: #253c49;
-  --card-border: #e4e8e9;
-  --card-bg: #f1f6f7;
-  --prime-grey: #1c2819;
-  --inactive-grey: #888888;
-  --bg-color: #f3f4f6;
-  --component-bg: #ffffff;
-}
-
-.dark {
-  --heading-prime: #60a5fa; /* Lighter blue */
-  --heading-highlight: #4fd1c5; /* Brighter cyan */
-  --heading-grey: #9ca3af; /* Light grey */
-  --services-bg: #0f172a; /* Deep slate */
-  --heading-secondary: #f8fafc; /* Near white */
-  --card-border: #334155; /* Slate border */
-  --card-bg: #1e293b; /* Dark slate card */
-  --prime-grey: #cbd5e1;
-  --inactive-grey: #475569;
-  --bg-color: #020617; /* Very deep blue/black background */
-  --component-bg: #0f172a; /* Dark transparent component bg */
+  --color-heading_prime: #121063;
+  --color-heading_highlight: #3ab7bf;
+  --color-heading_grey: #626973;
+  --color-services_bg: #d8edf1;
+  --color-heading_secondary: #253c49;
+  --color-card_border: #e4e8e9;
+  --color-card_bg: #f1f6f7;
+  --color-prime_grey: #1c2819;
+  --color-inactive_grey: #888888;
 }
 
 @layer base {
@@ -47,14 +19,34 @@
         font-family: "Rethink Sans", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
-        background-color: var(--bg-color);
-        color: var(--heading-secondary);
-        transition: background-color 0.3s ease, color 0.3s ease;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
     }
     
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 80px;
+    }
+
+    /* Better mobile typography */
+    @media (max-width: 640px) {
+        html {
+            font-size: 15px;
+        }
+    }
+
+    /* Optimize images globally for mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Smoother touch interactions */
+    a, button {
+        touch-action: manipulation;
     }
 }
 

@@ -4,18 +4,8 @@
 
     let scrolled = $state(false);
     let mobileMenuOpen = $state(false);
-    let isDark = $state(false);
 
     onMount(() => {
-        // Hydrate theme from local storage or system preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            isDark = true;
-            document.documentElement.classList.add('dark');
-        } else {
-            isDark = false;
-            document.documentElement.classList.remove('dark');
-        }
-
         const handleScroll = () => {
             scrolled = window.scrollY > 20;
         };
@@ -23,22 +13,18 @@
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
-    const toggleTheme = () => {
-        isDark = !isDark;
-        if (isDark) {
-            document.documentElement.classList.add('dark');
-            localStorage.theme = 'dark';
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.theme = 'light';
-        }
-    };
-
     const toggleMenu = () => {
         mobileMenuOpen = !mobileMenuOpen;
+        // Prevent body scroll when menu is open
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     };
     const closeMenu = () => {
         mobileMenuOpen = false;
+        document.body.style.overflow = '';
     };
 </script>
 
@@ -46,23 +32,23 @@
     @reference "../styles/global.css";
 
     .header {
-        @apply px-6 md:px-24 py-4 flex flex-row w-full fixed top-0 left-0 justify-between items-center z-50 transition-all duration-300;
+        @apply px-4 sm:px-6 md:px-24 py-3 md:py-4 flex flex-row w-full fixed top-0 left-0 justify-between items-center z-50 transition-all duration-300;
     }
     .header.scrolled {
-        @apply shadow-xl py-3;
-        background-color: var(--component-bg, #ffffff);
+        @apply bg-white shadow-xl py-2 md:py-3;
     }
     .header:not(.scrolled) {
         @apply bg-transparent;
     }
 
+    .header .logo_link {
+        @apply flex items-center z-[60];
+    }
     .header img {
-        @apply h-8 md:h-12 transition-transform duration-300 hover:scale-110;
-        animation: pulseGlow 3s infinite;
-        border-radius: 50%;
+        @apply h-9 sm:h-10 md:h-12 transition-transform duration-300 hover:scale-105;
     }
     .header.scrolled img {
-        @apply h-7 md:h-10;
+        @apply h-8 sm:h-9 md:h-10;
     }
 
     .nav_links {
@@ -76,45 +62,23 @@
         @apply relative h-full flex flex-col justify-center;
     }
     .dropdown_menu {
-        @apply absolute top-full left-0 shadow-xl rounded-md flex-col w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-gray-100;
-        background-color: var(--component-bg, #ffffff);
+        @apply absolute top-full left-0 bg-white shadow-xl rounded-md flex-col w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-gray-100;
     }
     .dropdown_menu a {
-        @apply block px-5 py-3 text-sm normal-case tracking-normal md:w-full border-b last:border-none hover:text-heading_highlight;
-        border-color: var(--card-border, #f9fafb);
+        @apply block px-5 py-3 hover:bg-gray-50 text-sm normal-case tracking-normal md:w-full border-b border-gray-50 last:border-none;
     }
 
     .header .actions {
         @apply hidden lg:flex flex-row items-center gap-4;
     }
-    
-    .theme_switch_pro {
-        @apply relative w-[60px] h-[32px] rounded-full flex items-center cursor-pointer transition-colors duration-500 mr-2 md:mr-6 shadow-inner;
-        background-color: #cbd5e1;
-    }
-    .theme_switch_pro.dark_active {
-        background-color: #1e293b;
-        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.4);
-    }
-    .theme_switch_pro .thumb {
-        @apply absolute w-[24px] h-[24px] rounded-full flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-md;
-        left: 4px;
-        background-color: white;
-        color: #f59e0b; /* Sun color */
-    }
-    .theme_switch_pro.dark_active .thumb {
-        transform: translateX(28px);
-        background-color: #0f172a;
-        color: #38bdf8; /* Moon color */
-    }
-
     .header .download_btn {
         @apply bg-[url(/images/btn_bg.png)] bg-cover bg-no-repeat bg-left w-fit flex flex-row justify-center items-center px-6 py-2.5 text-white text-sm md:text-base tracking-wider rounded-md cursor-pointer shadow-md hover:shadow-lg transition-all;
     }
 
-    /* Mobile menu button */
+    /* Mobile menu button - larger touch target */
     .mobile_btn {
-        @apply lg:hidden flex flex-col justify-center items-center w-8 h-8 cursor-pointer z-[60];
+        @apply lg:hidden flex flex-col justify-center items-center w-10 h-10 cursor-pointer z-[60] rounded-md;
+        -webkit-tap-highlight-color: transparent;
     }
     .mobile_btn span {
         @apply w-6 h-0.5 bg-heading_secondary mb-1.5 transition-all duration-300 origin-center;
@@ -123,37 +87,68 @@
         @apply mb-0;
     }
     .mobile_btn.open span:nth-child(1) {
-        @apply transform translate-y-2 rotate-45;
+        @apply transform translate-y-2 rotate-45 bg-heading_highlight;
     }
     .mobile_btn.open span:nth-child(2) {
         @apply opacity-0;
     }
     .mobile_btn.open span:nth-child(3) {
-        @apply transform -translate-y-2 -rotate-45;
+        @apply transform -translate-y-2 -rotate-45 bg-heading_highlight;
     }
 
-    /* Mobile menu overlay */
+    /* Mobile menu overlay - full redesign */
     .mobile_menu {
-        @apply fixed inset-0 z-50 flex flex-col items-center justify-center transform transition-transform duration-300 shadow-xl;
-        background-color: var(--bg-color, #ffffff);
+        @apply fixed inset-0 bg-white z-50 flex flex-col transform transition-all duration-400 ease-in-out overflow-y-auto;
     }
     .mobile_menu.closed {
-        @apply translate-x-full;
+        @apply translate-x-full opacity-0;
     }
     .mobile_menu.open {
-        @apply translate-x-0;
+        @apply translate-x-0 opacity-100;
     }
-    .mobile_menu a {
-        @apply text-2xl font-bold mb-6 transition-colors;
-        color: var(--heading-prime, #121063);
+
+    .mobile_menu_content {
+        @apply flex flex-col px-6 pt-24 pb-8 h-full;
     }
-    .mobile_menu a:hover {
-        @apply text-heading_highlight;
+
+    .mobile_nav_links {
+        @apply flex flex-col gap-1 mb-8;
+    }
+    .mobile_nav_links a {
+        @apply flex items-center justify-between text-lg font-semibold text-heading_secondary py-4 px-4 rounded-xl active:bg-gray-100 transition-colors;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .mobile_nav_links a:not(:last-child) {
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .mobile_services_label {
+        @apply text-xs uppercase text-heading_grey tracking-widest font-bold px-4 pt-4 pb-2;
+    }
+
+    .mobile_services_grid {
+        @apply grid grid-cols-2 gap-3 px-2 mb-6;
+    }
+    .mobile_services_grid a {
+        @apply flex flex-col items-center justify-center text-center bg-gray-50 rounded-2xl py-5 px-3 text-sm font-semibold text-heading_secondary active:scale-95 transition-transform;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .mobile_services_grid a .service_icon {
+        @apply text-2xl mb-2;
+    }
+
+    .mobile_download_btn {
+        @apply mt-auto w-full flex items-center justify-center gap-3 bg-heading_prime text-white px-6 py-4 rounded-2xl text-lg font-bold shadow-lg active:scale-[0.98] transition-transform;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile_contact {
+        @apply flex flex-col items-center gap-2 mt-4 text-sm text-heading_grey;
     }
 </style>
 
 <header class="header {scrolled ? 'scrolled' : ''}">
-    <a href="/" onclick={closeMenu}>
+    <a href="/" onclick={closeMenu} class="logo_link">
         <img src="/images/jb_logo.png" alt="Just Buy logo" />
     </a>
     
@@ -174,21 +169,6 @@
     </nav>
 
     <div class="actions">
-        <!-- Pro Theme Toggle Pill -->
-        <button class="theme_switch_pro {isDark ? 'dark_active' : ''}" onclick={toggleTheme} aria-label="Toggle Dark Mode">
-            <span class="absolute w-full flex justify-between px-2 text-gray-500 opacity-60 pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            </span>
-            <div class="thumb">
-                {#if isDark}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                {:else}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                {/if}
-            </div>
-        </button>
-
         <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular">
             <span>Download app</span>
         </a>
@@ -202,11 +182,55 @@
     </button>
 </header>
 
-<!-- Mobile Menu Overlay -->
+<!-- Mobile Menu Overlay — Completely Redesigned -->
 <div class="mobile_menu {mobileMenuOpen ? 'open' : 'closed'}">
-    <a href="/" onclick={closeMenu} class="poppins-bold">Home</a>
-    <a href="#services" onclick={closeMenu} class="poppins-bold">Services</a>
-    <a href="#how-it-works" onclick={closeMenu} class="poppins-bold">How It Works</a>
-    <a href="#testimonials" onclick={closeMenu} class="poppins-bold">Testimonials</a>
-    <a href="https://tinyurl.com/Datankoaa" target="_blank" class="bg-heading_prime text-white px-8 py-3 rounded-md poppins-regular mt-8 text-lg">Download app</a>
+    <div class="mobile_menu_content">
+        <!-- Main Nav Links -->
+        <div class="mobile_nav_links poppins-semibold">
+            <a href="/" onclick={closeMenu}>
+                <span>🏠 Home</span>
+                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#how-it-works" onclick={closeMenu}>
+                <span>⚡ How It Works</span>
+                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#testimonials" onclick={closeMenu}>
+                <span>⭐ Reviews</span>
+                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+        </div>
+
+        <!-- Services Grid - App-style -->
+        <p class="mobile_services_label poppins-bold">Our Services</p>
+        <div class="mobile_services_grid poppins-medium">
+            <a href="/corporate" onclick={closeMenu}>
+                <span class="service_icon">🏢</span>
+                Corporate
+            </a>
+            <a href="/retail" onclick={closeMenu}>
+                <span class="service_icon">🛍️</span>
+                Retail
+            </a>
+            <a href="/bill-payments" onclick={closeMenu}>
+                <span class="service_icon">💡</span>
+                Bill Payments
+            </a>
+            <a href="/airtime-and-data" onclick={closeMenu}>
+                <span class="service_icon">📱</span>
+                Airtime & Data
+            </a>
+        </div>
+
+        <!-- Download CTA -->
+        <a href="https://tinyurl.com/Datankoaa" target="_blank" onclick={closeMenu} class="mobile_download_btn poppins-bold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download JustBuy App
+        </a>
+
+        <!-- Contact Info -->
+        <div class="mobile_contact poppins-regular">
+            <span>Need help? <strong class="text-heading_highlight">support@justbuy.com.gh</strong></span>
+        </div>
+    </div>
 </div>

@@ -6,35 +6,35 @@
     @reference "../styles/global.css";
 
     .hero_section_main {
-        @apply bg-[url(/images/bg.png)] bg-fixed bg-cover bg-no-repeat bg-center min-h-dvh h-auto w-full flex flex-col md:flex-row px-6 md:px-8 pt-24 md:pt-0 pb-10 md:pb-0;
+        @apply bg-[url(/images/bg.png)] bg-fixed bg-cover bg-no-repeat bg-center min-h-dvh h-auto w-full flex flex-col md:flex-row px-4 sm:px-6 md:px-8 pt-20 md:pt-0 pb-8 md:pb-0;
     }
     .hero_section_main .left_col, .hero_section_main .right_col {
         @apply h-full w-full md:w-1/2 flex flex-col px-0 md:px-16;
     }
     .hero_section_main .right_col {
-        @apply justify-center md:justify-end items-center md:items-start pt-10 md:pt-0;
+        @apply justify-center md:justify-end items-center md:items-start pt-6 md:pt-0;
     }
     .hero_section_main .left_col {
         @apply justify-center items-center md:items-start text-center md:text-left;
     }
     .hero_section_main .left_col h2 {
-        @apply text-5xl md:text-7xl text-heading_prime tracking-wide md:leading-tight;
+        @apply text-3xl sm:text-4xl md:text-7xl text-heading_prime tracking-wide md:leading-tight;
     }
     .hero_section_main .left_col h2 span {
         @apply text-heading_highlight;
     }
     .hero_section_main .left_col p {
-        @apply text-sm md:text-base text-heading_grey pt-4 pb-8 md:pb-10 pr-0 md:pr-32;
+        @apply text-sm sm:text-base text-heading_grey pt-3 pb-6 md:pb-10 pr-0 md:pr-32;
     }
     .hero_section_main .left_col .download_btn {
-        @apply bg-[url(/images/btn_bg.png)] bg-cover bg-no-repeat bg-left w-fit flex flex-row justify-center items-center px-8 py-3 text-white text-base tracking-wider rounded-md cursor-pointer;
+        @apply bg-[url(/images/btn_bg.png)] bg-cover bg-no-repeat bg-left w-fit flex flex-row justify-center items-center px-6 sm:px-8 py-3 sm:py-3.5 text-white text-sm sm:text-base tracking-wider rounded-xl cursor-pointer;
     }
     .hero_section_main .right_col .hero_img {
-        @apply w-full max-w-[350px] md:max-w-[500px] h-auto relative z-10;
+        @apply w-full max-w-[280px] sm:max-w-[350px] md:max-w-[500px] h-auto relative z-10;
     }
 
     .trust_badge {
-        @apply inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-4 py-1.5 rounded-full text-xs font-semibold text-heading_secondary mb-6 shadow-sm shadow-black/5 relative z-20;
+        @apply inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold text-heading_secondary mb-4 sm:mb-6 shadow-sm shadow-black/5 relative z-20;
         animation: pulseGlow 2s infinite;
     }
     
@@ -47,16 +47,16 @@
     }
 
     .stats_container {
-        @apply flex gap-6 md:gap-10 mt-12 overflow-hidden;
+        @apply flex gap-4 sm:gap-6 md:gap-10 mt-8 sm:mt-12 overflow-hidden;
     }
     .stat_item {
         @apply flex flex-col;
     }
     .stat_value {
-        @apply text-2xl md:text-3xl font-extrabold text-heading_prime mb-1;
+        @apply text-xl sm:text-2xl md:text-3xl font-extrabold text-heading_prime mb-0.5 sm:mb-1;
     }
     .stat_label {
-        @apply text-xs md:text-sm text-heading_grey font-medium uppercase tracking-wider;
+        @apply text-[10px] sm:text-xs md:text-sm text-heading_grey font-medium uppercase tracking-wider;
     }
 </style>
 
@@ -71,11 +71,11 @@
         <span class="main_heading poppins-extrabold">Subscriptions in Seconds</span>
         </h2>
         <p class="poppins-medium text-lg">Top up MTN, Telecel, AirtelTigo and pay for DSTV and GOtv subscriptions instantly with one simple app.</p>
-        <div class="flex gap-4">
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
                 <span>Download app</span>
             </a>
-            <a href="#how-it-works" class="bg-white border-2 border-heading_prime text-heading_prime w-fit flex flex-row justify-center items-center px-8 py-3 text-base tracking-wider rounded-md cursor-pointer hover:bg-heading_prime hover:text-white transition-all duration-300 poppins-bold">
+            <a href="#how-it-works" class="bg-white border-2 border-heading_prime text-heading_prime flex flex-row justify-center items-center px-6 sm:px-8 py-3 text-sm sm:text-base tracking-wider rounded-xl cursor-pointer hover:bg-heading_prime hover:text-white transition-all duration-300 poppins-bold active:scale-95">
                 See How
             </a>
         </div>
