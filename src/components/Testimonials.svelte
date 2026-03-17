@@ -1,14 +1,18 @@
+<script>
+    import { reveal } from "$lib/reveal";
+</script>
+
 <style lang="postcss">
     @reference "../styles/global.css";
 
     .testimonials {
-        @apply bg-white h-auto w-full flex flex-col px-8 py-20;
+        @apply bg-white h-auto w-full flex flex-col px-6 md:px-8 py-14 md:py-20;
     }
     .testimonials .heading {
-        @apply text-5xl leading-14 text-heading_secondary mb-10 text-center max-w-[600px] mx-auto tracking-wider;
+        @apply text-3xl md:text-5xl md:leading-14 text-heading_secondary mb-10 text-center max-w-[600px] mx-auto tracking-wider;
     }
     .testimonials .first_row {
-        @apply grid grid-cols-3 gap-6 px-16;
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0 md:px-16;
     }
     .testimonials .first_row .card, .testimonials .second_row .card {
         @apply flex flex-col border-2 border-card_border bg-card_bg rounded-lg py-6 px-8;
@@ -35,14 +39,14 @@
         @apply w-full h-full object-cover rounded-md;
     }
     .testimonials .second_row {
-        @apply grid grid-cols-2 gap-6 px-16 mt-6;
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-6 px-0 md:px-16 mt-6;
     }
 </style>
 
-<section class="testimonials">
-    <h2 class="heading poppins-bold">The Trusted Choice for Airtime, Data, and Bill Payments</h2>
+<section id="testimonials" class="testimonials">
+    <h2 class="heading poppins-bold" use:reveal={{type: 'zoomIn'}}>The Trusted Choice for Airtime, Data, and Bill Payments</h2>
     <div class="first_row">
-        <div class="card">
+        <div class="card" use:reveal={{type: 'fadeInUp', delay: '0.1s'}}>
             <div class="star_rating">
                 <img src="/images/star.png" alt="5 star rating" />
                 <img src="/images/star.png" alt="5 star rating" />
@@ -62,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" use:reveal={{type: 'fadeInUp', delay: '0.2s'}}>
             <div class="star_rating">
                 <img src="/images/star.png" alt="5 star rating" />
                 <img src="/images/star.png" alt="5 star rating" />
@@ -82,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" use:reveal={{type: 'fadeInUp', delay: '0.3s'}}>
             <div class="star_rating">
                 <img src="/images/star.png" alt="5 star rating" />
                 <img src="/images/star.png" alt="5 star rating" />
@@ -104,7 +108,7 @@
         </div>
     </div>
     <div class="second_row">
-        <div class="card">
+        <div class="card" use:reveal={{type: 'fadeInUp', delay: '0.4s'}}>
             <div class="star_rating">
                 <img src="/images/star.png" alt="5 star rating" />
                 <img src="/images/star.png" alt="5 star rating" />
@@ -124,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" use:reveal={{type: 'fadeInUp', delay: '0.5s'}}>
             <div class="star_rating">
                 <img src="/images/star.png" alt="5 star rating" />
                 <img src="/images/star.png" alt="5 star rating" />

@@ -6,6 +6,7 @@
 	import LogoStrip from "../components/LogoStrip.svelte";
 	import ServicesGrid from "../components/ServicesGrid.svelte";
 	import Testimonials from "../components/Testimonials.svelte";
+	import Footer from "../components/Footer.svelte";
 </script>
 
 <style lang="postcss">
@@ -26,4 +27,5 @@
     <LogoStrip />
     <Testimonials />
     <CTA />
+    <Footer />
 </main>

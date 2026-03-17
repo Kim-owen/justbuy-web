@@ -1,4 +1,5 @@
 <script>
+    import { reveal } from "$lib/reveal";
 	let slide = $state(0);
 </script>
 
@@ -6,25 +7,25 @@
     @reference "../styles/global.css";
 
     .how_it_works_main {
-        @apply bg-white h-auto w-full flex flex-col px-24 py-20 justify-center items-center;
+        @apply bg-white h-auto w-full flex flex-col px-6 md:px-24 py-14 md:py-20 justify-center items-center;
     }
     .how_it_works_main .heading {
-        @apply text-5xl leading-14 text-heading_secondary mb-16 text-center max-w-[600px] mx-auto tracking-wide;
+        @apply text-3xl md:text-5xl md:leading-14 text-heading_secondary mb-10 md:mb-16 text-center max-w-[600px] mx-auto tracking-wide;
     }
     .how_it_works_main .content {
-        @apply flex flex-row w-full gap-6;
+        @apply flex flex-col md:flex-row w-full gap-6;
     }
     .how_it_works_main .content .left_col, .how_it_works_main .content .right_col {
-        @apply flex flex-col w-1/2 px-10 h-full;
+        @apply flex flex-col w-full md:w-1/2 px-0 md:px-10 h-full;
     }
     .how_it_works_main .content .left_col {
-        @apply flex justify-center items-center;
+        @apply flex justify-center items-center mb-10 md:mb-0;
     }
     .how_it_works_main .content .right_col {
         @apply flex justify-center h-[-webkit-fill-available];
     }
     .how_it_works_main .content .left_col .slide_bg {
-        @apply h-[30rem] w-fit px-28 rounded-3xl bg-[url(/images/btn_bg.png)] bg-center flex justify-center items-center shadow-md inset-shadow-sm;
+        @apply h-auto md:h-[30rem] w-full md:w-fit px-10 md:px-28 py-10 md:py-0 rounded-3xl bg-[url(/images/btn_bg.png)] bg-center flex justify-center items-center shadow-md inset-shadow-sm;
     }
     .how_it_works_main .content .right_col .step {
         @apply mb-10 cursor-pointer;
@@ -49,23 +50,23 @@
     }
 </style>
 
-<section class="how_it_works_main">
-    <h2 class="heading poppins-bold">How Just Buy Works</h2>
+<section id="how-it-works" class="how_it_works_main overflow-hidden">
+    <h2 class="heading poppins-bold" use:reveal={{type: 'fadeInDown'}}>How Just Buy Works</h2>
     <div class="content">
-        <div class="left_col">
+        <div class="left_col" use:reveal={{type: 'slideInLeft', duration: '0.8s'}}>
             <div class="slide_bg">
                 {#if slide == 0}
-                    <img class="transition ease-in-out" src="/images/mockup1.png" alt="Just Buy app" />
+                    <img class="transition ease-in-out w-1/2 md:w-auto" src="/images/mockup1.png" alt="Just Buy app" />
                 {:else if slide == 1}
-                    <img class="transition ease-in-out" src="/images/mockup2.png" alt="Just Buy app" />
+                    <img class="transition ease-in-out w-1/2 md:w-auto" src="/images/mockup2.png" alt="Just Buy app" />
                 {:else if slide == 2}
-                    <img class="transition ease-in-out" src="/images/mockup1.png" alt="Just Buy app" />
+                    <img class="transition ease-in-out w-1/2 md:w-auto" src="/images/mockup1.png" alt="Just Buy app" />
                 {:else if slide == 3}
-                    <img class="transition ease-in-out" src="/images/mockup2.png" alt="Just Buy app" />
+                    <img class="transition ease-in-out w-1/2 md:w-auto" src="/images/mockup2.png" alt="Just Buy app" />
                 {/if}
             </div>
         </div>
-        <div class="right_col">
+        <div class="right_col" use:reveal={{type: 'slideInRight', duration: '0.8s', delay: '0.2s'}}>
         {#if slide == 0}
             <div class="step" onclick={() => slide = 0}>
                 <div class="title_wrapper">
