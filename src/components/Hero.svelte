@@ -1,5 +1,12 @@
 <script>
     import { reveal } from "$lib/reveal";
+    let isMuted = $state(true);
+    let videoEl = $state(null);
+
+    const toggleMute = () => {
+        isMuted = !isMuted;
+        if (videoEl) videoEl.muted = isMuted;
+    };
 </script>
 
 <style lang="postcss">
@@ -60,6 +67,17 @@
     }
     .hero_video_wrap video {
         @apply w-full h-full object-cover;
+    }
+
+    .mute_btn {
+        @apply absolute bottom-3 right-3 z-20 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 active:scale-90;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        -webkit-tap-highlight-color: transparent;
+    }
+    .mute_btn svg {
+        @apply w-4 h-4 text-white;
     }
 
     .trust_badge {
@@ -129,6 +147,7 @@
             <div class="hero_phone_notch"></div>
             <div class="hero_video_wrap">
                 <video
+                    bind:this={videoEl}
                     src="/demo.mp4"
                     autoplay
                     playsinline
@@ -136,6 +155,13 @@
                     loop
                     preload="metadata"
                 ></video>
+                <button class="mute_btn" onclick={toggleMute} aria-label="Toggle audio">
+                    {#if isMuted}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                    {:else}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                    {/if}
+                </button>
             </div>
         </div>
     </div>
