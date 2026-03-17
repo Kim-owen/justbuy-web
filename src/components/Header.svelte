@@ -4,14 +4,35 @@
 
     let scrolled = $state(false);
     let mobileMenuOpen = $state(false);
+    let isDark = $state(false);
 
     onMount(() => {
+        // Hydrate theme from local storage or system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            isDark = true;
+            document.documentElement.classList.add('dark');
+        } else {
+            isDark = false;
+            document.documentElement.classList.remove('dark');
+        }
+
         const handleScroll = () => {
             scrolled = window.scrollY > 20;
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     });
+
+    const toggleTheme = () => {
+        isDark = !isDark;
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        }
+    };
 
     const toggleMenu = () => {
         mobileMenuOpen = !mobileMenuOpen;
@@ -28,14 +49,17 @@
         @apply px-6 md:px-24 py-4 flex flex-row w-full fixed top-0 left-0 justify-between items-center z-50 transition-all duration-300;
     }
     .header.scrolled {
-        @apply bg-white shadow-xl py-3;
+        @apply shadow-xl py-3;
+        background-color: var(--component-bg, #ffffff);
     }
     .header:not(.scrolled) {
         @apply bg-transparent;
     }
 
     .header img {
-        @apply h-8 md:h-12 transition-all duration-300;
+        @apply h-8 md:h-12 transition-transform duration-300 hover:scale-110;
+        animation: pulseGlow 3s infinite;
+        border-radius: 50%;
     }
     .header.scrolled img {
         @apply h-7 md:h-10;
@@ -52,15 +76,23 @@
         @apply relative h-full flex flex-col justify-center;
     }
     .dropdown_menu {
-        @apply absolute top-full left-0 bg-white shadow-xl rounded-md flex-col w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-gray-100;
+        @apply absolute top-full left-0 shadow-xl rounded-md flex-col w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-gray-100;
+        background-color: var(--component-bg, #ffffff);
     }
     .dropdown_menu a {
-        @apply block px-5 py-3 hover:bg-gray-50 text-sm normal-case tracking-normal md:w-full border-b border-gray-50 last:border-none;
+        @apply block px-5 py-3 text-sm normal-case tracking-normal md:w-full border-b last:border-none hover:text-heading_highlight;
+        border-color: var(--card-border, #f9fafb);
     }
 
     .header .actions {
         @apply hidden lg:flex flex-row items-center gap-4;
     }
+    
+    .theme_switch {
+        @apply w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/5 dark:hover:bg-white/10 transition-colors mr-2;
+        color: var(--heading-secondary);
+    }
+
     .header .download_btn {
         @apply bg-[url(/images/btn_bg.png)] bg-cover bg-no-repeat bg-left w-fit flex flex-row justify-center items-center px-6 py-2.5 text-white text-sm md:text-base tracking-wider rounded-md cursor-pointer shadow-md hover:shadow-lg transition-all;
     }
@@ -87,7 +119,8 @@
 
     /* Mobile menu overlay */
     .mobile_menu {
-        @apply fixed inset-0 bg-white z-50 flex flex-col items-center justify-center transform transition-transform duration-300 shadow-xl;
+        @apply fixed inset-0 z-50 flex flex-col items-center justify-center transform transition-transform duration-300 shadow-xl;
+        background-color: var(--bg-color, #ffffff);
     }
     .mobile_menu.closed {
         @apply translate-x-full;
@@ -96,7 +129,11 @@
         @apply translate-x-0;
     }
     .mobile_menu a {
-        @apply text-2xl text-heading_secondary font-bold mb-6 hover:text-heading_highlight transition-colors;
+        @apply text-2xl font-bold mb-6 transition-colors;
+        color: var(--heading-prime, #121063);
+    }
+    .mobile_menu a:hover {
+        @apply text-heading_highlight;
     }
 </style>
 
@@ -122,6 +159,17 @@
     </nav>
 
     <div class="actions">
+        <!-- Theme Toggle Button -->
+        <button class="theme_switch" onclick={toggleTheme} aria-label="Toggle Dark Mode">
+            {#if isDark}
+                <!-- Sun Icon for Dark Mode -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            {:else}
+                <!-- Moon Icon for Light Mode -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            {/if}
+        </button>
+
         <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular">
             <span>Download app</span>
         </a>
