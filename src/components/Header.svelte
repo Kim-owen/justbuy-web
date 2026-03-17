@@ -101,7 +101,7 @@
 </style>
 
 <header class="header {scrolled ? 'scrolled' : ''}">
-    <a href="#hero" onclick={closeMenu}>
+    <a href="/" onclick={closeMenu}>
         <img src="/images/jb_logo.png" alt="Just Buy logo" />
     </a>
     
@@ -137,7 +137,7 @@
 
 <!-- Mobile Menu Overlay -->
 <div class="mobile_menu {mobileMenuOpen ? 'open' : 'closed'}">
-    <a href="#hero" onclick={closeMenu} class="poppins-bold">Home</a>
+    <a href="/" onclick={closeMenu} class="poppins-bold">Home</a>
     <a href="#services" onclick={closeMenu} class="poppins-bold">Services</a>
     <a href="#how-it-works" onclick={closeMenu} class="poppins-bold">How It Works</a>
     <a href="#testimonials" onclick={closeMenu} class="poppins-bold">Testimonials</a>
