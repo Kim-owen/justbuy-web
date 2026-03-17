@@ -33,6 +33,35 @@
         @apply w-full max-w-[280px] sm:max-w-[350px] md:max-w-[500px] h-auto relative z-10;
     }
 
+    .hero_phone_frame {
+        @apply relative rounded-[2.5rem] overflow-hidden shadow-2xl;
+        background: #1a1a2e;
+        padding: 10px;
+        border: 3px solid rgba(255, 255, 255, 0.15);
+        width: 240px;
+        max-width: 70vw;
+    }
+    @media (min-width: 640px) {
+        .hero_phone_frame { width: 260px; }
+    }
+    @media (min-width: 768px) {
+        .hero_phone_frame { width: 280px; }
+    }
+    .hero_phone_notch {
+        @apply absolute top-0 left-1/2 -translate-x-1/2 z-20 rounded-b-2xl;
+        width: 100px;
+        height: 20px;
+        background: #1a1a2e;
+    }
+    .hero_video_wrap {
+        @apply relative w-full rounded-[2rem] overflow-hidden;
+        aspect-ratio: 9/19.5;
+        background: #000;
+    }
+    .hero_video_wrap video {
+        @apply w-full h-full object-cover;
+    }
+
     .trust_badge {
         @apply inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold text-heading_secondary mb-4 sm:mb-6 shadow-sm shadow-black/5 relative z-20;
         animation: pulseGlow 2s infinite;
@@ -96,6 +125,18 @@
         </div>
     </div>
     <div class="right_col" use:reveal={{type: 'slideInRight', duration: '1s'}}>
-        <img class="hero_img floating" src="/images/Hero_Image_Desktop.png" alt="just buy data"/>
+        <div class="hero_phone_frame floating">
+            <div class="hero_phone_notch"></div>
+            <div class="hero_video_wrap">
+                <video
+                    src="/demo.mp4"
+                    autoplay
+                    playsinline
+                    muted
+                    loop
+                    preload="metadata"
+                ></video>
+            </div>
+        </div>
     </div>
 </section>
