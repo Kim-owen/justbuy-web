@@ -88,9 +88,24 @@
         @apply hidden lg:flex flex-row items-center gap-4;
     }
     
-    .theme_switch {
-        @apply w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/5 dark:hover:bg-white/10 transition-colors mr-2;
-        color: var(--heading-secondary);
+    .theme_switch_pro {
+        @apply relative w-[60px] h-[32px] rounded-full flex items-center cursor-pointer transition-colors duration-500 mr-2 md:mr-6 shadow-inner;
+        background-color: #cbd5e1;
+    }
+    .theme_switch_pro.dark_active {
+        background-color: #1e293b;
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+    }
+    .theme_switch_pro .thumb {
+        @apply absolute w-[24px] h-[24px] rounded-full flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-md;
+        left: 4px;
+        background-color: white;
+        color: #f59e0b; /* Sun color */
+    }
+    .theme_switch_pro.dark_active .thumb {
+        transform: translateX(28px);
+        background-color: #0f172a;
+        color: #38bdf8; /* Moon color */
     }
 
     .header .download_btn {
@@ -159,15 +174,19 @@
     </nav>
 
     <div class="actions">
-        <!-- Theme Toggle Button -->
-        <button class="theme_switch" onclick={toggleTheme} aria-label="Toggle Dark Mode">
-            {#if isDark}
-                <!-- Sun Icon for Dark Mode -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            {:else}
-                <!-- Moon Icon for Light Mode -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            {/if}
+        <!-- Pro Theme Toggle Pill -->
+        <button class="theme_switch_pro {isDark ? 'dark_active' : ''}" onclick={toggleTheme} aria-label="Toggle Dark Mode">
+            <span class="absolute w-full flex justify-between px-2 text-gray-500 opacity-60 pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </span>
+            <div class="thumb">
+                {#if isDark}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                {:else}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                {/if}
+            </div>
         </button>
 
         <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular">
