@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Sitemap: https://www.justbuygh.shop/sitemap.xml
 
-Sitemap: https://justbuy.com.gh/sitemap.xml
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
