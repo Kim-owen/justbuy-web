@@ -1,0 +1,77 @@
+@import "tailwindcss"; 
+
+@theme {
+  --color-heading_prime: #121063;
+  --color-heading_highlight: #3ab7bf;
+  --color-heading_grey: #626973;
+  --color-services_bg: #d8edf1;
+  --color-heading_secondary: #253c49;
+  --color-card_border: #e4e8e9;
+  --color-card_bg: #f1f6f7;
+  --color-prime_grey: #1c2819;
+  --color-inactive_grey: #888888;
+}
+
+@layer base {
+    html, body {
+        margin: 0 auto;
+        overflow-x: hidden;
+        font-family: "Rethink Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
