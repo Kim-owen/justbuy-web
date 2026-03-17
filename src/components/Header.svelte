@@ -96,26 +96,28 @@
         @apply transform -translate-y-2 -rotate-45 bg-heading_highlight;
     }
 
-    /* Mobile menu overlay - full redesign */
+    /* Mobile menu - compact dropdown panel */
     .mobile_menu {
-        @apply fixed inset-0 bg-white z-50 flex flex-col transform transition-all duration-400 ease-in-out overflow-y-auto;
-    }
-    .mobile_menu.closed {
-        @apply translate-x-full opacity-0;
+        @apply fixed top-0 left-0 right-0 bg-white z-40 flex flex-col transform transition-all duration-300 ease-in-out shadow-2xl rounded-b-3xl overflow-hidden;
+        max-height: 0;
+        opacity: 0;
+        padding-top: 60px;
     }
     .mobile_menu.open {
-        @apply translate-x-0 opacity-100;
+        max-height: 85vh;
+        opacity: 1;
+        padding-top: 60px;
     }
 
     .mobile_menu_content {
-        @apply flex flex-col px-6 pt-24 pb-8 h-full;
+        @apply flex flex-col px-5 pb-6 pt-2;
     }
 
     .mobile_nav_links {
-        @apply flex flex-col gap-1 mb-8;
+        @apply flex flex-col gap-0;
     }
     .mobile_nav_links a {
-        @apply flex items-center justify-between text-lg font-semibold text-heading_secondary py-4 px-4 rounded-xl active:bg-gray-100 transition-colors;
+        @apply flex items-center justify-between text-base font-semibold text-heading_secondary py-3.5 px-3 rounded-xl active:bg-gray-50 transition-colors;
         -webkit-tap-highlight-color: transparent;
     }
     .mobile_nav_links a:not(:last-child) {
@@ -123,27 +125,34 @@
     }
 
     .mobile_services_label {
-        @apply text-xs uppercase text-heading_grey tracking-widest font-bold px-4 pt-4 pb-2;
+        @apply text-[10px] uppercase text-heading_grey tracking-widest font-bold px-3 pt-3 pb-1.5;
     }
 
     .mobile_services_grid {
-        @apply grid grid-cols-2 gap-3 px-2 mb-6;
+        @apply grid grid-cols-2 gap-2 px-1 mb-4;
     }
     .mobile_services_grid a {
-        @apply flex flex-col items-center justify-center text-center bg-gray-50 rounded-2xl py-5 px-3 text-sm font-semibold text-heading_secondary active:scale-95 transition-transform;
+        @apply flex flex-col items-center justify-center text-center bg-gray-50 rounded-xl py-3.5 px-2 text-xs font-semibold text-heading_secondary active:scale-95 transition-transform;
         -webkit-tap-highlight-color: transparent;
     }
     .mobile_services_grid a .service_icon {
-        @apply text-2xl mb-2;
+        @apply text-xl mb-1;
     }
 
     .mobile_download_btn {
-        @apply mt-auto w-full flex items-center justify-center gap-3 bg-heading_prime text-white px-6 py-4 rounded-2xl text-lg font-bold shadow-lg active:scale-[0.98] transition-transform;
+        @apply w-full flex items-center justify-center gap-2 bg-heading_prime text-white px-5 py-3 rounded-xl text-sm font-bold shadow-lg active:scale-[0.98] transition-transform;
         -webkit-tap-highlight-color: transparent;
     }
 
-    .mobile_contact {
-        @apply flex flex-col items-center gap-2 mt-4 text-sm text-heading_grey;
+    /* Backdrop overlay */
+    .mobile_backdrop {
+        @apply fixed inset-0 bg-black/30 z-30 transition-opacity duration-300;
+    }
+    .mobile_backdrop.hidden {
+        @apply opacity-0 pointer-events-none;
+    }
+    .mobile_backdrop.visible {
+        @apply opacity-100;
     }
 </style>
 
@@ -182,26 +191,29 @@
     </button>
 </header>
 
-<!-- Mobile Menu Overlay — Completely Redesigned -->
-<div class="mobile_menu {mobileMenuOpen ? 'open' : 'closed'}">
+<!-- Backdrop when menu is open -->
+<div class="mobile_backdrop {mobileMenuOpen ? 'visible' : 'hidden'}" onclick={closeMenu} role="presentation"></div>
+
+<!-- Mobile Menu — Compact Dropdown Panel -->
+<div class="mobile_menu {mobileMenuOpen ? 'open' : ''}">
     <div class="mobile_menu_content">
         <!-- Main Nav Links -->
         <div class="mobile_nav_links poppins-semibold">
             <a href="/" onclick={closeMenu}>
                 <span>🏠 Home</span>
-                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
             <a href="#how-it-works" onclick={closeMenu}>
                 <span>⚡ How It Works</span>
-                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
             <a href="#testimonials" onclick={closeMenu}>
                 <span>⭐ Reviews</span>
-                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
         </div>
 
-        <!-- Services Grid - App-style -->
+        <!-- Services Grid -->
         <p class="mobile_services_label poppins-bold">Our Services</p>
         <div class="mobile_services_grid poppins-medium">
             <a href="/corporate" onclick={closeMenu}>
@@ -224,13 +236,8 @@
 
         <!-- Download CTA -->
         <a href="https://tinyurl.com/Datankoaa" target="_blank" onclick={closeMenu} class="mobile_download_btn poppins-bold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Download JustBuy App
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download JustBuy
         </a>
-
-        <!-- Contact Info -->
-        <div class="mobile_contact poppins-regular">
-            <span>Need help? <strong class="text-heading_highlight">support@justbuy.com.gh</strong></span>
-        </div>
     </div>
 </div>
