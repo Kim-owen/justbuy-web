@@ -3,6 +3,7 @@
 	import Header from "../components/Header.svelte";
   import Hero from "../components/Hero.svelte";
 	import HowItWorks from "../components/HowItWorks.svelte";
+	import AppDemo from "../components/AppDemo.svelte";
 	import LogoStrip from "../components/LogoStrip.svelte";
 	import ServicesGrid from "../components/ServicesGrid.svelte";
 	import Testimonials from "../components/Testimonials.svelte";
@@ -24,6 +25,7 @@
     <Hero />
     <ServicesGrid />
     <HowItWorks />
+    <AppDemo />
     <LogoStrip />
     <Testimonials />
     <CTA />
