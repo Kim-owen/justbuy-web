@@ -2,6 +2,9 @@
 	"name": "justbuy",
 	"private": true,
 	"version": "0.0.1",
+	"author": "Sunu Manfred Senyo Kwami",
+	"description": "JustBuy Ghana - Cheap Data, Affordable Airtime & Best Data Deals",
+	"keywords": ["ghana", "data", "airtime", "justbuy", "ecommerce", "sveltekit"],
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",

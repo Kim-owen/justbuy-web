@@ -7,6 +7,31 @@
 <svelte:head>
     <title>Cheapest Data Bundles in Ghana 2026 — MTN, Telecel & AirtelTigo Price Guide | JustBuy</title>
     <meta name="description" content="Complete guide to the cheapest data bundles in Ghana for 2026. Compare affordable MTN data plans, cheap Telecel bundles, and best AirtelTigo data deals. Buy cheap data instantly with JustBuy." />
+    
+    <!-- Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The Cheapest Data Bundles in Ghana 2026 — Complete Price Guide",
+        "datePublished": "2026-03-15T08:00:00+00:00",
+        "dateModified": "2026-03-15T08:00:00+00:00",
+        "author": {
+            "@type": "Person",
+            "name": "Sunu Manfred Senyo Kwami",
+            "url": "https://www.linkedin.com/in/manfred-sunu"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "JustBuy Ghana",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.justbuygh.shop/images/jb_logo.png"
+            }
+        },
+        "description": "Complete guide to the cheapest data bundles in Ghana for 2026. Compare affordable MTN data plans, cheap Telecel bundles, and best AirtelTigo data deals."
+    }
+    </script>
 </svelte:head>
 
 <style lang="postcss">
