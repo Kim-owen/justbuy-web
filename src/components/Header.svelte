@@ -175,6 +175,7 @@
         </div>
         <a href="#how-it-works">How It Works</a>
         <a href="#testimonials">Reviews</a>
+        <a href="/blog">Blog</a>
     </nav>
 
     <div class="actions">
@@ -209,6 +210,10 @@
             </a>
             <a href="#testimonials" onclick={closeMenu}>
                 <span>⭐ Reviews</span>
+                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="/blog" onclick={closeMenu}>
+                <span>📝 Blog</span>
                 <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
         </div>
