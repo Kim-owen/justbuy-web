@@ -99,7 +99,7 @@
     }
 
     .float_btn:hover {
-        @apply !scale-110;
+        transform: scale(1.1);
         animation-play-state: paused;
     }
 
