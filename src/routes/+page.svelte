@@ -15,7 +15,7 @@
 </svelte:head>
 
 <style lang="postcss">
-  @reference "tailwindcss";
+  @reference "../styles/global.css";
   :global(html) {
     background-color: theme(--color-gray-100);
   }
