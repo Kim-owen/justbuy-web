@@ -7,6 +7,7 @@
 	import ServicesGrid from "../components/ServicesGrid.svelte";
 	import Testimonials from "../components/Testimonials.svelte";
 	import FAQ from "../components/FAQ.svelte";
+	import FloatingCTA from "../components/FloatingCTA.svelte";
 	import Footer from "../components/Footer.svelte";
 </script>
 
@@ -46,6 +47,7 @@
 
 <main class="main_wrapper">
     <Header />
+    <FloatingCTA />
     <Hero />
     <ServicesGrid />
     <HowItWorks />
