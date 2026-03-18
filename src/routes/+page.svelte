@@ -17,7 +17,7 @@
 <style lang="postcss">
   @reference "../styles/global.css";
   :global(html) {
-    background-color: theme(--color-gray-100);
+    background-color: #f3f4f6;
   }
   .main_wrapper {
     @apply relative;
@@ -26,16 +26,20 @@
     @apply bg-white px-6 md:px-24 py-12 md:py-16;
   }
   .seo_content h2 {
-    @apply text-2xl md:text-3xl font-bold text-heading_prime mb-6;
+    @apply text-2xl md:text-3xl font-bold mb-6;
+    color: #121063;
   }
   .seo_content h3 {
-    @apply text-lg md:text-xl font-semibold text-heading_secondary mt-6 mb-3;
+    @apply text-lg md:text-xl font-semibold mt-6 mb-3;
+    color: #253c49;
   }
   .seo_content p {
-    @apply text-sm md:text-base text-heading_grey leading-relaxed mb-4;
+    @apply text-sm md:text-base leading-relaxed mb-4;
+    color: #626973;
   }
   .seo_content ul {
-    @apply list-disc list-inside text-sm md:text-base text-heading_grey mb-4 space-y-1;
+    @apply list-disc list-inside text-sm md:text-base mb-4 space-y-1;
+    color: #626973;
   }
 </style>
 
