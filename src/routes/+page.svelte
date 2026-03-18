@@ -5,7 +5,6 @@
 	import HowItWorks from "../components/HowItWorks.svelte";
 	import LogoStrip from "../components/LogoStrip.svelte";
 	import ServicesGrid from "../components/ServicesGrid.svelte";
-	import Testimonials from "../components/Testimonials.svelte";
 	import FAQ from "../components/FAQ.svelte";
 	import FloatingCTA from "../components/FloatingCTA.svelte";
 	import Footer from "../components/Footer.svelte";
@@ -52,7 +51,6 @@
     <ServicesGrid />
     <HowItWorks />
     <LogoStrip />
-    <Testimonials />
     <FAQ />
     <CTA />
 
