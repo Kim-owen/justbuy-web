@@ -84,22 +84,22 @@
         <div class="flex-1 text-center lg:text-left z-20" use:reveal={{type: 'slideInLeft', delay: '0.1s'}}>
             <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 text-heading_highlight text-sm font-bold uppercase tracking-widest mb-6 border border-white/10">The JustBuy App</span>
             
-            <h2 class="poppins-extrabold text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
+            <h2 class="font-poppins font-extrabold text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
                 Experience the <br class="hidden lg:block"/><span class="text-heading_highlight">Fastest Way</span> to Pay.
             </h2>
             
-            <p class="poppins-regular text-gray-300 text-base md:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p class="font-poppins text-gray-300 text-base md:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Watch how easy it is to buy airtime, top up your data, and pay your utility bills — all in under 60 seconds. No USSD codes, no queues, just instant transactions.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-10">
                 <div class="flex items-center gap-3 text-left">
                     <span class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl shadow-inner border border-white/5">⚡</span> 
-                    <p class="text-white poppins-semibold text-sm leading-tight">Instant execution <br/><span class="text-gray-400 font-normal">on all networks</span></p>
+                    <p class="text-white font-poppins font-semibold text-sm leading-tight">Instant execution <br/><span class="text-gray-400 font-normal">on all networks</span></p>
                 </div>
                 <div class="flex items-center gap-3 text-left">
                     <span class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl shadow-inner border border-white/5">🔒</span> 
-                    <p class="text-white poppins-semibold text-sm leading-tight">Bank-grade security <br/><span class="text-gray-400 font-normal">256-bit encryption</span></p>
+                    <p class="text-white font-poppins font-semibold text-sm leading-tight">Bank-grade security <br/><span class="text-gray-400 font-normal">256-bit encryption</span></p>
                 </div>
             </div>
 
@@ -115,8 +115,8 @@
             <div class="glass_notification floating -left-4 sm:-left-12 top-10" style="animation-delay: 1.5s;">
                 <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">💸</div>
                 <div class="text-left">
-                    <p class="text-xs text-gray-500 poppins-semibold uppercase tracking-wider">Just now</p>
-                    <p class="text-sm text-heading_prime poppins-bold">Kwami bought 2GB MTN Data</p>
+                    <p class="text-xs text-gray-500 font-poppins font-semibold uppercase tracking-wider">Just now</p>
+                    <p class="text-sm text-heading_prime font-poppins font-bold">Kwami bought 2GB MTN Data</p>
                 </div>
             </div>
 
@@ -124,8 +124,8 @@
             <div class="glass_notification floating right-0 sm:-right-8 bottom-20" style="animation-delay: 0.5s;">
                 <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl">💡</div>
                 <div class="text-left">
-                    <p class="text-xs text-gray-500 poppins-semibold uppercase tracking-wider">2 mins ago</p>
-                    <p class="text-sm text-heading_prime poppins-bold">Paid ECG Bill GHS 50</p>
+                    <p class="text-xs text-gray-500 font-poppins font-semibold uppercase tracking-wider">2 mins ago</p>
+                    <p class="text-sm text-heading_prime font-poppins font-bold">Paid ECG Bill GHS 50</p>
                 </div>
             </div>
 
@@ -157,3 +157,4 @@
         
     </div>
 </section>
+

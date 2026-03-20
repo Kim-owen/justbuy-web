@@ -66,22 +66,22 @@
 
     <div class="login_card" use:reveal={{type: 'zoomIn'}}>
         <div class="login_header">
-            <h1 class="poppins-extrabold">JustBuy Admin</h1>
-            <p class="poppins-bold">Authorized Personnel Only</p>
+            <h1 class="font-poppins font-extrabold">JustBuy Admin</h1>
+            <p class="font-poppins font-bold">Authorized Personnel Only</p>
         </div>
 
         <form onsubmit={handleLogin} class="flex flex-col gap-6">
             <div class="form_group">
-                <span class="form_label poppins-bold">Email Address</span>
-                <input type="email" bind:value={email} placeholder="admin@justbuygh.shop" required class="form_input poppins-medium" />
+                <span class="form_label font-poppins font-bold">Email Address</span>
+                <input type="email" bind:value={email} placeholder="admin@justbuygh.shop" required class="form_input font-poppins font-medium" />
             </div>
 
             <div class="form_group">
-                <span class="form_label poppins-bold">Security Password</span>
-                <input type="password" bind:value={password} placeholder="••••••••" required class="form_input poppins-medium" />
+                <span class="form_label font-poppins font-bold">Security Password</span>
+                <input type="password" bind:value={password} placeholder="••••••••" required class="form_input font-poppins font-medium" />
             </div>
 
-            <button type="submit" class="login_btn poppins-bold" disabled={loading}>
+            <button type="submit" class="login_btn font-poppins font-bold" disabled={loading}>
                 {#if loading}
                     <div class="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
                     Authenticating...
@@ -91,6 +91,7 @@
             </button>
         </form>
 
-        <p class="text-center text-[10px] text-gray-400 font-bold poppins-bold">© 2026 JustBuy Security Protocol v4.0.1</p>
+        <p class="text-center text-[10px] text-gray-400 font-bold font-poppins font-bold">© 2026 JustBuy Security Protocol v4.0.1</p>
     </div>
 </div>
+

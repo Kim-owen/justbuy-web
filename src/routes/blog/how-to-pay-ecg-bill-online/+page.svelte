@@ -44,20 +44,20 @@
     <FloatingCTA />
 
     <div class="article_hero">
-        <span class="tag poppins-bold">Bill Payment</span>
-        <h1 class="poppins-extrabold">How to Pay Your ECG Bill Online in Ghana — Step by Step Guide</h1>
-        <p class="meta poppins-regular">March 12, 2026 · 4 min read</p>
+        <span class="tag font-poppins font-bold">Bill Payment</span>
+        <h1 class="font-poppins font-extrabold">How to Pay Your ECG Bill Online in Ghana — Step by Step Guide</h1>
+        <p class="meta font-poppins">March 12, 2026 · 4 min read</p>
     </div>
 
-    <article class="article_body poppins-regular">
-        <a href="/blog" class="back_link poppins-semibold">
+    <article class="article_body font-poppins">
+        <a href="/blog" class="back_link font-poppins font-semibold">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             Back to Blog
         </a>
 
         <p>Tired of queuing at <strong>ECG offices to pay your electricity bill</strong>? With JustBuy, you can <strong>pay your ECG bill online</strong> in under 60 seconds — right from your phone. This guide shows you exactly how to do it.</p>
 
-        <h2 class="poppins-bold">Why Pay Your ECG Bill Online?</h2>
+        <h2 class="font-poppins font-bold">Why Pay Your ECG Bill Online?</h2>
         <ul>
             <li><strong>No queues</strong> — pay from anywhere at any time</li>
             <li><strong>Instant processing</strong> — your meter is credited within seconds</li>
@@ -66,7 +66,7 @@
             <li><strong>Receipt</strong> — digital confirmation for your records</li>
         </ul>
 
-        <h2 class="poppins-bold">How to Pay ECG Bill Using JustBuy (Step by Step)</h2>
+        <h2 class="font-poppins font-bold">How to Pay ECG Bill Using JustBuy (Step by Step)</h2>
         <ol>
             <li><strong>Download JustBuy</strong> from the Google Play Store if you haven't already</li>
             <li><strong>Open the app</strong> and select <strong>"Pay Bills"</strong> from the home screen</li>
@@ -78,12 +78,12 @@
         </ol>
 
         <div class="cta_box">
-            <h3 class="poppins-bold">Pay Your ECG Bill Now</h3>
-            <p class="poppins-regular">Download JustBuy and pay your ECG electricity bill in under 60 seconds. No queues, no stress.</p>
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="poppins-bold">Download JustBuy →</a>
+            <h3 class="font-poppins font-bold">Pay Your ECG Bill Now</h3>
+            <p class="font-poppins">Download JustBuy and pay your ECG electricity bill in under 60 seconds. No queues, no stress.</p>
+            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="font-poppins font-bold">Download JustBuy →</a>
         </div>
 
-        <h2 class="poppins-bold">What Other Bills Can You Pay with JustBuy?</h2>
+        <h2 class="font-poppins font-bold">What Other Bills Can You Pay with JustBuy?</h2>
         <p>JustBuy isn't just for <strong>ECG bill payments</strong>. You can also pay for:</p>
         <ul>
             <li><strong>Ghana Water Company</strong> bills</li>
@@ -98,3 +98,4 @@
 
     <Footer />
 </div>
+

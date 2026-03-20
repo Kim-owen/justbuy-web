@@ -61,15 +61,15 @@
 </style>
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1 class="poppins-extrabold">Superadmin Settings</h1>
+    <h1 class="font-poppins font-extrabold">Superadmin Settings</h1>
 </div>
 
 <div class="settings_container">
     <!-- Profile Settings -->
     <div class="settings_section" use:reveal={{type: 'fadeInUp'}}>
         <div class="section_info">
-            <h3 class="poppins-extrabold">Admin Identity</h3>
-            <p class="poppins-bold">Update your personal information and profile display settings.</p>
+            <h3 class="font-poppins font-extrabold">Admin Identity</h3>
+            <p class="font-poppins font-bold">Update your personal information and profile display settings.</p>
         </div>
         <div class="section_controls">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -84,14 +84,14 @@
     <!-- Global Controls -->
     <div class="settings_section" use:reveal={{type: 'fadeInUp', delay: '0.1s'}}>
         <div class="section_info">
-            <h3 class="poppins-extrabold">Infrastructure</h3>
-            <p class="poppins-bold">Control global system states and emergency shutdown protocols.</p>
+            <h3 class="font-poppins font-extrabold">Infrastructure</h3>
+            <p class="font-poppins font-bold">Control global system states and emergency shutdown protocols.</p>
         </div>
         <div class="section_controls">
             <div class="card_toggle">
                 <div>
-                    <h4 class="text-lg font-black text-[#121063] poppins-black">Maintenence Mode</h4>
-                    <p class="text-xs text-gray-400 font-bold poppins-bold uppercase tracking-widest mt-1">Locks app transactions for all users</p>
+                    <h4 class="text-lg font-black text-[#121063] font-poppins font-black">Maintenence Mode</h4>
+                    <p class="text-xs text-gray-400 font-bold font-poppins font-bold uppercase tracking-widest mt-1">Locks app transactions for all users</p>
                 </div>
                 <label class="switch">
                     <input type="checkbox" bind:checked={isMaintenance} />
@@ -101,8 +101,8 @@
             
             <div class="card_toggle">
                 <div>
-                    <h4 class="text-lg font-black text-[#121063] poppins-black">Debug Verbosity</h4>
-                    <p class="text-xs text-gray-400 font-bold poppins-bold uppercase tracking-widest mt-1">Detailed logging for integration troubleshooting</p>
+                    <h4 class="text-lg font-black text-[#121063] font-poppins font-black">Debug Verbosity</h4>
+                    <p class="text-xs text-gray-400 font-bold font-poppins font-bold uppercase tracking-widest mt-1">Detailed logging for integration troubleshooting</p>
                 </div>
                 <label class="switch">
                     <input type="checkbox" checked={false} />
@@ -116,19 +116,20 @@
     {#each settingsGroups as group, i}
         <div class="settings_section" use:reveal={{type: 'fadeInUp', delay: `${0.2 + (i * 0.1)}s`}}>
             <div class="section_info">
-                <h3 class="poppins-extrabold">{group.title}</h3>
-                <p class="poppins-bold">{group.desc}</p>
+                <h3 class="font-poppins font-extrabold">{group.title}</h3>
+                <p class="font-poppins font-bold">{group.desc}</p>
             </div>
             <div class="section_controls">
                 <div class="p-10 border-2 border-dashed border-gray-100 rounded-[2rem] flex flex-col items-center justify-center gap-4 text-center">
                     <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center text-2xl">🔧</div>
                     <div>
-                        <p class="text-sm font-black text-[#121063] poppins-black">Advanced {group.title} Configuration</p>
-                        <p class="text-xs text-gray-400 font-bold poppins-bold leading-relaxed max-w-sm mt-1">This module requires high-level clearance to modify production API environments.</p>
+                        <p class="text-sm font-black text-[#121063] font-poppins font-black">Advanced {group.title} Configuration</p>
+                        <p class="text-xs text-gray-400 font-bold font-poppins font-bold leading-relaxed max-w-sm mt-1">This module requires high-level clearance to modify production API environments.</p>
                     </div>
-                    <button class="bg-[#121063] text-white px-8 py-3 rounded-2xl text-xs font-bold poppins-bold shadow-lg opacity-50 cursor-not-allowed">Access Blocked</button>
+                    <button class="bg-[#121063] text-white px-8 py-3 rounded-2xl text-xs font-bold font-poppins font-bold shadow-lg opacity-50 cursor-not-allowed">Access Blocked</button>
                 </div>
             </div>
         </div>
     {/each}
 </div>
+

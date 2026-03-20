@@ -95,11 +95,11 @@
         <div class="brand_area">
             <img src="/images/jb_logo.png" alt="JustBuy" />
             {#if isSidebarOpen}
-                <span class="poppins-bold text-lg tracking-tight" use:reveal={{type: 'fadeIn'}}>JustBuy Admin</span>
+                <span class="font-poppins font-bold text-lg tracking-tight" use:reveal={{type: 'fadeIn'}}>JustBuy Admin</span>
             {/if}
         </div>
 
-        <nav class="nav_menu poppins-regular">
+        <nav class="nav_menu font-poppins">
             {#each navItems as item}
                 <a href={item.path} 
                    class="nav_item {activePath === item.path ? 'active' : 'text-gray-400'}"
@@ -113,7 +113,7 @@
         </nav>
 
         <div class="sidebar_footer">
-            <button class="logout_btn poppins-bold">
+            <button class="logout_btn font-poppins font-bold">
                 <span>🚪</span>
                 {#if isSidebarOpen}
                     <span transition:reveal={{type: 'fadeIn'}}>Logout</span>
@@ -130,11 +130,11 @@
             </button>
 
             <div class="flex items-center gap-6">
-                <div class="search_mock poppins-regular">Search users, transactions...</div>
+                <div class="search_mock font-poppins">Search users, transactions...</div>
                 <div class="flex items-center gap-3">
                     <div class="text-right">
-                        <p class="text-xs font-bold text-[#121063] poppins-bold">Manfred Kwami</p>
-                        <p class="text-[10px] text-gray-400 poppins-regular">Super Admin</p>
+                        <p class="text-xs font-bold text-[#121063] font-poppins font-bold">Manfred Kwami</p>
+                        <p class="text-[10px] text-gray-400 font-poppins">Super Admin</p>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-[#3ab7bf]/10 flex items-center justify-center text-lg shadow-sm border border-[#3ab7bf]/20">
                         👨‍💻
@@ -148,3 +148,4 @@
         </div>
     </main>
 </div>
+

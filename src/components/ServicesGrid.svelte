@@ -69,10 +69,10 @@
     <!-- Row 1: Bills & Utilities -->
     <div class="z_container">
         <div class="z_content_block" use:reveal={{type: 'slideInLeft', delay: '0.1s'}}>
-            <h2 class="poppins-extrabold">Pay Bills & Utilities <br/>in One Place</h2>
-            <p class="poppins-regular">Handle all your recurring payments, from electricity to internet bundles, unified in a single dashboard. Payments process instantly, keeping your life running smoothly.</p>
+            <h2 class="font-poppins font-extrabold">Pay Bills & Utilities <br/>in One Place</h2>
+            <p class="font-poppins">Handle all your recurring payments, from electricity to internet bundles, unified in a single dashboard. Payments process instantly, keeping your life running smoothly.</p>
             
-            <div class="checklist poppins-medium">
+            <div class="checklist font-poppins font-medium">
                 <div class="checklist_item">
                     <div class="check_icon">✓</div>
                     <span class="text-[#253c49]">Instant transfers to MTN & Telecel</span>
@@ -112,10 +112,10 @@
     <!-- Row 2: Cheap Data -->
     <div class="z_container reverse">
         <div class="z_content_block" use:reveal={{type: 'slideInRight', delay: '0.1s'}}>
-            <h2 class="poppins-extrabold">Never Run Out Of <br/>Data Again</h2>
-            <p class="poppins-regular">Get access to the absolute cheapest data bundles in Ghana. No need to memorize USSD shortcodes, simply tap and execute your top-ups in seconds.</p>
+            <h2 class="font-poppins font-extrabold">Never Run Out Of <br/>Data Again</h2>
+            <p class="font-poppins">Get access to the absolute cheapest data bundles in Ghana. No need to memorize USSD shortcodes, simply tap and execute your top-ups in seconds.</p>
             
-            <div class="checklist poppins-medium">
+            <div class="checklist font-poppins font-medium">
                 <div class="checklist_item">
                     <div class="check_icon">✓</div>
                     <span class="text-[#253c49]">Unbeatable rates for MTN packages</span>

@@ -1,6 +1,7 @@
 @import "tailwindcss"; 
 
 @theme {
+  /* Colors */
   --color-heading_prime: #121063;
   --color-heading_highlight: #3ab7bf;
   --color-heading_grey: #626973;
@@ -10,17 +11,21 @@
   --color-card_bg: #f1f6f7;
   --color-prime_grey: #1c2819;
   --color-inactive_grey: #888888;
+
+  /* Font Family */
+  --font-poppins: "Poppins", sans-serif;
+  --font-rethink: "Rethink Sans", sans-serif;
 }
 
 @layer base {
     html, body {
         margin: 0 auto;
         overflow-x: hidden;
-        font-family: "Rethink Sans", sans-serif;
+        font-family: var(--font-rethink);
         font-optical-sizing: auto;
         font-style: normal;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        -moz-osx-content-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: transparent;
     }
@@ -30,80 +35,22 @@
         scroll-padding-top: 80px;
     }
 
-    /* Better mobile typography */
     @media (max-width: 640px) {
-        html {
-            font-size: 15px;
-        }
+        html { font-size: 15px; }
     }
 
-    /* Optimize images globally for mobile */
     img {
         max-width: 100%;
         height: auto;
         display: block;
     }
 
-    /* Smoother touch interactions */
     a, button {
         touch-action: manipulation;
     }
 }
 
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
+/* Animations */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translate3d(0, -30px, 0); }
   to { opacity: 1; transform: translate3d(0, 0, 0); }
@@ -134,9 +81,5 @@
   70% { box-shadow: 0 0 0 15px rgba(58, 183, 191, 0); }
   100% { box-shadow: 0 0 0 0 rgba(58, 183, 191, 0); }
 }
-.floating {
-  animation: floating 4s ease-in-out infinite;
-}
-.pulse-glow {
-  animation: pulseGlow 2s infinite;
-}
+.floating { animation: floating 4s ease-in-out infinite; }
+.pulse-glow { animation: pulseGlow 2s infinite; }

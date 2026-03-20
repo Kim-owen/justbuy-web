@@ -74,9 +74,9 @@
 </style>
 
 <div class="dashboard_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1 class="poppins-extrabold">Dashboard Overview</h1>
+    <h1 class="font-poppins font-extrabold">Dashboard Overview</h1>
     <div class="flex gap-2">
-        <button class="bg-[#121063] text-white px-5 py-2.5 rounded-full text-xs font-bold poppins-bold shadow-lg shadow-[#121063]/20">Generate Report</button>
+        <button class="bg-[#121063] text-white px-5 py-2.5 rounded-full text-xs font-bold font-poppins font-bold shadow-lg shadow-[#121063]/20">Generate Report</button>
         <button class="bg-white border border-gray-100 px-5 py-2.5 rounded-full text-xs font-bold text-[#121063]">Export Data</button>
     </div>
 </div>
@@ -90,8 +90,8 @@
                 <div class="trend {stat.trend.startsWith('+') ? 'trend_pos' : 'trend_neg'}">{stat.trend}</div>
             </div>
             <div>
-                <p class="label poppins-bold">{stat.title}</p>
-                <p class="value poppins-black">{stat.value}</p>
+                <p class="label font-poppins font-bold">{stat.title}</p>
+                <p class="value font-poppins font-black">{stat.value}</p>
             </div>
         </div>
     {/each}
@@ -101,7 +101,7 @@
     <!-- Recent Transactions Table -->
     <div class="main_table_card" use:reveal={{type: 'slideInLeft', delay: '0.4s'}}>
         <div class="card_header">
-            <h3 class="poppins-bold">Recent Transactions</h3>
+            <h3 class="font-poppins font-bold">Recent Transactions</h3>
             <button class="text-[#3ab7bf] text-xs font-bold hover:underline">View All</button>
         </div>
         <table>
@@ -115,7 +115,7 @@
                     <th>Time</th>
                 </tr>
             </thead>
-            <tbody class="poppins-medium">
+            <tbody class="font-poppins font-medium">
                 {#each recentTransactions as trx}
                     <tr>
                         <td class="text-[#121063] font-bold">{trx.id}</td>
@@ -134,7 +134,7 @@
 
     <!-- Revenue Insights Mockup -->
     <div class="chart_mock" use:reveal={{type: 'slideInRight', delay: '0.5s'}}>
-        <h3 class="text-lg font-bold poppins-bold">Revenue Target</h3>
+        <h3 class="text-lg font-bold font-poppins font-bold">Revenue Target</h3>
         <p class="text-xs text-white/60 mb-8">You are at 85% of your monthly goal.</p>
         
         <div class="flex-grow flex items-center justify-center">
@@ -151,3 +151,4 @@
         <button class="w-full py-4 bg-[#3ab7bf] rounded-2xl font-bold text-sm shadow-xl shadow-[#3ab7bf]/20 transition-all hover:scale-105 active:scale-95">Upgrade Capacity</button>
     </div>
 </div>
+

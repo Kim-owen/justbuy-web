@@ -82,9 +82,9 @@
 </style>
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1 class="poppins-extrabold">Financial Insights</h1>
+    <h1 class="font-poppins font-extrabold">Financial Insights</h1>
     <div class="flex gap-2">
-        <button class="bg-[#121063] text-white px-8 py-4 rounded-2xl text-sm font-bold poppins-bold shadow-xl shadow-[#121063]/20 hover:scale-105 transition-all">Download P&L Statement</button>
+        <button class="bg-[#121063] text-white px-8 py-4 rounded-2xl text-sm font-bold font-poppins font-bold shadow-xl shadow-[#121063]/20 hover:scale-105 transition-all">Download P&L Statement</button>
     </div>
 </div>
 
@@ -102,8 +102,8 @@
     <div class="forecast_card" use:reveal={{type: 'slideInLeft', delay: '0.4s'}}>
         <div class="forecast_header">
             <div>
-                <h3 class="poppins-extrabold">Transaction Volume Forecast</h3>
-                <p class="text-xs text-gray-400 font-bold poppins-bold uppercase tracking-widest mt-2">Projected vs Actual Revenue</p>
+                <h3 class="font-poppins font-extrabold">Transaction Volume Forecast</h3>
+                <p class="text-xs text-gray-400 font-bold font-poppins font-bold uppercase tracking-widest mt-2">Projected vs Actual Revenue</p>
             </div>
             <div class="flex gap-4">
                 <div class="flex items-center gap-2 text-[10px] font-black uppercase text-gray-400 tracking-widest"><span class="w-2 h-2 rounded-full bg-[#121063]"></span> Actual</div>
@@ -121,25 +121,25 @@
 
         <div class="grid grid-cols-2 gap-8 mt-4">
             <div class="p-8 bg-gray-50 rounded-3xl flex flex-col gap-2">
-                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest poppins-bold">Average Transaction</span>
-                <span class="text-2xl font-black text-[#121063] poppins-black">₵145.20</span>
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest font-poppins font-bold">Average Transaction</span>
+                <span class="text-2xl font-black text-[#121063] font-poppins font-black">₵145.20</span>
             </div>
             <div class="p-8 bg-gray-50 rounded-3xl flex flex-col gap-2">
-                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest poppins-bold">Highest Billing Service</span>
-                <span class="text-2xl font-black text-[#121063] poppins-black">MTN Data</span>
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest font-poppins font-bold">Highest Billing Service</span>
+                <span class="text-2xl font-black text-[#121063] font-poppins font-black">MTN Data</span>
             </div>
         </div>
     </div>
 
     <aside class="insights_sidebar" use:reveal={{type: 'slideInRight', delay: '0.5s'}}>
-        <h3 class="text-2xl font-extrabold poppins-extrabold">Monthly Summary</h3>
-        <p class="text-xs text-white/50 font-bold poppins-bold uppercase tracking-widest">Q1 2026 Reports</p>
+        <h3 class="text-2xl font-extrabold font-poppins font-extrabold">Monthly Summary</h3>
+        <p class="text-xs text-white/50 font-bold font-poppins font-bold uppercase tracking-widest">Q1 2026 Reports</p>
 
         <div class="flex flex-col">
             {#each monthlyData as data}
                 <div class="insight_row">
-                    <span class="month poppins-bold">{data.month}</span>
-                    <div class="stats poppins-bold">
+                    <span class="month font-poppins font-bold">{data.month}</span>
+                    <div class="stats font-poppins font-bold">
                         <span>Volume: {data.volume}</span>
                         <span class="growth">{data.growth} growth</span>
                     </div>
@@ -150,3 +150,4 @@
         <button class="w-full mt-auto py-5 bg-[#3ab7bf] text-white rounded-2xl font-black text-sm shadow-xl shadow-[#3ab7bf]/20 transition-all hover:scale-105 active:scale-95">Verify Account Balance</button>
     </aside>
 </div>
+

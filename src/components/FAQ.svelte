@@ -93,23 +93,24 @@
 
 <section class="faq_section" id="faq">
     <div class="faq_heading" use:reveal={{type: 'fadeInDown'}}>
-        <h2 class="poppins-extrabold">Got <span class="text-[#3ab7bf]">Questions?</span></h2>
-        <p class="poppins-regular">Everything you need to know about using Ghana's fastest payment platform.</p>
+        <h2 class="font-poppins font-extrabold">Got <span class="text-[#3ab7bf]">Questions?</span></h2>
+        <p class="font-poppins">Everything you need to know about using Ghana's fastest payment platform.</p>
     </div>
 
     <div class="faq_list">
         {#each faqs as faq, i}
             <div class="faq_item {openFaq === i ? 'open' : ''}" use:reveal={{type: 'fadeInUp', delay: `${i * 0.05}s`}}>
                 <button class="faq_question" onclick={() => toggleFaq(i)} aria-label="Toggle FAQ">
-                    <span class="poppins-bold">{faq.q}</span>
+                    <span class="font-poppins font-bold">{faq.q}</span>
                     <svg class="arrow {openFaq === i ? 'rotated' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div class="faq_answer {openFaq === i ? 'open' : ''}">
-                    <p class="poppins-regular">{faq.a}</p>
+                    <p class="font-poppins">{faq.a}</p>
                 </div>
             </div>
         {/each}
     </div>
 </section>
+

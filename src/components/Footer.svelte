@@ -72,7 +72,7 @@
         
         <div class="col_links" use:reveal={{type: 'fadeInUp', delay: '0.2s'}}>
             <h3 class="footer_title">Quick Links</h3>
-            <ul class="poppins-regular">
+            <ul class="font-poppins">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
@@ -82,7 +82,7 @@
         
         <div class="col_links" use:reveal={{type: 'fadeInUp', delay: '0.3s'}}>
             <h3 class="footer_title">Legal</h3>
-            <ul class="poppins-regular">
+            <ul class="font-poppins">
                 <li><a href="/">Privacy Policy</a></li>
                 <li><a href="/">Terms of Service</a></li>
                 <li><a href="/">AML Policy</a></li>
@@ -91,7 +91,7 @@
         
         <div class="col_contact" use:reveal={{type: 'fadeInUp', delay: '0.4s'}}>
             <h3 class="footer_title">Need help?</h3>
-            <ul class="poppins-regular">
+            <ul class="font-poppins">
                 <li>
                     <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     <span>support@justbuygh.shop</span>
@@ -105,10 +105,11 @@
     </div>
     
     <div class="footer_bottom z-10">
-        <p class="poppins-regular">&copy; 2026 JustBuy. Built by Manfred Kwami.</p>
-        <div class="footer_bottom_links poppins-regular">
+        <p class="font-poppins">&copy; 2026 JustBuy. Built by Manfred Kwami.</p>
+        <div class="footer_bottom_links font-poppins">
             <a href="/">Sitemap</a>
             <a href="/">Status</a>
         </div>
     </div>
 </footer>
+

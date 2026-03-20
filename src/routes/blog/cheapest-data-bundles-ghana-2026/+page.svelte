@@ -88,20 +88,20 @@
     <FloatingCTA />
 
     <div class="article_hero">
-        <span class="tag poppins-bold">Data Deals</span>
-        <h1 class="poppins-extrabold">The Cheapest Data Bundles in Ghana 2026 — Complete Price Guide</h1>
-        <p class="meta poppins-regular">March 15, 2026 · 5 min read</p>
+        <span class="tag font-poppins font-bold">Data Deals</span>
+        <h1 class="font-poppins font-extrabold">The Cheapest Data Bundles in Ghana 2026 — Complete Price Guide</h1>
+        <p class="meta font-poppins">March 15, 2026 · 5 min read</p>
     </div>
 
-    <article class="article_body poppins-regular">
-        <a href="/blog" class="back_link poppins-semibold">
+    <article class="article_body font-poppins">
+        <a href="/blog" class="back_link font-poppins font-semibold">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             Back to Blog
         </a>
 
         <p>If you're looking for the <strong>cheapest data bundles in Ghana</strong>, you've come to the right place. With data prices constantly changing across MTN, Telecel, and AirtelTigo, it can be hard to know which network offers the <strong>most affordable data deals</strong>. In this complete guide, we break down every <strong>cheap data bundle</strong> available in 2026.</p>
 
-        <h2 class="poppins-bold">Cheapest MTN Data Bundles in 2026</h2>
+        <h2 class="font-poppins font-bold">Cheapest MTN Data Bundles in 2026</h2>
         <p><strong>MTN Ghana</strong> remains the largest network with the widest coverage. Here are the <strong>most affordable MTN data plans</strong>:</p>
         <ul>
             <li><strong>50MB for GH₵1</strong> — Perfect for quick WhatsApp messaging</li>
@@ -113,7 +113,7 @@
         </ul>
         <p>With JustBuy, you can <strong>buy cheap MTN data instantly</strong> without visiting any vendor. Just open the app, select MTN, choose your bundle, and pay with mobile money.</p>
 
-        <h2 class="poppins-bold">Most Affordable Telecel Data Plans</h2>
+        <h2 class="font-poppins font-bold">Most Affordable Telecel Data Plans</h2>
         <p><strong>Telecel (formerly Vodafone Ghana)</strong> offers some of the <strong>cheapest data bundles</strong> in the market:</p>
         <ul>
             <li><strong>200MB for GH₵1</strong> — The cheapest data bundle in Ghana</li>
@@ -122,7 +122,7 @@
             <li><strong>10GB for GH₵30</strong> — Cheap data deal for streaming and downloads</li>
         </ul>
 
-        <h2 class="poppins-bold">Best AirtelTigo Cheap Data Deals</h2>
+        <h2 class="font-poppins font-bold">Best AirtelTigo Cheap Data Deals</h2>
         <p><strong>AirtelTigo</strong> consistently offers <strong>affordable data bundles</strong> that compete on price:</p>
         <ul>
             <li><strong>300MB for GH₵1</strong> — Most data per cedi on any network</li>
@@ -130,17 +130,17 @@
             <li><strong>5GB for GH₵15</strong> — Best cheap data bundle for streaming</li>
         </ul>
 
-        <h2 class="poppins-bold">Which Network Has the Cheapest Data?</h2>
+        <h2 class="font-poppins font-bold">Which Network Has the Cheapest Data?</h2>
         <p>When comparing <strong>affordable data bundles across all networks</strong>, AirtelTigo generally offers the most GBs per cedi, followed closely by Telecel. However, MTN's superior network coverage means your <strong>cheap data deal</strong> works reliably everywhere in Ghana.</p>
         <p>The best strategy? Use <strong>JustBuy</strong> to quickly compare and buy the <strong>cheapest data bundles</strong> from any network. You can switch between MTN, Telecel, and AirtelTigo depending on which offers the best deal that day.</p>
 
         <div class="cta_box">
-            <h3 class="poppins-bold">Ready to Buy Cheap Data?</h3>
-            <p class="poppins-regular">Download JustBuy and get the most affordable data bundles in Ghana instantly. All networks, 24/7.</p>
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="poppins-bold">Download JustBuy Now →</a>
+            <h3 class="font-poppins font-bold">Ready to Buy Cheap Data?</h3>
+            <p class="font-poppins">Download JustBuy and get the most affordable data bundles in Ghana instantly. All networks, 24/7.</p>
+            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="font-poppins font-bold">Download JustBuy Now →</a>
         </div>
 
-        <h2 class="poppins-bold">How to Buy the Cheapest Data Bundles with JustBuy</h2>
+        <h2 class="font-poppins font-bold">How to Buy the Cheapest Data Bundles with JustBuy</h2>
         <p>Getting <strong>affordable data</strong> couldn't be easier:</p>
         <ul>
             <li><strong>Step 1:</strong> Download the JustBuy app from the Play Store</li>
@@ -155,3 +155,4 @@
 
     <Footer />
 </div>
+

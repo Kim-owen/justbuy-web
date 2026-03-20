@@ -34,10 +34,10 @@
 
 <section class="cta" id="get-started">
     <div class="cta_content" use:reveal={{type: 'fadeInUp'}}>
-        <h2 class="poppins-extrabold">Ready to Pay the <br class="hidden sm:block"/>Smarter Way?</h2>
-        <p class="poppins-regular">Join 50,000+ Ghanaians who trust JustBuy for their daily data, airtime, and utility payments.</p>
+        <h2 class="font-poppins font-extrabold">Ready to Pay the <br class="hidden sm:block"/>Smarter Way?</h2>
+        <p class="font-poppins">Join 50,000+ Ghanaians who trust JustBuy for their daily data, airtime, and utility payments.</p>
         
-        <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-bold">
+        <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn font-poppins font-bold">
             Download App Now
         </a>
     </div>

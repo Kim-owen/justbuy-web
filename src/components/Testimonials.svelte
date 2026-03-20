@@ -44,7 +44,7 @@
 </style>
 
 <section id="testimonials" class="testimonials">
-    <h2 class="heading poppins-bold" use:reveal={{type: 'zoomIn'}}>The Trusted Choice for Airtime, Data, and Bill Payments</h2>
+    <h2 class="heading font-poppins font-bold" use:reveal={{type: 'zoomIn'}}>The Trusted Choice for Airtime, Data, and Bill Payments</h2>
     <div class="first_row">
         <div class="card" use:reveal={{type: 'fadeInUp', delay: '0.1s'}}>
             <div class="star_rating">
@@ -55,12 +55,12 @@
                 <img src="/images/star.png" alt="5 star rating" />
             </div>
             <div class="content">
-                <p class="review_text poppins-regular">"Just Buy has made my life easier. I can buy airtime and data for my whole family in seconds without going to a vendor. Everything works instantly."</p>
+                <p class="review_text font-poppins">"Just Buy has made my life easier. I can buy airtime and data for my whole family in seconds without going to a vendor. Everything works instantly."</p>
                 <div class="author">
                     <div class="avatar">
                         <img src="/images/avatar1.jpg" alt="Just Buy review" />
                     </div>
-                    <div class="name poppins-medium">
+                    <div class="name font-poppins font-medium">
                         <span>Daniel K., Accra</span>
                     </div>
                 </div>
@@ -75,12 +75,12 @@
                 <img src="/images/star.png" alt="5 star rating" />
             </div>
             <div class="content">
-                <p class="review_text poppins-regular">"I used to queue to pay my ECG bill. Now I just open the app and finish in less than a minute. It’s simple and reliable."</p>
+                <p class="review_text font-poppins">"I used to queue to pay my ECG bill. Now I just open the app and finish in less than a minute. It’s simple and reliable."</p>
                 <div class="author">
                     <div class="avatar">
                         <img src="/images/avatar3.jpg" alt="Just Buy review" />
                     </div>
-                    <div class="name poppins-medium">
+                    <div class="name font-poppins font-medium">
                         <span>Ama O., Tema</span>
                     </div>
                 </div>
@@ -95,12 +95,12 @@
                 <img src="/images/star.png" alt="5 star rating" />
             </div>
             <div class="content">
-                <p class="review_text poppins-regular">"I like that everything is in one place. Airtime, data, and utility payments. I don’t need three different apps anymore."</p>
+                <p class="review_text font-poppins">"I like that everything is in one place. Airtime, data, and utility payments. I don’t need three different apps anymore."</p>
                 <div class="author">
                     <div class="avatar">
                         <img src="/images/avatar2.jpg" alt="Just Buy review" />
                     </div>
-                    <div class="name poppins-medium">
+                    <div class="name font-poppins font-medium">
                         <span>Kwame T., Kumasi</span>
                     </div>
                 </div>
@@ -117,12 +117,12 @@
                 <img src="/images/star.png" alt="5 star rating" />
             </div>
             <div class="content">
-                <p class="review_text poppins-regular">"The best part is how fast it is. I buy MTN data every week and the bundle arrives immediately. No delays, no stress."</p>
+                <p class="review_text font-poppins">"The best part is how fast it is. I buy MTN data every week and the bundle arrives immediately. No delays, no stress."</p>
                 <div class="author">
                     <div class="avatar">
                         <img src="/images/avatar4.jpg" alt="Just Buy review" />
                     </div>
-                    <div class="name poppins-medium">
+                    <div class="name font-poppins font-medium">
                         <span>Sarah M., East Legon</span>
                     </div>
                 </div>
@@ -137,12 +137,12 @@
                 <img src="/images/star.png" alt="5 star rating" />
             </div>
             <div class="content">
-                <p class="review_text poppins-regular">"I was skeptical at first, but after using Just Buy for a few months it’s now my go-to for paying bills and topping up my phone."</p>
+                <p class="review_text font-poppins">"I was skeptical at first, but after using Just Buy for a few months it’s now my go-to for paying bills and topping up my phone."</p>
                 <div class="author">
                     <div class="avatar">
                         <img src="/images/avatar5.jpg" alt="Just Buy review" />
                     </div>
-                    <div class="name poppins-medium">
+                    <div class="name font-poppins font-medium">
                         <span>Joseph A., Spintex</span>
                     </div>
                 </div>

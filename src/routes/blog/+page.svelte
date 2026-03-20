@@ -143,21 +143,21 @@
     <FloatingCTA />
 
     <div class="blog_hero">
-        <h1 class="poppins-extrabold">JustBuy <span class="accent">Blog</span></h1>
-        <p class="poppins-regular">Tips on cheap data deals, affordable airtime, and the smartest ways to save money in Ghana</p>
+        <h1 class="font-poppins font-extrabold">JustBuy <span class="accent">Blog</span></h1>
+        <p class="font-poppins">Tips on cheap data deals, affordable airtime, and the smartest ways to save money in Ghana</p>
     </div>
 
     <div class="blog_grid">
         {#each posts as post, i}
             <a href="/blog/{post.slug}" class="blog_card" use:reveal={{type: 'fadeInUp', delay: `${i * 0.1}s`}}>
                 <div class="blog_card_header">
-                    <span class="blog_tag poppins-bold" style="background-color: {post.color}">{post.tag}</span>
-                    <span class="blog_date poppins-regular">{post.date} · {post.readTime}</span>
+                    <span class="blog_tag font-poppins font-bold" style="background-color: {post.color}">{post.tag}</span>
+                    <span class="blog_date font-poppins">{post.date} · {post.readTime}</span>
                 </div>
                 <div class="blog_card_body">
-                    <h2 class="poppins-bold">{post.title}</h2>
-                    <p class="poppins-regular">{post.excerpt}</p>
-                    <span class="read_more poppins-semibold">
+                    <h2 class="font-poppins font-bold">{post.title}</h2>
+                    <p class="font-poppins">{post.excerpt}</p>
+                    <span class="read_more font-poppins font-semibold">
                         Read Article
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </span>
@@ -168,3 +168,4 @@
 
     <Footer />
 </div>
+

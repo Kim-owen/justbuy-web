@@ -73,7 +73,7 @@
 </style>
 
 <section class="logo_strip_main" use:reveal>
-    <p class="heading poppins-medium">Trusted by Ghana's leading service providers</p>
+    <p class="heading font-poppins font-medium">Trusted by Ghana's leading service providers</p>
     
     <div class="marquee_container">
         <div class="marquee_track">
@@ -100,3 +100,4 @@
         </div>
     </div>
 </section>
+

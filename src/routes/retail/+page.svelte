@@ -49,16 +49,16 @@
 
 <main>
     <section class="subpage_hero">
-        <h1 class="poppins-bold" use:reveal={{type: 'fadeInDown'}}>Retail Solutions</h1>
-        <p class="poppins-regular" use:reveal={{type: 'fadeInUp', delay: '0.2s'}}>Become a Just Buy agent. Increase your foot traffic and earn commissions by selling airtime and processing bills.</p>
+        <h1 class="font-poppins font-bold" use:reveal={{type: 'fadeInDown'}}>Retail Solutions</h1>
+        <p class="font-poppins" use:reveal={{type: 'fadeInUp', delay: '0.2s'}}>Become a Just Buy agent. Increase your foot traffic and earn commissions by selling airtime and processing bills.</p>
     </section>
 
     <section class="content_section">
         <div class="retail_grid">
             <div class="retail_text" use:reveal={{type: 'slideInLeft', duration: '1s'}}>
-                <h2 class="text-4xl text-heading_secondary poppins-bold mb-6">Boost Your Store's Income</h2>
-                <p class="text-heading_grey mb-6 poppins-regular leading-relaxed">Join thousands of merchants across Ghana who are using the Just Buy Retailer App. Whether you run a provision shop, a pharmacy, or a boutique, offering bill payment and top-up services brings more customers to your door.</p>
-                <ul class="flex flex-col gap-4 text-heading_secondary poppins-medium">
+                <h2 class="text-4xl text-heading_secondary font-poppins font-bold mb-6">Boost Your Store's Income</h2>
+                <p class="text-heading_grey mb-6 font-poppins leading-relaxed">Join thousands of merchants across Ghana who are using the Just Buy Retailer App. Whether you run a provision shop, a pharmacy, or a boutique, offering bill payment and top-up services brings more customers to your door.</p>
+                <ul class="flex flex-col gap-4 text-heading_secondary font-poppins font-medium">
                     <li class="flex items-center gap-3">
                         <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         Zero setup fees or maintenance costs
@@ -84,3 +84,4 @@
     <CTA />
 </main>
 <Footer />
+

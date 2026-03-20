@@ -59,11 +59,11 @@
     <CTA />
 
     <!-- SEO Content Section - Rich Keyword Text for Google Indexing -->
-    <section class="seo_content poppins-regular">
-        <h2 class="poppins-bold">Buy Cheap Data Bundles & Affordable Airtime in Ghana</h2>
+    <section class="seo_content font-poppins">
+        <h2 class="font-poppins font-bold">Buy Cheap Data Bundles & Affordable Airtime in Ghana</h2>
         <p>Looking for the <strong>cheapest data bundles in Ghana</strong>? JustBuy is Ghana's #1 platform for <strong>affordable data deals</strong>, <strong>cheap airtime top-ups</strong>, and instant bill payments. Whether you need <strong>cheap MTN data</strong>, <strong>affordable Telecel bundles</strong>, or the <strong>best AirtelTigo data plans</strong>, JustBuy has you covered with the lowest prices available 24/7.</p>
 
-        <h3 class="poppins-semibold">Best Data Deals for Every Network</h3>
+        <h3 class="font-poppins font-semibold">Best Data Deals for Every Network</h3>
         <p>JustBuy offers the <strong>best data deals</strong> across all major Ghanaian networks. Compare and buy <strong>cheap data bundles</strong> for:</p>
         <ul>
             <li><strong>Cheap MTN Data Bundles</strong> — Get the most affordable MTN internet data plans at unbeatable prices</li>
@@ -71,10 +71,10 @@
             <li><strong>Best AirtelTigo Data Deals</strong> — The cheapest AirtelTigo data plans available online</li>
         </ul>
 
-        <h3 class="poppins-semibold">Why JustBuy Offers the Cheapest Data in Ghana</h3>
+        <h3 class="font-poppins font-semibold">Why JustBuy Offers the Cheapest Data in Ghana</h3>
         <p>JustBuy is trusted by over <strong>50,000+ users</strong> as the go-to app for <strong>affordable data bundles</strong> and <strong>cheap airtime</strong> in Ghana. Our platform provides instant top-ups with a <strong>99.9% success rate</strong>, making us the most reliable choice for <strong>budget data bundles</strong> and <strong>low-cost data plans</strong>.</p>
 
-        <h3 class="poppins-semibold">Pay Bills Instantly — ECG, DSTV, GOtv & More</h3>
+        <h3 class="font-poppins font-semibold">Pay Bills Instantly — ECG, DSTV, GOtv & More</h3>
         <p>Beyond <strong>cheap data and affordable airtime</strong>, JustBuy lets you pay all your utility bills from one app. Pay your <strong>ECG electricity bill</strong>, <strong>Ghana Water Company bill</strong>, <strong>DSTV subscription</strong>, <strong>GOtv subscription</strong>, and <strong>StarTimes subscription</strong> instantly. No queues, no stress — just fast, secure payments at <strong>affordable prices</strong>.</p>
 
         <p>Download JustBuy today and start enjoying the <strong>cheapest data bundles</strong>, <strong>best airtime deals</strong>, and <strong>most affordable bill payment service</strong> in Ghana. Available 24/7 with secure mobile money payments.</p>

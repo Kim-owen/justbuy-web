@@ -119,7 +119,7 @@
 </style>
 
 <section id="how-it-works" class="how_it_works_main overflow-hidden">
-    <h2 class="heading poppins-extrabold" use:reveal={{type: 'fadeInDown'}}>How Just Buy Works</h2>
+    <h2 class="heading font-poppins font-extrabold" use:reveal={{type: 'fadeInDown'}}>How Just Buy Works</h2>
     <div class="content">
         <div class="left_col" use:reveal={{type: 'slideInLeft', duration: '0.8s'}}>
             <div class="slide_bg floating" style="animation-duration: 6s;">
@@ -142,13 +142,13 @@
                 {/if}
             </div>
         </div>
-        <div class="right_col poppins-regular" use:reveal={{type: 'slideInRight', duration: '0.8s', delay: '0.2s'}}>
+        <div class="right_col font-poppins" use:reveal={{type: 'slideInRight', duration: '0.8s', delay: '0.2s'}}>
             
             <!-- Step 1 -->
             <button class="step {slide !== 0 ? 'inactive' : ''} text-left" onclick={() => manualSelect(0)} aria-label="Step 1">
                 <div class="title_wrapper">
                     <div class="number {slide !== 0 ? 'inactive_number' : ''}">
-                        <span class="poppins-bold">1</span>
+                        <span class="font-poppins font-bold">1</span>
                     </div>
                     <p class="title {slide !== 0 ? 'inactive_title' : ''}">Create Your Account</p>
                 </div>
@@ -160,7 +160,7 @@
             <button class="step {slide !== 1 ? 'inactive' : ''} text-left" onclick={() => manualSelect(1)} aria-label="Step 2">
                 <div class="title_wrapper">
                     <div class="number {slide !== 1 ? 'inactive_number' : ''}">
-                        <span class="poppins-bold">2</span>
+                        <span class="font-poppins font-bold">2</span>
                     </div>
                     <p class="title {slide !== 1 ? 'inactive_title' : ''}">Fund Your Wallet</p>
                 </div>
@@ -172,7 +172,7 @@
             <button class="step {slide !== 2 ? 'inactive' : ''} text-left" onclick={() => manualSelect(2)} aria-label="Step 3">
                 <div class="title_wrapper">
                     <div class="number {slide !== 2 ? 'inactive_number' : ''}">
-                        <span class="poppins-bold">3</span>
+                        <span class="font-poppins font-bold">3</span>
                     </div>
                     <p class="title {slide !== 2 ? 'inactive_title' : ''}">Choose Your Service</p>
                 </div>
@@ -184,7 +184,7 @@
             <button class="step {slide !== 3 ? 'inactive' : ''} text-left" onclick={() => manualSelect(3)} aria-label="Step 4">
                 <div class="title_wrapper">
                     <div class="number {slide !== 3 ? 'inactive_number' : ''}">
-                        <span class="poppins-bold">4</span>
+                        <span class="font-poppins font-bold">4</span>
                     </div>
                     <p class="title {slide !== 3 ? 'inactive_title' : ''}">Instant Confirmation</p>
                 </div>

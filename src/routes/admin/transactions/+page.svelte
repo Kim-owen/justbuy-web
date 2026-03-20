@@ -69,9 +69,9 @@
 </style>
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1 class="poppins-extrabold">Global Transactions</h1>
+    <h1 class="font-poppins font-extrabold">Global Transactions</h1>
     <div class="flex gap-2">
-        <button class="bg-[#121063] text-white px-6 py-3 rounded-2xl text-xs font-bold poppins-bold shadow-lg shadow-[#121063]/20 flex items-center gap-2">
+        <button class="bg-[#121063] text-white px-6 py-3 rounded-2xl text-xs font-bold font-poppins font-bold shadow-lg shadow-[#121063]/20 flex items-center gap-2">
             📊 Reconciliation
         </button>
     </div>
@@ -80,14 +80,14 @@
 <!-- Tabs for Status filtering -->
 <div class="tabs_bar" use:reveal={{type: 'fadeInUp'}}>
     {#each ["All", "Success", "Pending", "Failed"] as tab}
-        <button class="tab_btn {activeTab === tab ? 'active' : ''} poppins-bold" onclick={() => activeTab = tab}>{tab}</button>
+        <button class="tab_btn {activeTab === tab ? 'active' : ''} font-poppins font-bold" onclick={() => activeTab = tab}>{tab}</button>
     {/each}
 </div>
 
 <!-- Search & Controls -->
 <div class="action_controls" use:reveal={{type: 'fadeInUp', delay: '0.1s'}}>
-    <input type="text" placeholder="Search by Transaction ID or Username..." class="search_tx poppins-medium" bind:value={searchId} />
-    <button class="bg-white border border-gray-100 px-8 py-4 rounded-2xl text-xs font-bold text-[#121063] poppins-bold shadow-sm whitespace-nowrap">
+    <input type="text" placeholder="Search by Transaction ID or Username..." class="search_tx font-poppins font-medium" bind:value={searchId} />
+    <button class="bg-white border border-gray-100 px-8 py-4 rounded-2xl text-xs font-bold text-[#121063] font-poppins font-bold shadow-sm whitespace-nowrap">
         📅 Filter by Date
     </button>
 </div>
@@ -106,7 +106,7 @@
                 <th>Timestamp</th>
             </tr>
         </thead>
-        <tbody class="poppins-medium">
+        <tbody class="font-poppins font-medium">
             {#each filteredTransactions as tx, i}
                 <tr use:reveal={{type: 'fadeIn', delay: `${i * 0.05}s`}} class="group">
                     <td><span class="tx_id">{tx.id}</span></td>
@@ -140,5 +140,6 @@
 </div>
 
 <div class="mt-8 flex justify-center" use:reveal={{type: 'fadeInUp', delay: '0.5s'}}>
-    <button class="text-[#121063] font-bold text-xs uppercase tracking-widest hover:underline poppins-bold">Load More Past Records</button>
+    <button class="text-[#121063] font-bold text-xs uppercase tracking-widest hover:underline font-poppins font-bold">Load More Past Records</button>
 </div>
+

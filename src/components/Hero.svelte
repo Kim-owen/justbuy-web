@@ -101,18 +101,18 @@
 
     <!-- Centered Content block (similar to the reference image) -->
     <div class="content" use:reveal={{type: 'fadeInUp'}}>
-        <h1 class="poppins-extrabold">
+        <h1 class="font-poppins font-extrabold">
             All Your <span class="highlight">Payments</span><br/> One App
         </h1>
-        <p class="poppins-regular">
+        <p class="font-poppins">
             Simplify airtime, data bundles, and utility bill payments with Ghana's fastest financial platform.
         </p>
 
         <div class="btn_group">
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="btn_primary poppins-semibold">
+            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="btn_primary font-poppins font-semibold">
                 Get the App
             </a>
-            <a href="/corporate" class="btn_outline poppins-semibold">
+            <a href="/corporate" class="btn_outline font-poppins font-semibold">
                 For Business
             </a>
         </div>

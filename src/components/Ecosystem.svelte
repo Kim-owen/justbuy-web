@@ -58,45 +58,46 @@
 
 <section class="eco_section" id="ecosystem">
     <div class="eco_header" use:reveal={{type: 'fadeInDown'}}>
-        <h2 class="poppins-extrabold">The Complete Ecosystem</h2>
-        <p class="poppins-regular">Everything you need to manage your money effortlessly, right in your pocket.</p>
+        <h2 class="font-poppins font-extrabold">The Complete Ecosystem</h2>
+        <p class="font-poppins">Everything you need to manage your money effortlessly, right in your pocket.</p>
     </div>
 
     <div class="eco_grid">
         <!-- Pay -->
         <div class="eco_card" use:reveal={{type: 'fadeInUp', delay: '0.1s'}}>
             <div class="eco_icon_wrap icon_pay">💸</div>
-            <h3 class="poppins-bold">Pay</h3>
-            <p class="poppins-regular">Send money, buy cheap data, and pay all your utility bills instantly with zero hassle.</p>
+            <h3 class="font-poppins font-bold">Pay</h3>
+            <p class="font-poppins">Send money, buy cheap data, and pay all your utility bills instantly with zero hassle.</p>
             <div class="mt-4"></div>
-            <a href="https://tinyurl.com/Datankoaa" class="beta_link poppins-bold">Get App Now →</a>
+            <a href="https://tinyurl.com/Datankoaa" class="beta_link font-poppins font-bold">Get App Now →</a>
         </div>
 
         <!-- Virtual Cards (Coming Soon) -->
         <div class="eco_card" use:reveal={{type: 'fadeInUp', delay: '0.2s'}}>
             <div class="eco_icon_wrap icon_card">💳</div>
-            <h3 class="poppins-bold">Virtual Cards</h3>
-            <p class="poppins-regular">Create USD virtual cards to pay for Netflix, Facebook Ads, and shop globally online.</p>
-            <span class="coming_soon_badge poppins-bold">Coming Soon</span>
-            <a href="#" class="beta_link poppins-bold">Join Beta Program →</a>
+            <h3 class="font-poppins font-bold">Virtual Cards</h3>
+            <p class="font-poppins">Create USD virtual cards to pay for Netflix, Facebook Ads, and shop globally online.</p>
+            <span class="coming_soon_badge font-poppins font-bold">Coming Soon</span>
+            <a href="#" class="beta_link font-poppins font-bold">Join Beta Program →</a>
         </div>
 
         <!-- Borrow (Coming Soon) -->
         <div class="eco_card" use:reveal={{type: 'fadeInUp', delay: '0.3s'}}>
             <div class="eco_icon_wrap icon_loan">🤝</div>
-            <h3 class="poppins-bold">Borrow</h3>
-            <p class="poppins-regular">Access instant micro-loans directly to your mobile money wallet when you need cash fast.</p>
-            <span class="coming_soon_badge poppins-bold">Coming Soon</span>
-            <a href="#" class="beta_link poppins-bold">Join Beta Program →</a>
+            <h3 class="font-poppins font-bold">Borrow</h3>
+            <p class="font-poppins">Access instant micro-loans directly to your mobile money wallet when you need cash fast.</p>
+            <span class="coming_soon_badge font-poppins font-bold">Coming Soon</span>
+            <a href="#" class="beta_link font-poppins font-bold">Join Beta Program →</a>
         </div>
 
         <!-- Save & Invest (Coming Soon) -->
         <div class="eco_card" use:reveal={{type: 'fadeInUp', delay: '0.4s'}}>
             <div class="eco_icon_wrap icon_save">📈</div>
-            <h3 class="poppins-bold">Save & Invest</h3>
-            <p class="poppins-regular">Grow your wealth with high-yield automated savings and curated investment plans.</p>
-            <span class="coming_soon_badge poppins-bold">Coming Soon</span>
-            <a href="#" class="beta_link poppins-bold">Join Beta Program →</a>
+            <h3 class="font-poppins font-bold">Save & Invest</h3>
+            <p class="font-poppins">Grow your wealth with high-yield automated savings and curated investment plans.</p>
+            <span class="coming_soon_badge font-poppins font-bold">Coming Soon</span>
+            <a href="#" class="beta_link font-poppins font-bold">Join Beta Program →</a>
         </div>
     </div>
 </section>
+

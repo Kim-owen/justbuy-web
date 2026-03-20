@@ -136,7 +136,7 @@
         <img src="/images/jb_logo.png" alt="Just Buy logo" />
     </a>
     
-    <nav class="nav_links poppins-regular">
+    <nav class="nav_links font-poppins">
         <div class="dropdown_container group">
             <a href="#services" class="flex items-center gap-1 cursor-pointer">Services
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -154,7 +154,7 @@
     </nav>
 
     <div class="actions">
-        <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular">
+        <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn font-poppins">
             <span>Download app</span>
         </a>
     </div>
@@ -174,7 +174,7 @@
 <div class="mobile_menu {mobileMenuOpen ? 'open' : ''}">
     <div class="mobile_menu_content">
         <!-- Main Nav Links -->
-        <div class="mobile_nav_links poppins-semibold">
+        <div class="mobile_nav_links font-poppins font-semibold">
             <a href="/" onclick={closeMenu}>
                 <span>🏠 Home</span>
                 <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
@@ -194,8 +194,8 @@
         </div>
 
         <!-- Services Grid -->
-        <p class="mobile_services_label poppins-bold">Our Services</p>
-        <div class="mobile_services_grid poppins-medium">
+        <p class="mobile_services_label font-poppins font-bold">Our Services</p>
+        <div class="mobile_services_grid font-poppins font-medium">
             <a href="/corporate" onclick={closeMenu}>
                 <span class="service_icon">🏢</span>
                 Corporate
@@ -215,7 +215,7 @@
         </div>
 
         <!-- Download CTA -->
-        <a href="https://tinyurl.com/Datankoaa" target="_blank" onclick={closeMenu} class="mobile_download_btn poppins-bold">
+        <a href="https://tinyurl.com/Datankoaa" target="_blank" onclick={closeMenu} class="mobile_download_btn font-poppins font-bold">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Download JustBuy
         </a>

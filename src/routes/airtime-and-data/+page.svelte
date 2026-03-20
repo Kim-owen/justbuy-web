@@ -51,15 +51,15 @@
 
 <main>
     <section class="subpage_hero">
-        <h1 class="poppins-bold" use:reveal={{type: 'fadeInDown'}}>Airtime & Data</h1>
-        <p class="poppins-regular" use:reveal={{type: 'fadeInUp', delay: '0.2s'}}>Stay connected across all major networks in Ghana with zero extra convenience fees on your top-ups.</p>
+        <h1 class="font-poppins font-bold" use:reveal={{type: 'fadeInDown'}}>Airtime & Data</h1>
+        <p class="font-poppins" use:reveal={{type: 'fadeInUp', delay: '0.2s'}}>Stay connected across all major networks in Ghana with zero extra convenience fees on your top-ups.</p>
         <div class="blob pulse-glow"></div>
     </section>
 
     <section class="content_section">
         <div class="text-center" use:reveal={{type: 'zoomIn'}}>
-            <h2 class="text-3xl md:text-4xl text-heading_secondary poppins-bold mb-4">Supported Networks</h2>
-            <p class="text-heading_grey poppins-regular">Instant delivery for both airtime recharges and internet bundles.</p>
+            <h2 class="text-3xl md:text-4xl text-heading_secondary font-poppins font-bold mb-4">Supported Networks</h2>
+            <p class="text-heading_grey font-poppins">Instant delivery for both airtime recharges and internet bundles.</p>
         </div>
 
         <div class="networks_grid">
@@ -84,7 +84,7 @@
         
         <div class="mt-20 flex flex-col md:flex-row bg-heading_prime text-white rounded-3xl overflow-hidden shadow-2xl" use:reveal={{type: 'slideInLeft'}}>
             <div class="p-10 md:p-14 md:w-3/5 flex flex-col justify-center">
-                <h3 class="text-3xl poppins-bold mb-4">Never run out of data.</h3>
+                <h3 class="text-3xl font-poppins font-bold mb-4">Never run out of data.</h3>
                 <p class="text-gray-300 mb-8 leading-relaxed">Save your favorite numbers and repeat your last purchase with just one tap. Available on our iOS and Android applications.</p>
                 <a href="https://tinyurl.com/Datankoaa" target="_blank" class="bg-heading_highlight text-white w-fit px-8 py-3 rounded-md font-bold hover:bg-white hover:text-heading_highlight transition-colors duration-300">Download the App</a>
             </div>
@@ -94,3 +94,4 @@
     </section>
 </main>
 <Footer />
+

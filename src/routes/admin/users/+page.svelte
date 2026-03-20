@@ -64,24 +64,24 @@
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
     <div>
-        <h1 class="poppins-extrabold">User Management</h1>
-        <p class="text-xs text-gray-400 font-bold poppins-bold uppercase tracking-widest mt-1">Total Registered Users: {users.length}</p>
+        <h1 class="font-poppins font-extrabold">User Management</h1>
+        <p class="text-xs text-gray-400 font-bold font-poppins font-bold uppercase tracking-widest mt-1">Total Registered Users: {users.length}</p>
     </div>
-    <button class="bg-[#3ab7bf] text-white px-8 py-4 rounded-2xl text-sm font-bold poppins-bold shadow-xl shadow-[#3ab7bf]/20 hover:scale-105 transition-all">
+    <button class="bg-[#3ab7bf] text-white px-8 py-4 rounded-2xl text-sm font-bold font-poppins font-bold shadow-xl shadow-[#3ab7bf]/20 hover:scale-105 transition-all">
         + Add New User
     </button>
 </div>
 
 <!-- Search & Filtering -->
 <div class="controls_bar" use:reveal={{type: 'fadeInUp'}}>
-    <input type="text" placeholder="Search by name, email, or phone..." class="search_input poppins-medium" bind:value={searchQuery} />
+    <input type="text" placeholder="Search by name, email, or phone..." class="search_input font-poppins font-medium" bind:value={searchQuery} />
     <select class="filter_select" bind:value={filterStatus}>
         <option value="All">All Statuses</option>
         <option value="Active">Active</option>
         <option value="Pending">Pending</option>
         <option value="Banned">Banned</option>
     </select>
-    <button class="bg-gray-100 text-[#121063] px-6 py-3 rounded-2xl text-sm font-bold poppins-bold hover:bg-gray-200 transition-all">Bulk Actions</button>
+    <button class="bg-gray-100 text-[#121063] px-6 py-3 rounded-2xl text-sm font-bold font-poppins font-bold hover:bg-gray-200 transition-all">Bulk Actions</button>
 </div>
 
 <!-- Users Table -->
@@ -103,10 +103,10 @@
                     <td>
                         <div class="user_info">
                             <span class="user_name">{user.avatar} {user.name}</span>
-                            <span class="user_email poppins-medium">{user.email}</span>
+                            <span class="user_email font-poppins font-medium">{user.email}</span>
                         </div>
                     </td>
-                    <td class="poppins-bold text-[#121063]">+233 ** *** ****</td>
+                    <td class="font-poppins font-bold text-[#121063]">+233 ** *** ****</td>
                     <td class="font-black text-[#121063]">₵0.00</td>
                     <td class="text-xs text-gray-400">{user.joined}</td>
                     <td>
@@ -136,3 +136,4 @@
         </tbody>
     </table>
 </div>
+
