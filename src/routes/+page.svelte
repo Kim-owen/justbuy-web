@@ -1,7 +1,9 @@
 <script>
 	import CTA from "../components/CTA..svelte";
 	import Header from "../components/Header.svelte";
-  import Hero from "../components/Hero.svelte";
+    import Hero from "../components/Hero.svelte";
+    import AppDemo from "../components/AppDemo.svelte";
+    import Ecosystem from "../components/Ecosystem.svelte";
 	import HowItWorks from "../components/HowItWorks.svelte";
 	import LogoStrip from "../components/LogoStrip.svelte";
 	import ServicesGrid from "../components/ServicesGrid.svelte";
@@ -48,6 +50,8 @@
     <Header />
     <FloatingCTA />
     <Hero />
+    <Ecosystem />
+    <AppDemo />
     <ServicesGrid />
     <HowItWorks />
     <LogoStrip />

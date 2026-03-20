@@ -32,10 +32,11 @@
     @reference "../styles/global.css";
 
     .header {
-        @apply px-4 sm:px-6 md:px-24 py-3 md:py-4 flex flex-row w-full fixed top-0 left-0 justify-between items-center z-50 transition-all duration-300;
+        @apply px-4 sm:px-6 md:px-12 lg:px-24 py-4 flex flex-row w-full fixed top-0 left-0 justify-between items-center z-50 transition-all duration-300;
     }
     .header.scrolled {
-        @apply bg-white shadow-xl py-2 md:py-3;
+        @apply bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-4;
+        border-bottom: 1px solid rgba(0,0,0,0.02);
     }
     .header:not(.scrolled) {
         @apply bg-transparent;
@@ -45,115 +46,89 @@
         @apply flex items-center z-[60];
     }
     .header img {
-        @apply h-9 sm:h-10 md:h-12 transition-transform duration-300 hover:scale-105;
-    }
-    .header.scrolled img {
-        @apply h-8 sm:h-9 md:h-10;
+        @apply h-9 sm:h-10 transition-transform duration-300 hover:scale-105;
     }
 
     .nav_links {
-        @apply hidden lg:flex flex-row gap-8 items-center h-full;
+        @apply hidden lg:flex flex-row gap-10 items-center h-full;
     }
     .nav_links a {
-        @apply text-heading_secondary font-medium hover:text-heading_highlight transition-colors text-sm uppercase tracking-wide py-2;
+        @apply text-[#121063] font-semibold hover:text-[#3ab7bf] transition-colors text-sm tracking-tight py-2;
     }
     
     .dropdown_container {
         @apply relative h-full flex flex-col justify-center;
     }
     .dropdown_menu {
-        @apply absolute top-full left-0 bg-white shadow-xl rounded-md flex-col w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-gray-100;
+        @apply absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-2xl rounded-2xl flex-col w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-gray-50 p-2;
     }
     .dropdown_menu a {
-        @apply block px-5 py-3 hover:bg-gray-50 text-sm normal-case tracking-normal md:w-full border-b border-gray-50 last:border-none;
+        @apply block px-4 py-3 hover:bg-gray-50 text-sm rounded-xl text-[#121063] font-medium transition-colors;
     }
 
     .header .actions {
         @apply hidden lg:flex flex-row items-center gap-4;
     }
     .header .download_btn {
-        @apply bg-[url(/images/btn_bg.png)] bg-cover bg-no-repeat bg-left w-fit flex flex-row justify-center items-center px-6 py-2.5 text-white text-sm md:text-base tracking-wider rounded-md cursor-pointer shadow-md hover:shadow-lg transition-all;
+        @apply bg-[#3ab7bf] text-white px-8 py-2.5 rounded-full font-bold text-sm hover:opacity-90 transition-all shadow-md active:scale-95;
     }
 
-    /* Mobile menu button - larger touch target */
+    /* Mobile menu button */
     .mobile_btn {
-        @apply lg:hidden flex flex-col justify-center items-center w-10 h-10 cursor-pointer z-[60] rounded-md;
+        @apply lg:hidden flex flex-col justify-center items-center w-10 h-10 cursor-pointer z-[60] bg-white/10 backdrop-blur-sm rounded-xl border border-white/20;
         -webkit-tap-highlight-color: transparent;
     }
+    .header.scrolled .mobile_btn {
+        @apply bg-gray-50 border-gray-100;
+    }
     .mobile_btn span {
-        @apply w-6 h-0.5 bg-heading_secondary mb-1.5 transition-all duration-300 origin-center;
+        @apply w-5 h-0.5 bg-[#121063] mb-1.5 transition-all duration-300 origin-center last:mb-0;
     }
-    .mobile_btn span:last-child {
-        @apply mb-0;
-    }
-    .mobile_btn.open span:nth-child(1) {
-        @apply transform translate-y-2 rotate-45 bg-heading_highlight;
-    }
-    .mobile_btn.open span:nth-child(2) {
-        @apply opacity-0;
-    }
-    .mobile_btn.open span:nth-child(3) {
-        @apply transform -translate-y-2 -rotate-45 bg-heading_highlight;
-    }
+    .mobile_btn.open span:nth-child(1) { @apply translate-y-2 rotate-45; }
+    .mobile_btn.open span:nth-child(2) { @apply opacity-0; }
+    .mobile_btn.open span:nth-child(3) { @apply -translate-y-2 -rotate-45; }
 
-    /* Mobile menu - compact dropdown panel */
+    /* Mobile menu */
     .mobile_menu {
-        @apply fixed top-0 left-0 right-0 bg-white z-40 flex flex-col transform transition-all duration-300 ease-in-out shadow-2xl rounded-b-3xl overflow-hidden;
-        max-height: 0;
-        opacity: 0;
-        padding-top: 60px;
+        @apply fixed inset-0 bg-white z-40 flex flex-col transform transition-transform duration-500 ease-in-out;
+        transform: translateY(-100%);
     }
     .mobile_menu.open {
-        max-height: 85vh;
-        opacity: 1;
-        padding-top: 60px;
+        transform: translateY(0);
     }
 
     .mobile_menu_content {
-        @apply flex flex-col px-5 pb-6 pt-2;
+        @apply flex flex-col px-8 pb-12 pt-24 h-full overflow-y-auto;
     }
 
     .mobile_nav_links {
-        @apply flex flex-col gap-0;
+        @apply flex flex-col gap-2;
     }
     .mobile_nav_links a {
-        @apply flex items-center justify-between text-base font-semibold text-heading_secondary py-3.5 px-3 rounded-xl active:bg-gray-50 transition-colors;
-        -webkit-tap-highlight-color: transparent;
-    }
-    .mobile_nav_links a:not(:last-child) {
-        border-bottom: 1px solid #f1f5f9;
+        @apply flex items-center justify-between text-2xl font-bold text-[#121063] py-4 border-b border-gray-50;
     }
 
     .mobile_services_label {
-        @apply text-[10px] uppercase text-heading_grey tracking-widest font-bold px-3 pt-3 pb-1.5;
+        @apply text-xs uppercase text-gray-400 tracking-widest font-bold pt-8 pb-4;
     }
 
     .mobile_services_grid {
-        @apply grid grid-cols-2 gap-2 px-1 mb-4;
+        @apply grid grid-cols-2 gap-3 mb-12;
     }
     .mobile_services_grid a {
-        @apply flex flex-col items-center justify-center text-center bg-gray-50 rounded-xl py-3.5 px-2 text-xs font-semibold text-heading_secondary active:scale-95 transition-transform;
-        -webkit-tap-highlight-color: transparent;
+        @apply flex flex-col items-center justify-center p-6 bg-gray-50 rounded-3xl text-sm font-bold text-[#121063];
     }
-    .mobile_services_grid a .service_icon {
-        @apply text-xl mb-1;
-    }
+    .mobile_services_grid a .service_icon { @apply text-2xl mb-2; }
 
     .mobile_download_btn {
-        @apply w-full flex items-center justify-center gap-2 bg-heading_prime text-white px-5 py-3 rounded-xl text-sm font-bold shadow-lg active:scale-[0.98] transition-transform;
-        -webkit-tap-highlight-color: transparent;
+        @apply w-full flex items-center justify-center gap-2 bg-[#121063] text-white py-4 rounded-full text-lg font-bold shadow-xl active:scale-95 transition-transform mt-auto;
     }
 
-    /* Backdrop overlay */
     .mobile_backdrop {
-        @apply fixed inset-0 bg-black/30 z-30 transition-opacity duration-300;
+        @apply fixed inset-0 bg-[#0b1014]/40 backdrop-blur-sm z-30 transition-opacity duration-300;
     }
-    .mobile_backdrop.hidden {
-        @apply opacity-0 pointer-events-none;
-    }
-    .mobile_backdrop.visible {
-        @apply opacity-100;
-    }
+    .mobile_backdrop.hidden { @apply opacity-0 pointer-events-none; }
+    .mobile_backdrop.visible { @apply opacity-100; }
 </style>
 
 <header class="header {scrolled ? 'scrolled' : ''}">

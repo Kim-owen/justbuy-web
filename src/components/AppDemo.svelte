@@ -73,7 +73,7 @@
     }
 
     .glass_notification {
-        @apply absolute z-30 bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-2xl flex items-center gap-3 floating border border-white/20;
+        @apply absolute z-30 bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-2xl flex items-center gap-3 border border-white/20;
     }
 </style>
 
@@ -112,7 +112,7 @@
         <div class="flex-1 relative flex justify-center lg:justify-end w-full mt-10 lg:mt-0" use:reveal={{type: 'zoomIn', delay: '0.3s'}}>
             
             <!-- Live Social Proof Notification 1 -->
-            <div class="glass_notification -left-4 sm:-left-12 top-10" style="animation-delay: 1.5s;">
+            <div class="glass_notification floating -left-4 sm:-left-12 top-10" style="animation-delay: 1.5s;">
                 <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">💸</div>
                 <div class="text-left">
                     <p class="text-xs text-gray-500 poppins-semibold uppercase tracking-wider">Just now</p>
@@ -121,7 +121,7 @@
             </div>
 
             <!-- Live Social Proof Notification 2 -->
-            <div class="glass_notification right-0 sm:-right-8 bottom-20" style="animation-delay: 0.5s;">
+            <div class="glass_notification floating right-0 sm:-right-8 bottom-20" style="animation-delay: 0.5s;">
                 <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl">💡</div>
                 <div class="text-left">
                     <p class="text-xs text-gray-500 poppins-semibold uppercase tracking-wider">2 mins ago</p>

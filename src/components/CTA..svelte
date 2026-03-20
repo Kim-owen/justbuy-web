@@ -1,28 +1,44 @@
-<script>
-    import { reveal } from "$lib/reveal";
-</script>
-
 <style lang="postcss">
     @reference "../styles/global.css";
 
     .cta {
-        @apply bg-[url(/images/CTA_bg.png)] bg-fixed bg-cover bg-no-repeat bg-center h-auto w-full flex flex-col px-6 md:px-24 py-14 md:py-20 justify-center items-center text-center;
+        @apply bg-[#121063] py-20 md:py-32 px-4 sm:px-6 md:px-12 lg:px-24 flex items-center justify-center text-center overflow-hidden relative;
     }
-    .cta .heading {
-        @apply text-3xl md:text-5xl md:leading-14 text-heading_secondary mb-6 text-center max-w-[600px] mx-auto tracking-wide;
+    
+    /* Dynamic background shapes to add depth without an image */
+    .cta::before {
+        content: '';
+        @apply absolute -top-24 -left-24 w-96 h-96 bg-[#3ab7bf] opacity-10 rounded-full blur-[100px] pointer-events-none;
     }
+    .cta::after {
+        content: '';
+        @apply absolute -bottom-24 -right-24 w-96 h-96 bg-[#3ab7bf] opacity-10 rounded-full blur-[100px] pointer-events-none;
+    }
+
+    .cta_content {
+        @apply relative z-10 max-w-4xl mx-auto flex flex-col items-center;
+    }
+
+    .cta h2 {
+        @apply text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight;
+    }
+    
     .cta p {
-        @apply text-sm md:text-base text-prime_grey pt-4 pb-10 max-w-[400px] text-center;
+        @apply text-lg md:text-xl text-gray-300 mb-12 max-w-2xl font-medium;
     }
-    .cta .download_btn {
-        @apply bg-[url(/images/btn_bg.png)] bg-cover bg-no-repeat bg-left w-fit flex flex-row justify-center items-center px-8 py-3 text-white text-base tracking-wider rounded-md cursor-pointer;
+
+    .download_btn {
+        @apply bg-[#3ab7bf] text-white px-10 py-5 rounded-2xl font-bold text-xl hover:opacity-90 transition-all shadow-[0_0_40px_rgba(58,183,191,0.3)] active:scale-95;
     }
 </style>
 
-<section class="cta" use:reveal>
-    <h2 class="heading poppins-bold">Take Control of Your Digital Payments</h2>
-    <p class="poppins-medium">Download the Just Buy app, fund your wallet and start paying for airtime, data and bills the smarter way.</p>
-    <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular">
-        <span>Download app</span>
-    </a>
+<section class="cta" id="get-started">
+    <div class="cta_content" use:reveal={{type: 'fadeInUp'}}>
+        <h2 class="poppins-extrabold">Ready to Pay the <br class="hidden sm:block"/>Smarter Way?</h2>
+        <p class="poppins-regular">Join 50,000+ Ghanaians who trust JustBuy for their daily data, airtime, and utility payments.</p>
+        
+        <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-bold">
+            Download App Now
+        </a>
+    </div>
 </section>
