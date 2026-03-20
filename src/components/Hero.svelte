@@ -1,9 +1,13 @@
 <script>
     import { reveal } from "$lib/reveal";
+    import { contentState } from "$lib/state/content.svelte";
     
     let isMuted = $state(true);
     let isPaused = $state(false);
     let videoEl = $state(null);
+
+    // Get the first active video from the shared state
+    let activeVideo = $derived(contentState.videos.find(v => v.active) || contentState.videos[0]);
 
     const toggleMute = () => {
         isMuted = !isMuted;
@@ -84,7 +88,7 @@
     <!-- Background Video -->
     <video
         bind:this={videoEl}
-        src="/demo.mp4"
+        src={activeVideo.url}
         class="bg_video"
         autoplay
         loop

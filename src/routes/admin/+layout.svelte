@@ -12,6 +12,7 @@
         { label: "Transactions", icon: "💸", path: "/admin/transactions" },
         { label: "Services", icon: "⚙️", path: "/admin/services" },
         { label: "Revenue", icon: "📈", path: "/admin/revenue" },
+        { label: "Content", icon: "🎬", path: "/admin/content" },
         { label: "Settings", icon: "🛠️", path: "/admin/settings" },
     ];
 
