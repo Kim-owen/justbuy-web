@@ -16,7 +16,7 @@
 </script>
 
 <style lang="postcss">
-    @reference "../../styles/global.css";
+    @reference "../../../styles/global.css";
 
     .page_header {
         @apply flex items-center justify-between mb-10;

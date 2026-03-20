@@ -24,7 +24,7 @@
 </script>
 
 <style lang="postcss">
-    @reference "../../styles/global.css";
+    @reference "../../../styles/global.css";
 
     .page_header {
         @apply flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10;
