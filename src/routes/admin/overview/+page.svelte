@@ -24,7 +24,7 @@
         @apply flex items-center justify-between mb-10;
     }
     .dashboard_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold tracking-tight;
+        @apply text-3xl font-extrabold text-[#121063] tracking-tight;
     }
 
     .stats_grid {
@@ -56,7 +56,7 @@
 
     .main_table_card { @apply flex-grow bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden; }
     .card_header { @apply p-6 border-b border-gray-50 flex items-center justify-between; }
-    .card_header h3 { @apply text-lg font-bold text-[#121063] poppins-bold; }
+    .card_header h3 { @apply text-lg font-bold text-[#121063]; }
 
     table { @apply w-full text-left; }
     thead { @apply bg-gray-50 text-[10px] uppercase font-black text-gray-400 tracking-widest; }
@@ -78,7 +78,7 @@
 </style>
 
 <div class="dashboard_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1>Dashboard Overview</h1>
+    <h1 class="poppins-extrabold">Dashboard Overview</h1>
     <div class="flex gap-2">
         <button class="bg-[#121063] text-white px-5 py-2.5 rounded-full text-xs font-bold poppins-bold shadow-lg shadow-[#121063]/20">Generate Report</button>
         <button class="bg-white border border-gray-100 px-5 py-2.5 rounded-full text-xs font-bold text-[#121063]">Export Data</button>
@@ -105,7 +105,7 @@
     <!-- Recent Transactions Table -->
     <div class="main_table_card" use:reveal={{type: 'slideInLeft', delay: '0.4s'}}>
         <div class="card_header">
-            <h3>Recent Transactions</h3>
+            <h3 class="poppins-bold">Recent Transactions</h3>
             <button class="text-[#3ab7bf] text-xs font-bold hover:underline">View All</button>
         </div>
         <table>

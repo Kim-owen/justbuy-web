@@ -32,7 +32,7 @@
         @apply text-center mb-10;
     }
     .login_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold mb-2;
+        @apply text-3xl font-extrabold text-[#121063] mb-2;
     }
     .login_header p {
         @apply text-xs font-bold text-gray-400 uppercase tracking-widest;
