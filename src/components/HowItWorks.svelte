@@ -25,7 +25,7 @@
         @apply flex justify-center flex-col gap-6;
     }
     .slide_bg {
-        @apply relative w-full max-w-sm rounded-[3rem] bg-white p-8 flex justify-center items-center shadow-2xl border-[6px] border-white overflow-hidden aspect-[4/5];
+        @apply relative w-full h-full max-w-sm rounded-[3rem] bg-white p-8 flex justify-center items-center shadow-2xl border-[6px] border-white overflow-hidden aspect-[4/5];
     }
     /* Subtle background gradient to make the phone pop */
     .slide_bg::after {

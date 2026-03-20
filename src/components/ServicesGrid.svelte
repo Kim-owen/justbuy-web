@@ -61,7 +61,7 @@
 
     /* Floating UI badges for Kowri glass effect */
     .floating_badge {
-        @apply absolute bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl flex items-center gap-3 border border-gray-100 z-30 floating;
+        @apply absolute bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl flex items-center gap-3 border border-gray-100 z-30;
     }
 </style>
 
@@ -89,14 +89,14 @@
         </div>
         
         <div class="z_image_block" use:reveal={{type: 'zoomIn', delay: '0.2s'}}>
-            <div class="floating_badge top-6 -left-6 sm:-left-12" style="animation-delay: 1.2s;">
+            <div class="floating_badge floating top-6 -left-6 sm:-left-12" style="animation-delay: 1.2s;">
                 <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-xl">💡</div>
                 <div class="text-left hidden sm:block">
                     <p class="text-sm font-extrabold text-[#121063]">ECG Prepaid</p>
                 </div>
             </div>
             
-            <div class="floating_badge bottom-10 -right-6 sm:-right-8 flex flex-row-reverse sm:flex-row" style="animation-delay: 0.5s;">
+            <div class="floating_badge floating bottom-10 -right-6 sm:-right-8 flex flex-row-reverse sm:flex-row" style="animation-delay: 0.5s;">
                 <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center text-xl">📺</div>
                 <div class="text-right sm:text-left hidden sm:block">
                     <p class="text-sm font-extrabold text-[#121063]">DSTV Premium</p>
@@ -132,7 +132,7 @@
         </div>
         
         <div class="z_image_block" use:reveal={{type: 'zoomIn', delay: '0.2s'}}>
-            <div class="floating_badge top-16 -right-6 sm:-right-12 flex flex-row-reverse sm:flex-row" style="animation-delay: 2s;">
+            <div class="floating_badge floating top-16 -right-6 sm:-right-12 flex flex-row-reverse sm:flex-row" style="animation-delay: 2s;">
                 <div class="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center text-xl">📱</div>
                 <div class="text-right sm:text-left hidden sm:block">
                     <p class="text-sm font-extrabold text-[#121063]">10GB Data</p>
