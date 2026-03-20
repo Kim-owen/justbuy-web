@@ -30,7 +30,7 @@
         @apply flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10;
     }
     .page_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold tracking-tight;
+        @apply text-3xl font-extrabold text-[#121063] tracking-tight;
     }
 
     .controls_bar {
@@ -42,7 +42,7 @@
     }
 
     .filter_select {
-        @apply bg-gray-50 border border-gray-100 px-6 py-3 rounded-2xl text-sm font-bold text-[#121063] poppins-bold cursor-pointer outline-none;
+        @apply bg-gray-50 border border-gray-100 px-6 py-3 rounded-2xl text-sm font-bold text-[#121063] cursor-pointer outline-none;
     }
 
     .table_card { @apply bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden; }
@@ -53,7 +53,7 @@
     td { @apply px-8 py-6 text-sm font-medium border-t border-gray-50 text-[#626973] transition-colors hover:bg-gray-50/50; }
 
     .user_info { @apply flex flex-col; }
-    .user_name { @apply text-sm font-black text-[#121063] poppins-black; }
+    .user_name { @apply text-sm font-black text-[#121063]; }
     .user_email { @apply text-[11px] text-gray-400; }
 
     .status_tag { @apply px-3 py-1 rounded-full text-[10px] font-bold; }

@@ -27,7 +27,7 @@
         @apply flex items-center justify-between mb-10;
     }
     .page_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold tracking-tight;
+        @apply text-3xl font-extrabold text-[#121063] tracking-tight;
     }
 
     .service_grid {
@@ -47,12 +47,12 @@
     .status_maintenance { @apply bg-orange-50 text-orange-600; }
     .status_degraded { @apply bg-red-50 text-red-600; }
 
-    .service_title { @apply text-xl font-extrabold text-[#121063] poppins-extrabold; }
-    .service_meta { @apply text-xs text-gray-400 font-bold poppins-bold uppercase tracking-tight flex items-center gap-2; }
+    .service_title { @apply text-xl font-extrabold text-[#121063]; }
+    .service_meta { @apply text-xs text-gray-400 font-bold uppercase tracking-tight flex items-center gap-2; }
 
     .config_row { @apply flex items-center justify-between py-3 border-t border-gray-50 mt-4; }
-    .config_label { @apply text-xs font-bold text-gray-400 poppins-bold; }
-    .config_value { @apply text-sm font-black text-[#121063] poppins-black; }
+    .config_label { @apply text-xs font-bold text-gray-400; }
+    .config_value { @apply text-sm font-black text-[#121063]; }
 
     /* Custom Toggle Switch */
     .switch {
@@ -71,7 +71,7 @@
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
     <div>
-        <h1>Service Control Center</h1>
+        <h1 class="poppins-extrabold">Service Control Center</h1>
         <p class="text-xs text-gray-400 font-bold poppins-bold uppercase tracking-widest mt-1">Live Endpoint Monitoring</p>
     </div>
     <div class="flex gap-2">
@@ -90,8 +90,8 @@
             </div>
 
             <div>
-                <h3 class="service_title">{service.name}</h3>
-                <div class="service_meta">
+                <h3 class="service_title poppins-extrabold">{service.name}</h3>
+                <div class="service_meta poppins-bold">
                     <span>{service.category}</span>
                     <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
                     <span class="flex items-center gap-1">
@@ -105,8 +105,8 @@
 
             <div class="flex flex-col">
                 <div class="config_row">
-                    <span class="config_label">Revenue Comm.</span>
-                    <span class="config_value">{service.commission}</span>
+                    <span class="config_label poppins-bold">Revenue Comm.</span>
+                    <span class="config_value poppins-black">{service.commission}</span>
                 </div>
                 <div class="config_row">
                     <span class="config_label poppins-bold">Service Endpoint</span>

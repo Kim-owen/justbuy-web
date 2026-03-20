@@ -22,7 +22,7 @@
         @apply flex items-center justify-between mb-10;
     }
     .page_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold tracking-tight;
+        @apply text-3xl font-extrabold text-[#121063] tracking-tight;
     }
 
     .revenue_grid {
@@ -36,8 +36,8 @@
     .rev_card.red { @apply bg-red-600; }
     .rev_card.green { @apply bg-green-600; }
 
-    .rev_card .label { @apply text-[10px] font-bold text-white/60 uppercase tracking-widest mb-2 poppins-bold; }
-    .rev_card .value { @apply text-2xl font-black poppins-black; }
+    .rev_card .label { @apply text-[10px] font-bold text-white/60 uppercase tracking-widest mb-2; }
+    .rev_card .value { @apply text-2xl font-black; }
 
     .blob {
         @apply absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-[20px];
@@ -52,7 +52,7 @@
     }
 
     .forecast_header { @apply flex items-center justify-between; }
-    .forecast_header h3 { @apply text-2xl font-extrabold text-[#121063] poppins-extrabold; }
+    .forecast_header h3 { @apply text-2xl font-extrabold text-[#121063]; }
 
     .chart_placeholder {
         @apply flex-grow w-full min-h-[300px] border-b-2 border-l-2 border-gray-50 flex items-end justify-around px-8 pb-4 relative;
@@ -75,13 +75,13 @@
 
     .insight_row { @apply flex flex-col gap-4 py-8 border-b border-white/5; }
     .insight_row:last-child { @apply border-none; }
-    .insight_row .month { @apply text-xl font-bold poppins-bold; }
-    .insight_row .stats { @apply flex items-center justify-between text-xs font-bold text-white/50 poppins-bold uppercase; }
+    .insight_row .month { @apply text-xl font-bold; }
+    .insight_row .stats { @apply flex items-center justify-between text-xs font-bold text-white/50 uppercase; }
     .insight_row .growth { @apply text-teal-400 font-black; }
 </style>
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1>Financial Insights</h1>
+    <h1 class="poppins-extrabold">Financial Insights</h1>
     <div class="flex gap-2">
         <button class="bg-[#121063] text-white px-8 py-4 rounded-2xl text-sm font-bold poppins-bold shadow-xl shadow-[#121063]/20 hover:scale-105 transition-all">Download P&L Statement</button>
     </div>
@@ -137,8 +137,8 @@
         <div class="flex flex-col">
             {#each monthlyData as data}
                 <div class="insight_row">
-                    <span class="month">{data.month}</span>
-                    <div class="stats">
+                    <span class="month poppins-bold">{data.month}</span>
+                    <div class="stats poppins-bold">
                         <span>Volume: {data.volume}</span>
                         <span class="growth">{data.growth} growth</span>
                     </div>

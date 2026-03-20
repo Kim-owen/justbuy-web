@@ -29,7 +29,7 @@
         @apply flex items-center justify-between mb-10;
     }
     .page_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold tracking-tight;
+        @apply text-3xl font-extrabold text-[#121063] tracking-tight;
     }
 
     .tabs_bar {
@@ -59,8 +59,8 @@
     td { @apply px-8 py-6 text-sm font-medium border-t border-gray-50; }
 
     .tx_id { @apply text-xs font-black text-[#121063] bg-[#f8fafc] px-3 py-1 rounded-lg border border-gray-100; }
-    .tx_user { @apply font-bold text-[#121063] poppins-bold; }
-    .tx_amt { @apply text-lg font-black text-[#121063] poppins-black; }
+    .tx_user { @apply font-bold text-[#121063]; }
+    .tx_amt { @apply text-lg font-black text-[#121063]; }
     .tx_comm { @apply text-[10px] text-teal-500 font-bold block mt-1; }
 
     .status_badge { @apply px-3 py-1 rounded-full text-[10px] font-bold; }
@@ -77,7 +77,7 @@
 </style>
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1>Global Transactions</h1>
+    <h1 class="poppins-extrabold">Global Transactions</h1>
     <div class="flex gap-2">
         <button class="bg-[#121063] text-white px-6 py-3 rounded-2xl text-xs font-bold poppins-bold shadow-lg shadow-[#121063]/20 flex items-center gap-2">
             📊 Reconciliation

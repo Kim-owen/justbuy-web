@@ -20,7 +20,7 @@
         @apply flex items-center justify-between mb-10;
     }
     .page_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold tracking-tight;
+        @apply text-3xl font-extrabold text-[#121063] tracking-tight;
     }
 
     .settings_container {
@@ -32,13 +32,13 @@
     }
 
     .section_info { @apply w-full md:w-1/3 flex flex-col gap-2; }
-    .section_info h3 { @apply text-xl font-extrabold text-[#121063] poppins-extrabold; }
-    .section_info p { @apply text-xs text-gray-400 font-bold poppins-bold leading-relaxed uppercase tracking-tight; }
+    .section_info h3 { @apply text-xl font-extrabold text-[#121063]; }
+    .section_info p { @apply text-xs text-gray-400 font-bold leading-relaxed uppercase tracking-tight; }
 
     .section_controls { @apply flex-grow flex flex-col gap-6; }
 
     .input_field {
-        @apply bg-gray-50 border border-gray-100 px-6 py-4 rounded-2xl text-sm font-bold text-[#121063] poppins-bold w-full focus:outline-none focus:border-[#3ab7bf] transition-all;
+        @apply bg-gray-50 border border-gray-100 px-6 py-4 rounded-2xl text-sm font-bold text-[#121063] w-full focus:outline-none focus:border-[#3ab7bf] transition-all;
     }
 
     .card_toggle {
@@ -61,15 +61,15 @@
 </style>
 
 <div class="page_header" use:reveal={{type: 'fadeInDown'}}>
-    <h1>Superadmin Settings</h1>
+    <h1 class="poppins-extrabold">Superadmin Settings</h1>
 </div>
 
 <div class="settings_container">
     <!-- Profile Settings -->
     <div class="settings_section" use:reveal={{type: 'fadeInUp'}}>
         <div class="section_info">
-            <h3>Admin Identity</h3>
-            <p>Update your personal information and profile display settings.</p>
+            <h3 class="poppins-extrabold">Admin Identity</h3>
+            <p class="poppins-bold">Update your personal information and profile display settings.</p>
         </div>
         <div class="section_controls">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -84,8 +84,8 @@
     <!-- Global Controls -->
     <div class="settings_section" use:reveal={{type: 'fadeInUp', delay: '0.1s'}}>
         <div class="section_info">
-            <h3>Infrastructure</h3>
-            <p>Control global system states and emergency shutdown protocols.</p>
+            <h3 class="poppins-extrabold">Infrastructure</h3>
+            <p class="poppins-bold">Control global system states and emergency shutdown protocols.</p>
         </div>
         <div class="section_controls">
             <div class="card_toggle">
@@ -116,8 +116,8 @@
     {#each settingsGroups as group, i}
         <div class="settings_section" use:reveal={{type: 'fadeInUp', delay: `${0.2 + (i * 0.1)}s`}}>
             <div class="section_info">
-                <h3>{group.title}</h3>
-                <p>{group.desc}</p>
+                <h3 class="poppins-extrabold">{group.title}</h3>
+                <p class="poppins-bold">{group.desc}</p>
             </div>
             <div class="section_controls">
                 <div class="p-10 border-2 border-dashed border-gray-100 rounded-[2rem] flex flex-col items-center justify-center gap-4 text-center">
