@@ -1,168 +1,135 @@
 <script>
     import { reveal } from "$lib/reveal";
+    
     let isMuted = $state(true);
+    let isPaused = $state(false);
     let videoEl = $state(null);
 
     const toggleMute = () => {
         isMuted = !isMuted;
         if (videoEl) videoEl.muted = isMuted;
     };
+
+    const togglePlay = () => {
+        if (!videoEl) return;
+        if (isPaused) {
+            videoEl.play();
+        } else {
+            videoEl.pause();
+        }
+        isPaused = !isPaused;
+    }
 </script>
 
 <style lang="postcss">
     @reference "../styles/global.css";
 
-    .hero_section_main {
-        @apply bg-[url(/images/bg.png)] bg-fixed bg-cover bg-no-repeat bg-center min-h-dvh h-auto w-full flex flex-col md:flex-row px-4 sm:px-6 md:px-8 pt-20 md:pt-0 pb-8 md:pb-0;
-    }
-    .hero_section_main .left_col, .hero_section_main .right_col {
-        @apply h-full w-full md:w-1/2 flex flex-col px-0 md:px-16;
-    }
-    .hero_section_main .right_col {
-        @apply justify-center md:justify-end items-center md:items-start pt-6 md:pt-0;
-    }
-    .hero_section_main .left_col {
-        @apply justify-center items-center md:items-start text-center md:text-left;
-    }
-    .hero_section_main .left_col h2 {
-        @apply text-3xl sm:text-4xl md:text-7xl text-heading_prime tracking-wide md:leading-tight;
-    }
-    .hero_section_main .left_col h2 span {
-        @apply text-heading_highlight;
-    }
-    .hero_section_main .left_col p {
-        @apply text-sm sm:text-base text-heading_grey pt-3 pb-6 md:pb-10 pr-0 md:pr-32;
-    }
-    .hero_section_main .left_col .download_btn {
-        @apply bg-[url(/images/btn_bg.png)] bg-cover bg-no-repeat bg-left w-fit flex flex-row justify-center items-center px-6 sm:px-8 py-3 sm:py-3.5 text-white text-sm sm:text-base tracking-wider rounded-xl cursor-pointer;
-    }
-    .hero_section_main .right_col .hero_img {
-        @apply w-full max-w-[280px] sm:max-w-[350px] md:max-w-[500px] h-auto relative z-10;
+    .hero_fullscreen {
+        @apply relative w-full h-dvh min-h-[600px] flex items-center justify-center overflow-hidden;
     }
 
-    .hero_phone_frame {
-        @apply relative rounded-[2.5rem] overflow-hidden shadow-2xl;
-        background: #1a1a2e;
-        padding: 10px;
-        border: 3px solid rgba(255, 255, 255, 0.15);
-        width: 240px;
-        max-width: 70vw;
-    }
-    @media (min-width: 640px) {
-        .hero_phone_frame { width: 260px; }
-    }
-    @media (min-width: 768px) {
-        .hero_phone_frame { width: 280px; }
-    }
-    .hero_phone_notch {
-        @apply absolute top-0 left-1/2 -translate-x-1/2 z-20 rounded-b-2xl;
-        width: 100px;
-        height: 20px;
-        background: #1a1a2e;
-    }
-    .hero_video_wrap {
-        @apply relative w-full rounded-[2rem] overflow-hidden;
-        aspect-ratio: 9/19.5;
-        background: #000;
-    }
-    .hero_video_wrap video {
-        @apply w-full h-full object-cover;
+    .bg_video {
+        @apply absolute inset-0 w-full h-full object-cover z-0;
+        /* If the video is portrait, object-cover will center crop it. Good for mobile video. */
     }
 
-    .mute_btn {
-        @apply absolute bottom-3 right-3 z-20 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 active:scale-90;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        -webkit-tap-highlight-color: transparent;
-    }
-    .mute_btn svg {
-        @apply w-4 h-4 text-white;
+    /* Dark overlay to make text pop effortlessly */
+    .overlay {
+        @apply absolute inset-0 z-10 pointer-events-none;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(18,16,99,0.85) 100%);
     }
 
-    .trust_badge {
-        @apply inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold text-heading_secondary mb-4 sm:mb-6 shadow-sm shadow-black/5 relative z-20;
-        animation: pulseGlow 2s infinite;
+    .content {
+        @apply relative z-20 flex flex-col items-center text-center px-4 max-w-4xl mx-auto pt-16 mt-10;
+    }
+
+    h1 {
+        @apply text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-4 drop-shadow-xl;
     }
     
-    .live_dot {
-        @apply w-2 h-2 rounded-full bg-green-500 relative;
-    }
-    .live_dot::after {
-        content: '';
-        @apply absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75;
+    h1 .highlight {
+        @apply text-[#3ab7bf]; /* JustBuy Teal/Green */
     }
 
-    .stats_container {
-        @apply flex gap-4 sm:gap-6 md:gap-10 mt-8 sm:mt-12 overflow-hidden;
+    p {
+        @apply text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl font-medium drop-shadow-md leading-relaxed;
     }
-    .stat_item {
-        @apply flex flex-col;
+
+    .btn_group {
+        @apply flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full sm:w-auto;
     }
-    .stat_value {
-        @apply text-xl sm:text-2xl md:text-3xl font-extrabold text-heading_prime mb-0.5 sm:mb-1;
+
+    .btn_primary {
+        @apply bg-[#3ab7bf] text-white px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg w-full sm:w-auto text-center border-2 border-[#3ab7bf];
     }
-    .stat_label {
-        @apply text-[10px] sm:text-xs md:text-sm text-heading_grey font-medium uppercase tracking-wider;
+
+    .btn_outline {
+        @apply bg-transparent border-2 border-gray-400 text-gray-200 px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-lg hover:border-[#3ab7bf] hover:text-[#3ab7bf] hover:bg-[#3ab7bf]/10 transition backdrop-blur-sm w-full sm:w-auto text-center;
+    }
+
+    .controls {
+        @apply absolute bottom-6 right-6 z-30 flex gap-3;
+    }
+
+    .control_btn {
+        @apply w-12 h-12 rounded-full flex justify-center items-center bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/20 transition cursor-pointer shadow-lg;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .control_btn svg {
+        @apply w-5 h-5;
     }
 </style>
 
-<section id="hero" class="hero_section_main overflow-hidden relative">
-    <div class="blob pulse-glow absolute -top-40 -left-40 w-96 h-96 bg-heading_highlight opacity-10 rounded-full blur-[100px] z-0 pointer-events-none"></div>
-    <div class="left_col relative z-10" use:reveal={{type: 'slideInLeft', duration: '1s'}}>
-        <div class="trust_badge" use:reveal={{type: 'fadeInDown', delay: '0.2s'}}>
-            <div class="live_dot"></div>
-            <span>Systems 100% Operational & Licensed</span>
-        </div>
-        <h2 class="main_heading poppins-extrabold">Buy Airtime, Data and TV<br class="hidden md:block"/>
-        <span class="main_heading poppins-extrabold">Subscriptions in Seconds</span>
-        </h2>
-        <p class="poppins-medium text-lg">Top up MTN, Telecel, AirtelTigo and pay for DSTV and GOtv subscriptions instantly with one simple app.</p>
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn poppins-regular shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
-                <span>Download app</span>
+<section id="hero" class="hero_fullscreen">
+    <!-- Background Video -->
+    <video
+        bind:this={videoEl}
+        src="/demo.mp4"
+        class="bg_video"
+        autoplay
+        loop
+        muted
+        playsinline
+    ></video>
+
+    <!-- Dark Gradient Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Centered Content block (similar to the reference image) -->
+    <div class="content" use:reveal={{type: 'fadeInUp'}}>
+        <h1 class="poppins-extrabold">
+            All Your <span class="highlight">Payments</span><br/> One App
+        </h1>
+        <p class="poppins-regular">
+            Simplify airtime, data bundles, and utility bill payments with Ghana's fastest financial platform.
+        </p>
+
+        <div class="btn_group">
+            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="btn_primary poppins-semibold">
+                Get the App
             </a>
-            <a href="#how-it-works" class="bg-white border-2 border-heading_prime text-heading_prime flex flex-row justify-center items-center px-6 sm:px-8 py-3 text-sm sm:text-base tracking-wider rounded-xl cursor-pointer hover:bg-heading_prime hover:text-white transition-all duration-300 poppins-bold active:scale-95">
-                See How
+            <a href="/corporate" class="btn_outline poppins-semibold">
+                For Business
             </a>
-        </div>
-        
-        <div class="stats_container poppins-regular">
-            <div class="stat_item" use:reveal={{type: 'fadeInUp', delay: '0.4s'}}>
-                <span class="stat_value">50k+</span>
-                <span class="stat_label">Active Users</span>
-            </div>
-            <div class="stat_item" use:reveal={{type: 'fadeInUp', delay: '0.6s'}}>
-                <span class="stat_value">99.9%</span>
-                <span class="stat_label">Success Rate</span>
-            </div>
-            <div class="stat_item" use:reveal={{type: 'fadeInUp', delay: '0.8s'}}>
-                <span class="stat_value">24/7</span>
-                <span class="stat_label">Support</span>
-            </div>
         </div>
     </div>
-    <div class="right_col" use:reveal={{type: 'slideInRight', duration: '1s'}}>
-        <div class="hero_phone_frame floating">
-            <div class="hero_phone_notch"></div>
-            <div class="hero_video_wrap">
-                <video
-                    bind:this={videoEl}
-                    src="/demo.mp4"
-                    autoplay
-                    playsinline
-                    muted
-                    loop
-                    preload="metadata"
-                ></video>
-                <button class="mute_btn" onclick={toggleMute} aria-label="Toggle audio">
-                    {#if isMuted}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-                    {:else}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                    {/if}
-                </button>
-            </div>
-        </div>
+
+    <!-- Video Audio and Playback Controls (bottom right) -->
+    <div class="controls">
+        <button class="control_btn" aria-label="Toggle Mute" onclick={toggleMute}>
+            {#if isMuted}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+            {:else}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            {/if}
+        </button>
+
+        <button class="control_btn" aria-label="Toggle Play" onclick={togglePlay}>
+            {#if isPaused}
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            {:else}
+                <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            {/if}
+        </button>
     </div>
 </section>
