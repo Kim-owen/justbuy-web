@@ -1,22 +1,9 @@
 <script>
     import { reveal } from "$lib/reveal";
+    import { adminState } from "$lib/state/admin.svelte";
     
-    let services = $state([
-        { id: "S-01", name: "MTN Airtime", category: "Airtime", status: "Active", commission: "3.5%", load: "Low" },
-        { id: "S-02", name: "MTN Data", category: "Data", status: "Active", commission: "5.0%", load: "High" },
-        { id: "S-03", name: "Telecel Airtime", category: "Airtime", status: "Active", commission: "4.0%", load: "Medium" },
-        { id: "S-04", name: "Telecel Data", category: "Data", status: "Active", commission: "6.0%", load: "Low" },
-        { id: "S-05", name: "AirtelTigo Airtime", category: "Airtime", status: "Active", commission: "4.5%", load: "Medium" },
-        { id: "S-06", name: "AirtelTigo Data", category: "Data", status: "Degraded", commission: "7.0%", load: "Critical" },
-        { id: "S-07", name: "ECG Postpaid", category: "Utility", status: "Active", commission: "₵1.00", load: "Low" },
-        { id: "S-08", name: "GWCL Water", category: "Utility", status: "Maintenance", commission: "₵1.50", load: "N/A" },
-    ]);
-
     const toggleStatus = (id) => {
-        const s = services.find(x => x.id === id);
-        if (s) {
-            s.status = s.status === "Active" ? "Maintenance" : "Active";
-        }
+        adminState.toggleService(id);
     }
 </script>
 
@@ -80,11 +67,11 @@
 </div>
 
 <div class="service_grid">
-    {#each services as service, i}
+    {#each adminState.services as service, i}
         <div class="service_card" use:reveal={{type: 'fadeInUp', delay: `${i * 0.1}s`}}>
             <div class="flex justify-between items-start">
                 <div class="service_icon">
-                    {#if service.category === 'Airtime'}📱{:else if service.category === 'Data'}🛜{:else}⚡{/if}
+                    {#if service.category.includes('Airtime')}📱{:else if service.category.includes('Data')}🛜{:else}⚡{/if}
                 </div>
                 <span class="status_label status_{service.status.toLowerCase()}">{service.status}</span>
             </div>
@@ -111,7 +98,7 @@
                 <div class="config_row">
                     <span class="config_label poppins-bold">Service Endpoint</span>
                     <label class="switch">
-                        <input type="checkbox" checked={service.status === "Active"} onchange={() => toggleStatus(service.id)} />
+                        <input type="checkbox" checked={service.active} onchange={() => toggleStatus(service.id)} />
                         <span class="slider"></span>
                     </label>
                 </div>

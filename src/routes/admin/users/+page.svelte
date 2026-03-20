@@ -1,21 +1,17 @@
 <script>
     import { reveal } from "$lib/reveal";
+    import { adminState } from "$lib/state/admin.svelte";
     
     let searchQuery = $state("");
     let filterStatus = $state("All");
 
-    let users = $state([
-        { id: "USR-001", name: "John Doe", email: "john@example.com", phone: "+233 24 123 4567", status: "Active", joined: "Jan 12, 2026", balance: "₵1,250.00" },
-        { id: "USR-002", name: "Jane Smith", email: "jane@example.com", phone: "+233 50 987 6543", status: "Active", joined: "Feb 05, 2026", balance: "₵430.50" },
-        { id: "USR-003", name: "Kofi Annan", email: "kofi@example.com", phone: "+233 27 555 0199", status: "Banned", joined: "Feb 20, 2026", balance: "₵5.00" },
-        { id: "USR-004", name: "Ama Serwaa", email: "ama@example.com", phone: "+233 24 000 1111", status: "Pending", joined: "Mar 01, 2026", balance: "₵0.00" },
-        { id: "USR-005", name: "Kwame Nkrumah", email: "kwame@example.com", phone: "+233 55 222 3333", status: "Active", joined: "Mar 15, 2026", balance: "₵8,900.20" },
-        { id: "USR-001", name: "John Doe", email: "john@example.com", phone: "+233 24 123 4567", status: "Active", joined: "Jan 12, 2026", balance: "₵1,250.00" },
-        { id: "USR-002", name: "Jane Smith", email: "jane@example.com", phone: "+233 50 987 6543", status: "Active", joined: "Feb 05, 2026", balance: "₵430.50" },
-    ]);
+    const toggleBan = (id, currentStatus) => {
+        const nextStatus = currentStatus === 'Banned' ? 'Active' : 'Banned';
+        adminState.updateUserStatus(id, nextStatus);
+    };
 
     const filteredUsers = $derived(
-        users.filter(u => {
+        adminState.users.filter(u => {
             const matchesSearch = u.name.toLowerCase().includes(searchQuery.toLowerCase()) || u.email.toLowerCase().includes(searchQuery.toLowerCase());
             const matchesStatus = filterStatus === "All" || u.status === filterStatus;
             return matchesSearch && matchesStatus;
@@ -106,12 +102,12 @@
                 <tr use:reveal={{type: 'fadeIn', delay: `${i * 0.05}s`}}>
                     <td>
                         <div class="user_info">
-                            <span class="user_name">{user.name}</span>
+                            <span class="user_name">{user.avatar} {user.name}</span>
                             <span class="user_email poppins-medium">{user.email}</span>
                         </div>
                     </td>
-                    <td class="poppins-bold text-[#121063]">{user.phone}</td>
-                    <td class="font-black text-[#121063]">{user.balance}</td>
+                    <td class="poppins-bold text-[#121063]">+233 ** *** ****</td>
+                    <td class="font-black text-[#121063]">₵0.00</td>
                     <td class="text-xs text-gray-400">{user.joined}</td>
                     <td>
                         <span class="status_tag status_{user.status.toLowerCase()}">{user.status}</span>
@@ -124,8 +120,14 @@
                             <button class="action_btn" title="Edit User">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                             </button>
-                            <button class="action_btn text-red-400 hover:text-red-600" title="Ban User">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                            <button class="action_btn {user.status === 'Banned' ? 'text-[#3ab7bf]' : 'text-red-400 hover:text-red-600'}" 
+                                    title={user.status === 'Banned' ? 'Activate User' : 'Ban User'}
+                                    onclick={() => toggleBan(user.id, user.status)}>
+                                {#if user.status === 'Banned'}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                {:else}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                                {/if}
                             </button>
                         </div>
                     </td>

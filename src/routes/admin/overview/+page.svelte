@@ -1,20 +1,16 @@
 <script>
     import { reveal } from "$lib/reveal";
+    import { adminState } from "$lib/state/admin.svelte";
     
-    let stats = $state([
-        { title: "Total Revenue", value: "₵1,240,500", trend: "+12.5%", color: "teal", icon: "💰" },
-        { title: "Active Users", value: "52,430", trend: "+8.2%", color: "blue", icon: "👥" },
+    let stats = $derived([
+        { title: "Total Revenue", value: adminState.revenueStats.totalVolume, trend: adminState.revenueStats.growthRate, color: "teal", icon: "💰" },
+        { title: "Active Users", value: adminState.revenueStats.activeUsers, trend: "+8.2%", color: "blue", icon: "👥" },
         { title: "Success Rate", value: "99.9%", trend: "0.0%", color: "green", icon: "⚡" },
-        { title: "Pending Tickets", value: "14", trend: "-5", color: "orange", icon: "🎟️" },
+        { title: "Banned Users", value: adminState.bannedUsersCount, trend: "-5", color: "orange", icon: "🚫" },
     ]);
 
-    let recentTransactions = $state([
-        { id: "#TRX-9842", user: "John Doe", type: "MTN Data", amount: "₵100.00", status: "Success", time: "2 mins ago" },
-        { id: "#TRX-9841", user: "Jane Smith", type: "ECG Bill", amount: "₵500.00", status: "Success", time: "5 mins ago" },
-        { id: "#TRX-9840", user: "Kofi Annan", type: "Telecel Airtime", amount: "₵20.00", status: "Pending", time: "12 mins ago" },
-        { id: "#TRX-9839", user: "Ama Serwaa", type: "DSTV Premium", amount: "₵450.00", status: "Failed", time: "25 mins ago" },
-        { id: "#TRX-9838", user: "Kwame Nkrumah", type: "MTN Data", amount: "₵50.00", status: "Success", time: "45 mins ago" },
-    ]);
+    // Use common transactions from the state
+    let recentTransactions = $derived(adminState.transactions);
 </script>
 
 <style lang="postcss">
@@ -129,7 +125,7 @@
                         <td>
                             <span class="status_badge status_{trx.status.toLowerCase()}">{trx.status}</span>
                         </td>
-                        <td class="text-[10px] text-gray-400">{trx.time}</td>
+                        <td class="text-[10px] text-gray-400">{trx.date}</td>
                     </tr>
                 {/each}
             </tbody>

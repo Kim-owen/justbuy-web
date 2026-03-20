@@ -1,20 +1,12 @@
 <script>
     import { reveal } from "$lib/reveal";
+    import { adminState } from "$lib/state/admin.svelte";
     
     let activeTab = $state("All");
     let searchId = $state("");
 
-    const transactions = $state([
-        { id: "JBTX492042", user: "John Doe", type: "MTN Data", amount: "₵50.00", comm: "₵0.50", status: "Success", time: "2026-03-20 10:45", network: "MTN" },
-        { id: "JBTX492041", user: "Jane Smith", type: "ECG Prepaid", amount: "₵200.00", comm: "₵2.00", status: "Success", time: "2026-03-20 10:42", network: "Utility" },
-        { id: "JBTX492040", user: "Kofi Annan", type: "Telecel Airtime", amount: "₵10.00", comm: "₵0.10", status: "Pending", time: "2026-03-20 10:40", network: "Telecel" },
-        { id: "JBTX492039", user: "Ama Serwaa", type: "DSTV Premium", amount: "₵450.00", comm: "₵4.50", status: "Failed", time: "2026-03-20 10:35", network: "Bill" },
-        { id: "JBTX492038", user: "Kwame Nkrumah", type: "AirtelTigo Data", amount: "₵25.00", comm: "₵0.25", status: "Success", time: "2026-03-20 10:30", network: "AirtelTigo" },
-        { id: "JBTX492037", user: "Manfred Kwami", type: "MTN Airtime", amount: "₵5.00", comm: "₵0.05", status: "Success", time: "2026-03-20 10:25", network: "MTN" },
-    ]);
-
     const filteredTransactions = $derived(
-        transactions.filter(t => {
+        adminState.transactions.filter(t => {
             const matchesSearch = t.id.toLowerCase().includes(searchId.toLowerCase()) || t.user.toLowerCase().includes(searchId.toLowerCase());
             const matchesTab = activeTab === "All" || t.status === activeTab;
             return matchesSearch && matchesTab;
@@ -133,13 +125,13 @@
                     </td>
                     <td>
                         <span class="tx_amt">{tx.amount}</span>
-                        <span class="tx_comm">+{tx.comm} Revenue</span>
+                        <span class="tx_comm">+{tx.commission} Revenue</span>
                     </td>
                     <td>
                         <span class="status_badge status_{tx.status.toLowerCase()}">{tx.status}</span>
                     </td>
                     <td>
-                        <span class="text-xs text-gray-400">{tx.time}</span>
+                        <span class="text-xs text-gray-400">{tx.date}</span>
                     </td>
                 </tr>
             {/each}

@@ -1,6 +1,6 @@
 <script>
     import { reveal } from "$lib/reveal";
-    import { contentState } from "$lib/state/content.svelte";
+    import { adminState } from "$lib/state/admin.svelte";
     
     let newVideoUrl = $state("");
     let newVideoLabel = $state("");
@@ -9,9 +9,17 @@
     let newReviewComment = $state("");
     let newReviewLocation = $state("");
 
+    // Get the first active video from the shared state
+    let activeVideo = $derived(adminState.videos.find(v => v.active) || adminState.videos[0]);
+
+    // Computed total average rating
+    let avgRating = $derived(
+        (adminState.reviews.reduce((acc, r) => acc + r.rating, 0) / adminState.reviews.length).toFixed(1)
+    );
+
     const addVideo = () => {
         if (newVideoUrl && newVideoLabel) {
-            contentState.addVideo(newVideoLabel, newVideoUrl);
+            adminState.addVideo(newVideoLabel, newVideoUrl);
             newVideoUrl = "";
             newVideoLabel = "";
         }
@@ -19,7 +27,7 @@
 
     const addReview = () => {
         if (newReviewName && newReviewComment) {
-            contentState.addReview(newReviewName, newReviewComment, 5, newReviewLocation || 'Ghana');
+            adminState.addReview(newReviewName, newReviewComment, 5, newReviewLocation || 'Ghana');
             newReviewName = "";
             newReviewComment = "";
             newReviewLocation = "";
@@ -61,7 +69,7 @@
 
         <div class="flex flex-col gap-4 mt-6">
             <span class="text-xs font-bold text-gray-400 uppercase tracking-widest poppins-bold">Stored Assets</span>
-            {#each contentState.videos as video}
+            {#each adminState.videos as video}
                 <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 transition-all hover:bg-white hover:shadow-md">
                     <div class="flex items-center gap-4">
                         <div class="w-2 h-2 rounded-full {video.active ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]' : 'bg-gray-300'}"></div>
@@ -71,7 +79,7 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button class="text-xs font-bold {video.active ? 'text-green-500' : 'text-gray-400'} poppins-bold hover:underline" onclick={() => contentState.toggleVideoStatus(video.id)}>
+                        <button class="text-xs font-bold {video.active ? 'text-green-500' : 'text-gray-400'} poppins-bold hover:underline" onclick={() => adminState.toggleVideoStatus(video.id)}>
                             {video.active ? 'Active' : 'Draft'}
                         </button>
                     </div>
@@ -107,7 +115,7 @@
 
         <div class="flex flex-col gap-4 mt-6">
             <span class="text-xs font-bold text-gray-400 uppercase tracking-widest poppins-bold">Recent Reviews</span>
-            {#each contentState.reviews as review}
+            {#each adminState.reviews as review}
                 <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 transition-all hover:bg-white hover:shadow-md">
                     <div class="flex flex-col">
                         <p class="text-sm font-black text-[#121063] poppins-black">{review.user}</p>

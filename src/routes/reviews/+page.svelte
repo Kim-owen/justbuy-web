@@ -1,6 +1,6 @@
 <script>
     import { reveal } from "$lib/reveal";
-    import { contentState } from "$lib/state/content.svelte";
+    import { adminState } from "$lib/state/admin.svelte";
     import Header from "../../components/Header.svelte";
     import Footer from "../../components/Footer.svelte";
     import CTA from "../../components/CTA..svelte";
@@ -43,7 +43,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-7xl mx-auto mb-20">
-        {#each contentState.reviews as review, i}
+        {#each adminState.reviews as review, i}
             <div class="bg-gray-50 rounded-[2.5rem] p-10 flex flex-col gap-6 relative transition-all hover:bg-white hover:shadow-2xl hover:scale-105 border border-transparent hover:border-gray-100" use:reveal={{type: 'fadeInUp', delay: `${i * 0.1}s`}}>
                 <div class="absolute top-8 right-8 text-6xl text-gray-200/50 pointer-events-none poppins-black">“</div>
                 <div class="flex gap-1 text-[#3ab7bf]">

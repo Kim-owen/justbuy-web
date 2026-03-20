@@ -1,17 +1,18 @@
 <script>
     import { reveal } from "$lib/reveal";
+    import { adminState } from "$lib/state/admin.svelte";
     
-    let stats = $state([
-        { label: "Gross Volume", value: "₵1,240,500.00", color: "blue" },
-        { label: "Net Commission", value: "₵62,025.00", color: "teal" },
+    let stats = $derived([
+        { label: "Gross Volume", value: adminState.revenueStats.totalVolume, color: "blue" },
+        { label: "Net Platform Fees", value: adminState.revenueStats.platformFee, color: "teal" },
         { label: "Gateway Fees", value: "₵12,405.00", color: "red" },
-        { label: "Total Profit", value: "₵49,620.00", color: "green" },
+        { label: "Total Profit", value: "₵49,845.00", color: "green" },
     ]);
 
     let monthlyData = $state([
         { month: "January", volume: "₵850k", growth: "+15%" },
         { month: "February", volume: "₵1.1M", growth: "+30%" },
-        { month: "March", volume: "₵1.24M", growth: "+12%" },
+        { month: "March", volume: "₵1.24M", growth: adminState.revenueStats.growthRate },
     ]);
 </script>
 

@@ -1,13 +1,13 @@
 <script>
     import { reveal } from "$lib/reveal";
-    import { contentState } from "$lib/state/content.svelte";
+    import { adminState } from "$lib/state/admin.svelte";
     
     let isMuted = $state(true);
     let isPaused = $state(false);
     let videoEl = $state(null);
 
     // Get the first active video from the shared state
-    let activeVideo = $derived(contentState.videos.find(v => v.active) || contentState.videos[0]);
+    let activeVideo = $derived(adminState.videos.find(v => v.active) || adminState.videos[0]);
 
     const toggleMute = () => {
         isMuted = !isMuted;
