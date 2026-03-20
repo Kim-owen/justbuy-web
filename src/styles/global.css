@@ -12,10 +12,31 @@
   --color-prime_grey: #1c2819;
   --color-inactive_grey: #888888;
 
-  /* Font Family */
+  /* Font Families - Migrated from tailwind.config.js */
   --font-poppins: "Poppins", sans-serif;
   --font-rethink: "Rethink Sans", sans-serif;
+  --font-africa: "Africa";
+  --font-ariadne: "Ariadne";
+  --font-vivaldi: "Vivaldi";
+  --font-delap: "Delap";
+  --font-credit: "Kredit";
+  --font-montserrat: "Montserrat";
 }
+
+/* Custom Utilities */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom Font Utilities for v4 Compatibility */
+@utility poppins-extrabold { @apply font-poppins font-extrabold; }
+@utility poppins-black { @apply font-poppins font-black; }
+@utility poppins-bold { @apply font-poppins font-bold; }
+@utility poppins-medium { @apply font-poppins font-medium; }
+@utility poppins-semibold { @apply font-poppins font-semibold; }
 
 @layer base {
     html, body {

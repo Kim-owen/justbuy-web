@@ -7,7 +7,9 @@ export const adminState = $state({
         { id: 'usr-003', name: 'John Doe', email: 'j.doe@example.com', status: 'Banned', joined: '2026-02-28', avatar: '👤' },
         { id: 'usr-004', name: 'Efua Mensah', email: 'efua.m@outlook.com', status: 'Active', joined: '2026-03-05', avatar: '👩‍🎨' },
     ],
-    bannedUsersCount: $derived(this.users.filter(u => u.status === 'Banned').length),
+    get bannedUsersCount() {
+        return this.users.filter(u => u.status === 'Banned').length;
+    },
 
     updateUserStatus(id, newStatus) {
         const u = this.users.find(u => u.id === id);
