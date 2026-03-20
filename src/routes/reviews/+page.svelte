@@ -23,19 +23,19 @@
     }
 
     .hero_section h1 {
-        @apply text-5xl md:text-7xl font-extrabold text-[#121063] poppins-extrabold tracking-tight mb-6;
+        @apply text-5xl md:text-7xl font-extrabold text-[#121063] tracking-tight mb-6;
     }
 
     .hero_section p {
-        @apply text-lg text-gray-400 font-medium max-w-2xl mx-auto poppins-regular;
+        @apply text-lg text-gray-400 font-medium max-w-2xl mx-auto;
     }
 
     .stats_bar {
         @apply flex items-center justify-center gap-12 mt-10;
     }
     .stat_item { @apply flex flex-col items-center; }
-    .stat_value { @apply text-4xl font-black text-[#121063] poppins-black; }
-    .stat_label { @apply text-[10px] uppercase font-black tracking-widest text-[#3ab7bf] mt-1 poppins-black; }
+    .stat_value { @apply text-4xl font-black text-[#121063]; }
+    .stat_label { @apply text-[10px] uppercase font-black tracking-widest text-[#3ab7bf] mt-1; }
 
     .review_grid {
         @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-7xl mx-auto mb-20;
@@ -46,19 +46,19 @@
     }
 
     .quote_icon {
-        @apply absolute top-8 right-8 text-6xl text-gray-200/50 pointer-events-none poppins-black;
+        @apply absolute top-8 right-8 text-6xl text-gray-200/50 pointer-events-none;
     }
 
     .stars { @apply flex gap-1 text-[#3ab7bf]; }
 
     .review_text {
-        @apply text-lg text-[#121063] font-bold poppins-bold leading-relaxed;
+        @apply text-lg text-[#121063] font-bold leading-relaxed;
     }
 
     .reviewer { @apply flex items-center gap-4 mt-auto pt-6 border-t border-gray-100; }
     .avatar { @apply w-12 h-12 rounded-full bg-[#121063]/5 flex items-center justify-center text-xl shadow-inner; }
-    .reviewer_name { @apply text-sm font-black text-[#121063] poppins-black; }
-    .reviewer_loc { @apply text-[10px] text-gray-400 uppercase font-black tracking-widest poppins-black mt-0.5; }
+    .reviewer_name { @apply text-sm font-black text-[#121063]; }
+    .reviewer_loc { @apply text-[10px] text-gray-400 uppercase font-black tracking-widest mt-0.5; }
 </style>
 
 <svelte:head>

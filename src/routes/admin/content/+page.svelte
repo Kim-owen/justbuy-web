@@ -34,7 +34,7 @@
         @apply flex items-center justify-between mb-10;
     }
     .page_header h1 {
-        @apply text-3xl font-extrabold text-[#121063] poppins-extrabold tracking-tight;
+        @apply text-3xl font-extrabold text-[#121063] tracking-tight;
     }
 
     .content_grid {
@@ -45,11 +45,11 @@
         @apply bg-white rounded-[2.5rem] p-10 shadow-sm border border-gray-100 flex flex-col gap-8;
     }
 
-    .card_title { @apply text-2xl font-black text-[#121063] poppins-black; }
+    .card_title { @apply text-2xl font-black text-[#121063]; }
     
     .input_group { @apply flex flex-col gap-2; }
-    .label { @apply text-xs font-bold text-gray-400 uppercase tracking-widest poppins-bold; }
-    .input { @apply bg-gray-50 border border-gray-100 px-6 py-4 rounded-2xl text-sm font-bold text-[#121063] poppins-bold focus:outline-none focus:border-[#3ab7bf] transition-all; }
+    .label { @apply text-xs font-bold text-gray-400 uppercase tracking-widest; }
+    .input { @apply bg-gray-50 border border-gray-100 px-6 py-4 rounded-2xl text-sm font-bold text-[#121063] focus:outline-none focus:border-[#3ab7bf] transition-all; }
 
     .item_list { @apply flex flex-col gap-4 mt-6; }
     .item_row { @apply flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 transition-all hover:bg-white hover:shadow-md; }
