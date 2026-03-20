@@ -12,7 +12,7 @@
   --color-prime_grey: #1c2819;
   --color-inactive_grey: #888888;
 
-  /* Font Families - Migrated from tailwind.config.js */
+  /* Font Families */
   --font-poppins: "Poppins", sans-serif;
   --font-rethink: "Rethink Sans", sans-serif;
   --font-africa: "Africa";
@@ -21,6 +21,21 @@
   --font-delap: "Delap";
   --font-credit: "Kredit";
   --font-montserrat: "Montserrat";
+
+  /* Grid Templates - Migrated from tailwind.config.js */
+  --grid-template-columns-tapbarmenu: 1fr 1fr 1fr 1fr;
+  --grid-template-columns-otp_grid: 1fr 1fr 1fr 1fr 1fr 1fr;
+  --grid-template-columns-filter_btns: auto auto 1fr 1fr;
+  --grid-template-columns-category_grid: repeat(2, minmax(0, 1fr));
+  --grid-template-columns-featured_grid: repeat(1, minmax(0, 1fr));
+  --grid-template-columns-upload_thumbnail_grid: repeat(5, minmax(0, 1fr));
+  --grid-template-columns-product_list_item: 130px 1fr;
+  --grid-template-columns-product_tab: repeat(3, minmax(0, 1fr));
+
+  --grid-template-rows-tapbarmenu: 100%;
+  --grid-template-rows-dashboard_services: repeat(4, minmax(0, 1fr));
+  --grid-template-rows-cars_grid: 1fr 1fr;
+  --grid-template-rows-habits: 1fr 1fr 1fr 1fr;
 }
 
 /* Custom Utilities */
