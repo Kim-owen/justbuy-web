@@ -1,4 +1,5 @@
 <script>
+    let { children } = $props();
     import { reveal } from "$lib/reveal";
     import { onMount } from "svelte";
     
@@ -20,7 +21,7 @@
 </script>
 
 <style lang="postcss">
-    @reference "../styles/global.css";
+    @reference "../../styles/global.css";
 
     .admin_container {
         @apply flex h-screen bg-[#f8fafc] overflow-hidden;
@@ -123,7 +124,7 @@
     <!-- Content -->
     <main class="main_content">
         <header class="top_bar">
-            <button onclick={toggleSidebar} class="text-gray-400 hover:text-[#121063] transition-colors">
+            <button onclick={toggleSidebar} class="text-gray-400 hover:text-[#121063] transition-colors" aria-label="Toggle Sidebar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
 
@@ -142,7 +143,7 @@
         </header>
 
         <div class="scroll_area">
-            <slot />
+            {@render children()}
         </div>
     </main>
 </div>

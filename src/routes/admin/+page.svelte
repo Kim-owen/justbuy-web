@@ -18,7 +18,7 @@
 </script>
 
 <style lang="postcss">
-    @reference "../styles/global.css";
+    @reference "../../styles/global.css";
 
     .login_container {
         @apply min-h-screen bg-[#121063] flex items-center justify-center p-6 relative overflow-hidden;
