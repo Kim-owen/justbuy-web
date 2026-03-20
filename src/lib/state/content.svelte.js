@@ -1,7 +1,7 @@
 // Shared content state for the entire platform
 export const contentState = $state({
     videos: [
-        { id: 'v1', url: '/videos/hero_bg.mp4', active: true, label: 'Default Hero' },
+        { id: 'v1', url: '/demo.mp4', active: true, label: 'Standard Hero' },
     ],
     reviews: [
         { id: 'r1', user: 'Kwame O.', rating: 5, comment: 'JustBuy is the fastest way to get data in Ghana! 🔥', location: 'Accra' },
