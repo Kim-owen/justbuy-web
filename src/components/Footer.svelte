@@ -64,8 +64,7 @@
         filter: brightness(1.15);
     }
     .footer_badge img {
-        @apply h-11 w-auto rounded-lg shadow-md;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        @apply h-14 w-auto rounded-lg;
     }
     .footer_badge:hover img {
         @apply shadow-[0_6px_20px_rgba(58,183,191,0.3)];

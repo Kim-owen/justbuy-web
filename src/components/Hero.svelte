@@ -81,8 +81,7 @@
         transform: scale(0.97);
     }
     .store_badge img {
-        @apply h-14 sm:h-16 w-auto rounded-xl shadow-lg;
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        @apply h-20 sm:h-24 w-auto rounded-xl;
     }
     .store_badge:hover img {
         @apply shadow-[0_8px_30px_rgba(58,183,191,0.35)];
