@@ -154,15 +154,9 @@
     </nav>
 
     <div class="actions">
-        <div class="flex flex-row gap-3 items-center">
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="transition-transform duration-300 hover:scale-105 active:scale-95" aria-label="Get it on Google Play">
-                <img src="/images/google_play_badge.png" alt="Get it on Google Play" class="h-10 w-auto rounded-lg shadow-sm hover:shadow-md" />
-            </a>
-            <div class="relative opacity-60 cursor-default" aria-label="App Store - Coming Soon">
-                <img src="/images/app_store_badge.png" alt="Coming soon on the App Store" class="h-10 w-auto rounded-lg" />
-                <span class="absolute inset-0 flex items-center justify-center text-white text-[8px] font-bold uppercase tracking-widest rounded-lg bg-black/50 backdrop-blur-[2px]">Soon</span>
-            </div>
-        </div>
+        <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn font-poppins">
+            <span>Download app</span>
+        </a>
     </div>
 
     <!-- Mobile menu toggle -->
