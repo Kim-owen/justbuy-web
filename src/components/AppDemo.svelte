@@ -103,9 +103,15 @@
                 </div>
             </div>
 
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="inline-flex items-center justify-center px-10 py-5 bg-heading_highlight text-heading_prime text-lg sm:text-xl font-bold rounded-2xl shadow-[0_0_30px_rgba(58,183,191,0.4)] hover:shadow-[0_0_50px_rgba(58,183,191,0.6)] hover:-translate-y-1 transition-all">
-                Download App Now
-            </a>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+                <a href="https://tinyurl.com/Datankoaa" target="_blank" class="transition-all duration-300 hover:-translate-y-1 hover:brightness-110 active:scale-95" aria-label="Get it on Google Play">
+                    <img src="/images/google_play_badge.png" alt="Get it on Google Play" class="h-16 sm:h-20 w-auto rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(58,183,191,0.35)]" />
+                </a>
+                <div class="relative opacity-60 cursor-default transition-all duration-300" aria-label="App Store - Coming Soon">
+                    <img src="/images/app_store_badge.png" alt="Coming soon on the App Store" class="h-16 sm:h-20 w-auto rounded-xl" />
+                    <span class="absolute inset-0 flex items-center justify-center text-white text-[10px] font-bold uppercase tracking-widest rounded-xl bg-black/50 backdrop-blur-[2px]">Coming Soon</span>
+                </div>
+            </div>
         </div>
 
         <!-- Right Column: Interactive Phone Demo -->
