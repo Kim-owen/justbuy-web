@@ -27,8 +27,20 @@
         @apply text-lg md:text-xl text-gray-300 mb-12 max-w-2xl font-medium;
     }
 
-    .download_btn {
-        @apply bg-[#3ab7bf] text-white px-10 py-5 rounded-2xl font-bold text-xl hover:opacity-90 transition-all shadow-[0_0_40px_rgba(58,183,191,0.3)] active:scale-95;
+    .store_badges {
+        @apply flex flex-col sm:flex-row gap-4 sm:gap-6 items-center;
+    }
+    .store_badge {
+        @apply transition-transform duration-300 hover:scale-105 active:scale-95;
+    }
+    .store_badge img {
+        @apply h-14 sm:h-16 w-auto rounded-lg;
+    }
+    .store_badge.coming_soon {
+        @apply relative opacity-50 cursor-default;
+    }
+    .soon_label {
+        @apply absolute inset-0 flex items-center justify-center text-white text-[10px] uppercase tracking-widest bg-black/40 rounded-lg;
     }
 </style>
 
@@ -37,8 +49,14 @@
         <h2 class="font-poppins font-extrabold">Ready to Pay the <br class="hidden sm:block"/>Smarter Way?</h2>
         <p class="font-poppins">Join 50,000+ Ghanaians who trust JustBuy for their daily data, airtime, and utility payments.</p>
         
-        <a href="https://tinyurl.com/Datankoaa" target="_blank" class="download_btn font-poppins font-bold">
-            Download App Now
-        </a>
+        <div class="store_badges">
+            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="store_badge" aria-label="Get it on Google Play">
+                <img src="/images/google_play_badge.png" alt="Get it on Google Play" />
+            </a>
+            <div class="store_badge coming_soon" aria-label="App Store - Coming Soon">
+                <img src="/images/app_store_badge.png" alt="Coming soon on the App Store" />
+                <span class="soon_label font-poppins font-bold">Coming Soon</span>
+            </div>
+        </div>
     </div>
 </section>

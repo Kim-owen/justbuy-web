@@ -63,12 +63,17 @@
         @apply flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full sm:w-auto;
     }
 
-    .btn_primary {
-        @apply bg-[#3ab7bf] text-white px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg w-full sm:w-auto text-center border-2 border-[#3ab7bf];
+    .store_badge {
+        @apply transition-transform duration-300 hover:scale-105 active:scale-95;
     }
-
-    .btn_outline {
-        @apply bg-transparent border-2 border-gray-400 text-gray-200 px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-lg hover:border-[#3ab7bf] hover:text-[#3ab7bf] hover:bg-[#3ab7bf]/10 transition backdrop-blur-sm w-full sm:w-auto text-center;
+    .store_badge img {
+        @apply h-12 sm:h-14 w-auto rounded-lg;
+    }
+    .store_badge.coming_soon {
+        @apply relative opacity-50 cursor-default;
+    }
+    .soon_label {
+        @apply absolute inset-0 flex items-center justify-center text-white text-[10px] uppercase tracking-widest bg-black/40 rounded-lg;
     }
 
     .controls {
@@ -109,12 +114,13 @@
         </p>
 
         <div class="btn_group">
-            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="btn_primary font-poppins font-semibold">
-                Get the App
+            <a href="https://tinyurl.com/Datankoaa" target="_blank" class="store_badge" aria-label="Get it on Google Play">
+                <img src="/images/google_play_badge.png" alt="Get it on Google Play" />
             </a>
-            <a href="/corporate" class="btn_outline font-poppins font-semibold">
-                For Business
-            </a>
+            <div class="store_badge coming_soon" aria-label="App Store - Coming Soon">
+                <img src="/images/app_store_badge.png" alt="Coming soon on the App Store" />
+                <span class="soon_label font-poppins font-bold">Coming Soon</span>
+            </div>
         </div>
     </div>
 
