@@ -28,19 +28,36 @@
     }
 
     .store_badges {
-        @apply flex flex-col sm:flex-row gap-4 sm:gap-6 items-center;
+        @apply flex flex-col sm:flex-row gap-5 sm:gap-6 items-center;
     }
     .store_badge {
-        @apply transition-transform duration-300 hover:scale-105 active:scale-95;
+        @apply transition-all duration-500 ease-out;
+    }
+    .store_badge:hover {
+        transform: translateY(-4px) scale(1.05);
+        filter: brightness(1.1);
+    }
+    .store_badge:active {
+        transform: scale(0.97);
     }
     .store_badge img {
-        @apply h-14 sm:h-16 w-auto rounded-lg;
+        @apply h-16 sm:h-[72px] w-auto rounded-xl shadow-lg;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .store_badge:hover img {
+        @apply shadow-[0_8px_30px_rgba(58,183,191,0.4)];
     }
     .store_badge.coming_soon {
-        @apply relative opacity-50 cursor-default;
+        @apply relative opacity-60 cursor-default;
+    }
+    .store_badge.coming_soon:hover {
+        transform: none;
+        filter: none;
     }
     .soon_label {
-        @apply absolute inset-0 flex items-center justify-center text-white text-[10px] uppercase tracking-widest bg-black/40 rounded-lg;
+        @apply absolute inset-0 flex items-center justify-center text-white text-[10px] font-bold uppercase tracking-widest rounded-xl;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
     }
 </style>
 
