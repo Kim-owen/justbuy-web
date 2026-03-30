@@ -134,7 +134,7 @@
             <ul class="font-poppins">
                 <li><a href="/privacy-policy">Privacy Policy</a></li>
                 <li><a href="/terms-and-conditions">Terms of Service</a></li>
-                <li><a href="/">AML Policy</a></li>
+                <li><a href="/aml-policy">AML Policy</a></li>
             </ul>
         </div>
         
