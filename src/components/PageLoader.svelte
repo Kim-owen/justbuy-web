@@ -7,7 +7,7 @@
         // Give the page a moment to paint before fading out
         const timer = setTimeout(() => {
             visible = false;
-        }, 1800);
+        }, 700);
         return () => clearTimeout(timer);
     });
 </script>
