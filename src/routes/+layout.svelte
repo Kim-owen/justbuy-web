@@ -1,6 +1,7 @@
 <script>
 	let { children } = $props();
 	import "../styles/global.css";
+	import PageLoader from "../components/PageLoader.svelte";
 </script>
 
 <svelte:head>
@@ -9,5 +10,6 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
 </svelte:head>
 
+<PageLoader />
 {@render children()}
 
