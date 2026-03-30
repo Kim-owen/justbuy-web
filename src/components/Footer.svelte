@@ -132,8 +132,8 @@
         <div class="col_links" use:reveal={{type: 'fadeInUp', delay: '0.3s'}}>
             <h3 class="footer_title">Legal</h3>
             <ul class="font-poppins">
-                <li><a href="/">Privacy Policy</a></li>
-                <li><a href="/">Terms of Service</a></li>
+                <li><a href="/terms-and-conditions">Privacy Policy</a></li>
+                <li><a href="/terms-and-conditions">Terms of Service</a></li>
                 <li><a href="/">AML Policy</a></li>
             </ul>
         </div>
