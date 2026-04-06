@@ -25,6 +25,8 @@
     }
     .legal_content h2 { @apply text-lg md:text-xl font-bold mt-8 mb-3 text-gray-900; color: #121063; }
     .legal_content p { @apply text-sm md:text-base text-gray-600 leading-relaxed mb-4; }
+    .legal_content ul { @apply list-disc list-inside text-sm md:text-base text-gray-600 leading-relaxed mb-4 space-y-1 pl-2; }
+    .legal_content li { @apply leading-relaxed; }
     
     .meta_info { @apply flex flex-col md:flex-row justify-between mb-8 pb-6 border-b border-gray-100 text-sm text-gray-500; }
 </style>
@@ -35,7 +37,7 @@
 
     <div class="legal_hero">
         <h1 class="font-poppins font-extrabold">Terms & Conditions</h1>
-        <p class="font-poppins">Please read these terms carefully before using JustBuy.</p>
+        <p class="font-poppins">Please read these Terms carefully before using JustBuy.</p>
     </div>
 
     <div class="legal_content font-poppins">
@@ -45,61 +47,88 @@
         </div>
 
         <h2>1. Introduction</h2>
-        <p>These Terms and Conditions govern the use of the JustBuy platform, including the mobile application, USSD services, website, and all related products and services. By accessing or using JustBuy, you agree to be legally bound by these Terms.</p>
+        <p>These Terms and Conditions ("Terms") govern your access to and use of the JustBuy platform, including the mobile application, USSD services, website, and all related services (collectively, the "Platform").</p>
+        <p>By accessing or using JustBuy, you agree to be bound by these Terms.</p>
 
         <h2>2. Definitions</h2>
-        <p><strong>“JustBuy”</strong> refers to JustBuy Limited and its digital platforms.<br>
-        <strong>“User”</strong> refers to any person who accesses or uses the Platform.<br>
-        <strong>“Wallet”</strong> refers to the stored-value account maintained by JustBuy.<br>
-        <strong>“Services”</strong> include payments, utilities, airtime, data, and digital services.</p>
+        <ul>
+            <li><strong>"JustBuy"</strong> refers to JustBuy Limited and its digital services.</li>
+            <li><strong>"User"</strong> refers to any individual who accesses or uses the Platform.</li>
+            <li><strong>"Balance"</strong> refers to the prepaid stored value available within the Platform.</li>
+            <li><strong>"Services"</strong> include airtime, data bundles, utility payments, and other digital services offered on the Platform.</li>
+        </ul>
 
         <h2>3. Eligibility</h2>
-        <p>Users must be at least 18 years old and legally capable of entering into a binding agreement. Certain services require successful KYC verification.</p>
+        <p>You must be at least 18 years old and capable of entering into a legally binding agreement to use the Platform. Certain features may require identity verification (KYC).</p>
 
-        <h2>4. Account Registration and KYC</h2>
-        <p>Users must provide accurate and complete information. JustBuy reserves the right to request verification documents and to suspend or terminate accounts that fail verification.</p>
+        <h2>4. Account Registration and Verification</h2>
+        <p>You agree to provide accurate and complete information during registration. JustBuy reserves the right to request verification documents and may suspend or restrict accounts that fail verification requirements.</p>
 
-        <h2>5. Wallet Services</h2>
-        <p>JustBuy provides an internal wallet for KYC-verified users. Wallet balances are non-interest bearing and may only be used on the JustBuy platform.</p>
+        <h2>5. Platform Balance (Stored Value)</h2>
+        <p>JustBuy may provide users with a prepaid balance for convenience when purchasing services.</p>
+        <ul>
+            <li>The balance is <strong>non-interest bearing</strong></li>
+            <li>It is <strong>non-transferable</strong></li>
+            <li>It <strong>cannot be withdrawn as cash</strong></li>
+            <li>It can only be used to purchase services within the Platform</li>
+        </ul>
+        <p>The balance does not constitute a bank account or financial account.</p>
 
         <h2>6. Payments and Transactions</h2>
-        <p>All payments are processed through approved third-party providers. Transactions are confirmed only upon receipt of a successful callback from the payment processor.</p>
+        <p>All payments are processed through authorized third-party payment providers. A transaction is considered successful only after confirmation from the payment processor.</p>
 
-        <h2>7. Failed Transactions and Wallet Credits</h2>
-        <p>If payment succeeds but service delivery fails, the amount paid will be credited to the user’s JustBuy Wallet. No automatic Mobile Money refunds will be made unless required by law.</p>
+        <h2>7. Failed Transactions and Balance Credit</h2>
+        <p>Where payment is successful but service delivery fails, the corresponding amount will be credited to the user's JustBuy balance.</p>
+        <p>Refunds to external payment methods (e.g., Mobile Money) are not automatic and will only be processed where required by law or at JustBuy's discretion.</p>
 
         <h2>8. Utilities and Digital Services</h2>
-        <p>Utility and digital service transactions depend on third-party providers. JustBuy does not guarantee uninterrupted service delivery.</p>
+        <p>Service delivery depends on third-party providers. While JustBuy strives for reliability, we do not guarantee uninterrupted or error-free service availability.</p>
 
-        <h2>9. No Token Guarantee</h2>
-        <p>Some services, including ECG Direct and GWCL, do not generate recharge tokens. Successful transactions may result in direct account or meter credit without token issuance.</p>
+        <h2>9. Service-Specific Conditions (No Token Issuance)</h2>
+        <p>Certain services (e.g., ECG Direct or GWCL payments) may not generate recharge tokens. Successful transactions may result in direct account or meter credit without token issuance.</p>
 
         <h2>10. Fees and Charges</h2>
-        <p>JustBuy may charge service or processing fees. All applicable fees will be disclosed before transaction confirmation.</p>
+        <p>Applicable service or processing fees may be charged. All fees will be clearly displayed before transaction confirmation.</p>
 
-        <h2>11. User Obligations</h2>
-        <p>Users must not misuse the platform, engage in fraud, or attempt unauthorized access. Users are responsible for securing their account credentials.</p>
+        <h2>11. User Responsibilities</h2>
+        <p>You agree to:</p>
+        <ul>
+            <li>Use the Platform only for lawful purposes</li>
+            <li>Provide accurate transaction details</li>
+            <li>Maintain the confidentiality of your account credentials</li>
+        </ul>
+        <p>You must not engage in fraud, abuse, or unauthorized access.</p>
 
         <h2>12. Suspension and Termination</h2>
-        <p>JustBuy may suspend or terminate accounts for violations of these Terms, suspected fraud, or regulatory requirements.</p>
+        <p>JustBuy may suspend or terminate access to the Platform where:</p>
+        <ul>
+            <li>There is a violation of these Terms</li>
+            <li>Fraudulent or suspicious activity is detected</li>
+            <li>Required by law or regulatory authorities</li>
+        </ul>
 
         <h2>13. Limitation of Liability</h2>
-        <p>JustBuy shall not be liable for indirect, incidental, or consequential damages arising from platform use or third-party failures.</p>
+        <p>To the maximum extent permitted by law, JustBuy shall not be liable for any indirect, incidental, or consequential damages arising from:</p>
+        <ul>
+            <li>Use of the Platform</li>
+            <li>Failed or delayed transactions</li>
+            <li>Third-party service disruptions</li>
+        </ul>
 
         <h2>14. Indemnification</h2>
-        <p>Users agree to indemnify JustBuy against claims arising from misuse of the platform or violation of these Terms.</p>
+        <p>You agree to indemnify and hold JustBuy harmless from any claims, losses, or damages resulting from your misuse of the Platform or violation of these Terms.</p>
 
         <h2>15. Privacy and Data Protection</h2>
-        <p>User data is handled in accordance with applicable data protection laws and the JustBuy Privacy Policy.</p>
+        <p>Your personal data is handled in accordance with applicable data protection laws and the JustBuy Privacy Policy.</p>
 
         <h2>16. Amendments</h2>
-        <p>JustBuy may update these Terms at any time. Continued use of the platform constitutes acceptance of the revised Terms.</p>
+        <p>JustBuy reserves the right to update or modify these Terms at any time. Continued use of the Platform after changes constitutes acceptance of the revised Terms.</p>
 
         <h2>17. Governing Law</h2>
-        <p>These Terms are governed by the laws of the Republic of Ghana.</p>
+        <p>These Terms shall be governed by and interpreted in accordance with the laws of the Republic of Ghana.</p>
 
         <h2>18. Contact Information</h2>
-        <p>Users may contact JustBuy support through official communication channels for assistance or complaints.</p>
+        <p>For support, complaints, or inquiries, users may contact JustBuy through official support channels provided on the Platform.</p>
     </div>
 
     <Footer />
